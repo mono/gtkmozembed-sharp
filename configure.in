@@ -47,8 +47,8 @@ AC_SUBST(BASE_DEPENDENCIES_LIBS)
 
 dnl Find Gtk#
 PKG_CHECK_MODULES(GTK_SHARP, gtk-sharp-2.0 >= 1.9.0)
-GTKSHARP_PREFIX=`pkg-config --variable=prefix gtk-sharp-2.0`
-AC_SUBST(GTKSHARP_PREFIX)
+AC_SUBST(GTK_SHARP_CFLAGS)
+AC_SUBST(GTK_SHARP_LIBS)
 
 dnl Find Mozilla
 dnl AC_ARG_WITH(mozilla-headers,

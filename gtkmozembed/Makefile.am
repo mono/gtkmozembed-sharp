@@ -6,11 +6,6 @@ METADATA=gtkgecko.metadata
 ASSEMBLY_NAME= gecko-sharp
 ASSEMBLY= $(ASSEMBLY_NAME).dll
 
-INCLUDE_APIS = \
-	$(GTKSHARP_PREFIX)/share/gapi-2.0/gdk-api.xml \
-	$(GTKSHARP_PREFIX)/share/gapi-2.0/gtk-api.xml \
-	$(GTKSHARP_PREFIX)/share/gapi-2.0/atk-api.xml
-
 sources = NewWindowOrphan_handler.cs \
 	  NewWindow_delegate.cs      \
 	  NewWindow_handler.cs	     \
@@ -34,14 +29,13 @@ $(API): $(srcdir)/$(RAW_API) $(srcdir)/$(METADATA)
 	gapi2-fixup --api=$(srcdir)/$(API) --metadata=$(srcdir)/$(METADATA)
 
 generated-stamp: $(API)
-	 gapi2-codegen --generate $(srcdir)/$(API) --include $(INCLUDE_APIS) --outdir=generated --customdir=$(srcdir) --assembly-name=gecko-sharp && touch generated-stamp
+	 gapi2-codegen --generate $(srcdir)/$(API) $(GTK_SHARP_CFLAGS) --outdir=generated --customdir=$(srcdir) --assembly-name=gecko-sharp && touch generated-stamp
 
 gecko-sharp.snk: $(top_srcdir)/gecko-sharp.snk
 	cp $(top_srcdir)/gecko-sharp.snk .
 
 gecko-sharp.dll: $(build_sources) generated-stamp gecko-sharp.snk
-	$(MCS) --unsafe --target library -L $(GTKSHARP_PREFIX)/lib \
-	/pkg:gtk-sharp-2.0 \
+	$(MCS) --unsafe --target library $(GTK_SHARP_LIBS) \
 	$(build_sources) generated/*.cs -o gecko-sharp.dll
 
 install-data-local:
