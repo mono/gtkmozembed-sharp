@@ -1,5 +1,9 @@
 2004-06-25  Mike Kestner  <mkestner@ximian.com>
 	
+	* en/Gecko/*.xml : auto vm, handler, and args docage.
+
+2004-06-25  Mike Kestner  <mkestner@ximian.com>
+	
 	* *.* : s/GtkMozEmbed/Gecko, big time.
 
 2003-12-03  John Luke  <jluke@cfl.rr.com>

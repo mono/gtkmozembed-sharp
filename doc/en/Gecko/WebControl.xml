@@ -253,11 +253,11 @@ namespace GtkMozTest
         <Parameter Name="message" Type="System.IntPtr" />
       </Parameters>
       <Docs>
-        <summary>To be added</summary>
+        <summary>Default handler for the <see cref="M:Gecko.WebControl.StatusChange" /> event.</summary>
         <param name="request">a <see cref="T:System.IntPtr" /></param>
         <param name="status">a <see cref="T:System.Int32" /></param>
         <param name="message">a <see cref="T:System.IntPtr" /></param>
-        <remarks>To be added</remarks>
+        <remarks>Override this method in a subclass to provide a default handler for the <see cref="M:Gecko.WebControl.StatusChange" /> event.</remarks>
       </Docs>
     </Member>
     <Member MemberName="OnNetStateAll">
@@ -272,11 +272,11 @@ namespace GtkMozTest
         <Parameter Name="status" Type="System.UInt32" />
       </Parameters>
       <Docs>
-        <summary>To be added</summary>
+        <summary>Default handler for the <see cref="M:Gecko.WebControl.NetStateAll" /> event.</summary>
         <param name="aURI">a <see cref="T:System.String" /></param>
         <param name="state">a <see cref="T:System.Int32" /></param>
         <param name="status">a <see cref="T:System.UInt32" /></param>
-        <remarks>To be added</remarks>
+        <remarks>Override this method in a subclass to provide a default handler for the <see cref="M:Gecko.WebControl.NetStateAll" /> event.</remarks>
       </Docs>
     </Member>
     <Member MemberName="OnECMAStatus">
@@ -287,8 +287,8 @@ namespace GtkMozTest
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added</summary>
-        <remarks>To be added</remarks>
+        <summary>Default handler for the <see cref="M:Gecko.WebControl.ECMAStatus" /> event.</summary>
+        <remarks>Override this method in a subclass to provide a default handler for the <see cref="M:Gecko.WebControl.ECMAStatus" /> event.</remarks>
       </Docs>
     </Member>
     <Member MemberName="OnOpenUri">
@@ -301,10 +301,10 @@ namespace GtkMozTest
         <Parameter Name="aURI" Type="System.String" />
       </Parameters>
       <Docs>
-        <summary>To be added</summary>
+        <summary>Default handler for the <see cref="M:Gecko.WebControl.OpenUri" /> event.</summary>
         <param name="aURI">a <see cref="T:System.String" /></param>
         <returns>a <see cref="T:System.Int32" /></returns>
-        <remarks>To be added</remarks>
+        <remarks>Override this method in a subclass to provide a default handler for the <see cref="M:Gecko.WebControl.OpenUri" /> event.</remarks>
       </Docs>
     </Member>
     <Member MemberName="OnDomMouseDblClick">
@@ -317,10 +317,10 @@ namespace GtkMozTest
         <Parameter Name="dom_event" Type="System.IntPtr" />
       </Parameters>
       <Docs>
-        <summary>To be added</summary>
+        <summary>Default handler for the <see cref="M:Gecko.WebControl.DomMouseDblClick" /> event.</summary>
         <param name="dom_event">a <see cref="T:System.IntPtr" /></param>
         <returns>a <see cref="T:System.Int32" /></returns>
-        <remarks>To be added</remarks>
+        <remarks>Override this method in a subclass to provide a default handler for the <see cref="M:Gecko.WebControl.DomMouseDblClick" /> event.</remarks>
       </Docs>
     </Member>
     <Member MemberName="OnSizeTo">
@@ -334,10 +334,10 @@ namespace GtkMozTest
         <Parameter Name="height" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <summary>To be added</summary>
+        <summary>Default handler for the <see cref="M:Gecko.WebControl.SizeTo" /> event.</summary>
         <param name="width">a <see cref="T:System.Int32" /></param>
         <param name="height">a <see cref="T:System.Int32" /></param>
-        <remarks>To be added</remarks>
+        <remarks>Override this method in a subclass to provide a default handler for the <see cref="M:Gecko.WebControl.SizeTo" /> event.</remarks>
       </Docs>
     </Member>
     <Member MemberName="OnLinkMsg">
@@ -348,8 +348,8 @@ namespace GtkMozTest
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added</summary>
-        <remarks>To be added</remarks>
+        <summary>Default handler for the <see cref="M:Gecko.WebControl.LinkMsg" /> event.</summary>
+        <remarks>Override this method in a subclass to provide a default handler for the <see cref="M:Gecko.WebControl.LinkMsg" /> event.</remarks>
       </Docs>
     </Member>
     <Member MemberName="OnDomMouseOut">
@@ -362,10 +362,10 @@ namespace GtkMozTest
         <Parameter Name="dom_event" Type="System.IntPtr" />
       </Parameters>
       <Docs>
-        <summary>To be added</summary>
+        <summary>Default handler for the <see cref="M:Gecko.WebControl.DomMouseOut" /> event.</summary>
         <param name="dom_event">a <see cref="T:System.IntPtr" /></param>
         <returns>a <see cref="T:System.Int32" /></returns>
-        <remarks>To be added</remarks>
+        <remarks>Override this method in a subclass to provide a default handler for the <see cref="M:Gecko.WebControl.DomMouseOut" /> event.</remarks>
       </Docs>
     </Member>
     <Member MemberName="OnDomMouseOver">
@@ -378,10 +378,10 @@ namespace GtkMozTest
         <Parameter Name="dom_event" Type="System.IntPtr" />
       </Parameters>
       <Docs>
-        <summary>To be added</summary>
+        <summary>Default handler for the <see cref="M:Gecko.WebControl.DomMouseOver" /> event.</summary>
         <param name="dom_event">a <see cref="T:System.IntPtr" /></param>
         <returns>a <see cref="T:System.Int32" /></returns>
-        <remarks>To be added</remarks>
+        <remarks>Override this method in a subclass to provide a default handler for the <see cref="M:Gecko.WebControl.DomMouseOver" /> event.</remarks>
       </Docs>
     </Member>
     <Member MemberName="OnNetStop">
@@ -392,8 +392,8 @@ namespace GtkMozTest
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added</summary>
-        <remarks>To be added</remarks>
+        <summary>Default handler for the <see cref="M:Gecko.WebControl.NetStop" /> event.</summary>
+        <remarks>Override this method in a subclass to provide a default handler for the <see cref="M:Gecko.WebControl.NetStop" /> event.</remarks>
       </Docs>
     </Member>
     <Member MemberName="OnDomKeyPress">
@@ -406,10 +406,10 @@ namespace GtkMozTest
         <Parameter Name="dom_event" Type="System.IntPtr" />
       </Parameters>
       <Docs>
-        <summary>To be added</summary>
+        <summary>Default handler for the <see cref="M:Gecko.WebControl.DomKeyPress" /> event.</summary>
         <param name="dom_event">a <see cref="T:System.IntPtr" /></param>
         <returns>a <see cref="T:System.Int32" /></returns>
-        <remarks>To be added</remarks>
+        <remarks>Override this method in a subclass to provide a default handler for the <see cref="M:Gecko.WebControl.DomKeyPress" /> event.</remarks>
       </Docs>
     </Member>
     <Member MemberName="OnDomKeyUp">
@@ -422,10 +422,10 @@ namespace GtkMozTest
         <Parameter Name="dom_event" Type="System.IntPtr" />
       </Parameters>
       <Docs>
-        <summary>To be added</summary>
+        <summary>Default handler for the <see cref="M:Gecko.WebControl.DomKeyUp" /> event.</summary>
         <param name="dom_event">a <see cref="T:System.IntPtr" /></param>
         <returns>a <see cref="T:System.Int32" /></returns>
-        <remarks>To be added</remarks>
+        <remarks>Override this method in a subclass to provide a default handler for the <see cref="M:Gecko.WebControl.DomKeyUp" /> event.</remarks>
       </Docs>
     </Member>
     <Member MemberName="OnSecurityChange">
@@ -439,10 +439,10 @@ namespace GtkMozTest
         <Parameter Name="state" Type="System.UInt32" />
       </Parameters>
       <Docs>
-        <summary>To be added</summary>
+        <summary>Default handler for the <see cref="M:Gecko.WebControl.SecurityChange" /> event.</summary>
         <param name="request">a <see cref="T:System.IntPtr" /></param>
         <param name="state">a <see cref="T:System.UInt32" /></param>
-        <remarks>To be added</remarks>
+        <remarks>Override this method in a subclass to provide a default handler for the <see cref="M:Gecko.WebControl.SecurityChange" /> event.</remarks>
       </Docs>
     </Member>
     <Member MemberName="OnNetState">
@@ -456,10 +456,10 @@ namespace GtkMozTest
         <Parameter Name="status" Type="System.UInt32" />
       </Parameters>
       <Docs>
-        <summary>To be added</summary>
+        <summary>Default handler for the <see cref="M:Gecko.WebControl.NetState" /> event.</summary>
         <param name="state">a <see cref="T:System.Int32" /></param>
         <param name="status">a <see cref="T:System.UInt32" /></param>
-        <remarks>To be added</remarks>
+        <remarks>Override this method in a subclass to provide a default handler for the <see cref="M:Gecko.WebControl.NetState" /> event.</remarks>
       </Docs>
     </Member>
     <Member MemberName="OnNetStart">
@@ -470,8 +470,8 @@ namespace GtkMozTest
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added</summary>
-        <remarks>To be added</remarks>
+        <summary>Default handler for the <see cref="M:Gecko.WebControl.NetStart" /> event.</summary>
+        <remarks>Override this method in a subclass to provide a default handler for the <see cref="M:Gecko.WebControl.NetStart" /> event.</remarks>
       </Docs>
     </Member>
     <Member MemberName="OnVisibility">
@@ -484,9 +484,9 @@ namespace GtkMozTest
         <Parameter Name="visibility" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <summary>To be added</summary>
+        <summary>Default handler for the <see cref="M:Gecko.WebControl.Visibility" /> event.</summary>
         <param name="visibility">a <see cref="T:System.Boolean" /></param>
-        <remarks>To be added</remarks>
+        <remarks>Override this method in a subclass to provide a default handler for the <see cref="M:Gecko.WebControl.Visibility" /> event.</remarks>
       </Docs>
     </Member>
     <Member MemberName="OnDestroyBrowser">
@@ -497,8 +497,8 @@ namespace GtkMozTest
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added</summary>
-        <remarks>To be added</remarks>
+        <summary>Default handler for the <see cref="M:Gecko.WebControl.DestroyBrowser" /> event.</summary>
+        <remarks>Override this method in a subclass to provide a default handler for the <see cref="M:Gecko.WebControl.DestroyBrowser" /> event.</remarks>
       </Docs>
     </Member>
     <Member MemberName="OnDomMouseClick">
@@ -511,10 +511,10 @@ namespace GtkMozTest
         <Parameter Name="dom_event" Type="System.IntPtr" />
       </Parameters>
       <Docs>
-        <summary>To be added</summary>
+        <summary>Default handler for the <see cref="M:Gecko.WebControl.DomMouseClick" /> event.</summary>
         <param name="dom_event">a <see cref="T:System.IntPtr" /></param>
         <returns>a <see cref="T:System.Int32" /></returns>
-        <remarks>To be added</remarks>
+        <remarks>Override this method in a subclass to provide a default handler for the <see cref="M:Gecko.WebControl.DomMouseClick" /> event.</remarks>
       </Docs>
     </Member>
     <Member MemberName="OnTitleChange">
@@ -525,8 +525,8 @@ namespace GtkMozTest
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added</summary>
-        <remarks>To be added</remarks>
+        <summary>Default handler for the <see cref="M:Gecko.WebControl.TitleChange" /> event.</summary>
+        <remarks>Override this method in a subclass to provide a default handler for the <see cref="M:Gecko.WebControl.TitleChange" /> event.</remarks>
       </Docs>
     </Member>
     <Member MemberName="OnDomMouseUp">
@@ -539,10 +539,10 @@ namespace GtkMozTest
         <Parameter Name="dom_event" Type="System.IntPtr" />
       </Parameters>
       <Docs>
-        <summary>To be added</summary>
+        <summary>Default handler for the <see cref="M:Gecko.WebControl.DomMouseUp" /> event.</summary>
         <param name="dom_event">a <see cref="T:System.IntPtr" /></param>
         <returns>a <see cref="T:System.Int32" /></returns>
-        <remarks>To be added</remarks>
+        <remarks>Override this method in a subclass to provide a default handler for the <see cref="M:Gecko.WebControl.DomMouseUp" /> event.</remarks>
       </Docs>
     </Member>
     <Member MemberName="OnProgressAll">
@@ -557,11 +557,11 @@ namespace GtkMozTest
         <Parameter Name="maxprogress" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <summary>To be added</summary>
+        <summary>Default handler for the <see cref="M:Gecko.WebControl.ProgressAll" /> event.</summary>
         <param name="aURI">a <see cref="T:System.String" /></param>
         <param name="curprogress">a <see cref="T:System.Int32" /></param>
         <param name="maxprogress">a <see cref="T:System.Int32" /></param>
-        <remarks>To be added</remarks>
+        <remarks>Override this method in a subclass to provide a default handler for the <see cref="M:Gecko.WebControl.ProgressAll" /> event.</remarks>
       </Docs>
     </Member>
     <Member MemberName="OnDomMouseDown">
@@ -574,10 +574,10 @@ namespace GtkMozTest
         <Parameter Name="dom_event" Type="System.IntPtr" />
       </Parameters>
       <Docs>
-        <summary>To be added</summary>
+        <summary>Default handler for the <see cref="M:Gecko.WebControl.DomMouseDown" /> event.</summary>
         <param name="dom_event">a <see cref="T:System.IntPtr" /></param>
         <returns>a <see cref="T:System.Int32" /></returns>
-        <remarks>To be added</remarks>
+        <remarks>Override this method in a subclass to provide a default handler for the <see cref="M:Gecko.WebControl.DomMouseDown" /> event.</remarks>
       </Docs>
     </Member>
     <Member MemberName="OnDomKeyDown">
@@ -590,10 +590,10 @@ namespace GtkMozTest
         <Parameter Name="dom_event" Type="System.IntPtr" />
       </Parameters>
       <Docs>
-        <summary>To be added</summary>
+        <summary>Default handler for the <see cref="M:Gecko.WebControl.DomKeyDown" /> event.</summary>
         <param name="dom_event">a <see cref="T:System.IntPtr" /></param>
         <returns>a <see cref="T:System.Int32" /></returns>
-        <remarks>To be added</remarks>
+        <remarks>Override this method in a subclass to provide a default handler for the <see cref="M:Gecko.WebControl.DomKeyDown" /> event.</remarks>
       </Docs>
     </Member>
     <Member MemberName="OnProgress">
@@ -607,10 +607,10 @@ namespace GtkMozTest
         <Parameter Name="maxprogress" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <summary>To be added</summary>
+        <summary>Default handler for the <see cref="M:Gecko.WebControl.Progress" /> event.</summary>
         <param name="curprogress">a <see cref="T:System.Int32" /></param>
         <param name="maxprogress">a <see cref="T:System.Int32" /></param>
-        <remarks>To be added</remarks>
+        <remarks>Override this method in a subclass to provide a default handler for the <see cref="M:Gecko.WebControl.Progress" /> event.</remarks>
       </Docs>
     </Member>
     <Member MemberName="OnLocChange">
@@ -621,8 +621,8 @@ namespace GtkMozTest
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added</summary>
-        <remarks>To be added</remarks>
+        <summary>Default handler for the <see cref="M:Gecko.WebControl.LocChange" /> event.</summary>
+        <remarks>Override this method in a subclass to provide a default handler for the <see cref="M:Gecko.WebControl.LocChange" /> event.</remarks>
       </Docs>
     </Member>
     <Member MemberName="CanGoForward">
@@ -647,7 +647,7 @@ namespace GtkMozTest
       <Parameters />
       <Docs>
         <summary>Stop the load of a document that is being loaded in the <see cref="T:Gecko.WebControl" />.</summary>
-        <remarks/>
+        <remarks />
       </Docs>
     </Member>
     <Member MemberName="GoForward">
@@ -659,7 +659,8 @@ namespace GtkMozTest
       <Parameters />
       <Docs>
         <summary>Go forward one step in the navigation history.</summary>
-        <remarks></remarks>
+        <remarks>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="Reload">
@@ -686,7 +687,7 @@ namespace GtkMozTest
       <Parameters />
       <Docs>
         <summary>Closes the stream that you have been using to append data manually to the <see cref="T:Gecko.WebControl" />.</summary>
-        <remarks/>
+        <remarks />
       </Docs>
     </Member>
     <Member MemberName="GoBack">
@@ -698,7 +699,8 @@ namespace GtkMozTest
       <Parameters />
       <Docs>
         <summary>Go backwards one step in the navigation history.</summary>
-        <remarks></remarks>
+        <remarks>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="AppendData">
@@ -713,7 +715,8 @@ namespace GtkMozTest
       <Docs>
         <summary>Allows you to append data to an already opened stream in the <see cref="T:Gecko.WebControl" />.</summary>
         <param name="data">a <see cref="T:System.String" /></param>
-        <remarks></remarks>
+        <remarks>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="LoadUrl">
@@ -791,10 +794,10 @@ namespace GtkMozTest
         <Parameter Name="chromemask" Type="System.UInt32" />
       </Parameters>
       <Docs>
-        <summary>To be added</summary>
+        <summary>Default handler for the <see cref="M:Gecko.WebControl.NewWindow" /> event.</summary>
         <param name="newEmbed">a <see cref="T:Gecko.WebControl" /></param>
         <param name="chromemask">a <see cref="T:System.UInt32" /></param>
-        <remarks>To be added</remarks>
+        <remarks>Override this method in a subclass to provide a default handler for the <see cref="M:Gecko.WebControl.NewWindow" /> event.</remarks>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
