@@ -11,15 +11,15 @@
   <Docs>
     <summary>Embed a Mozilla browser window into your Gtk# application.</summary>
     <remarks>
-	  <para>
+      <para>
 	     It is designed to be easy to use and uncomplicated to make the barrier for use as low as possible.
 		 This means that the functionality exposed should cover about 80% of uses.
 	  </para>
-	  <para>
+      <para>
 	    The following sample is a very minimal web browser.
 	  </para>
-	  <example>
-	    <code language="C#">
+      <example>
+        <code language="C#">
 using System;
 using Gtk;
 using GtkSharp;
@@ -152,11 +152,11 @@ namespace GtkMozTest
 	}
 }
 	    </code>
-	  </example>
-	  <para>
+      </example>
+      <para>
 	    Compile with: mcs GtkMozTest.cs -r gtk-sharp -r gtkmozembed-sharp
 	  </para>
-	</remarks>
+    </remarks>
   </Docs>
   <Base>
     <BaseTypeName>Gtk.Bin</BaseTypeName>
@@ -189,8 +189,8 @@ namespace GtkMozTest
       </Parameters>
       <Docs>
         <summary>To be added</summary>
-        <param name="aDir">an object of type <see cref="T:System.String"/></param>
-        <param name="aName">an object of type <see cref="T:System.String"/></param>
+        <param name="aDir">an object of type <see cref="T:System.String" /></param>
+        <param name="aName">an object of type <see cref="T:System.String" /></param>
         <remarks>To be added</remarks>
       </Docs>
     </Member>
@@ -227,8 +227,8 @@ namespace GtkMozTest
       <Parameters />
       <Docs>
         <summary>Whether or not you can go backwards in the document's navigation history.</summary>
-        <returns>an object of type <see cref="T:System.Boolean"/></returns>
-        <remarks>It will return <see langword="true"/> if it can go backwards, <see langword="false"/> if it can't.</remarks>
+        <returns>an object of type <see cref="T:System.Boolean" /></returns>
+        <remarks>It will return <see langword="true" /> if it can go backwards, <see langword="false" /> if it can't.</remarks>
       </Docs>
     </Member>
     <Member MemberName="RenderData">
@@ -245,10 +245,10 @@ namespace GtkMozTest
       </Parameters>
       <Docs>
         <summary>Allows you to take a chunk of random data and render it into the document.</summary>
-        <param name="data">an object of type <see cref="T:System.String"/></param>
-        <param name="len">an object of type <see cref="T:System.UInt32"/></param>
-        <param name="base_uri">an object of type <see cref="T:System.String"/></param>
-        <param name="mime_type">an object of type <see cref="T:System.String"/></param>
+        <param name="data">an object of type <see cref="T:System.String" /></param>
+        <param name="len">an object of type <see cref="T:System.UInt32" /></param>
+        <param name="base_uri">an object of type <see cref="T:System.String" /></param>
+        <param name="mime_type">an object of type <see cref="T:System.String" /></param>
         <remarks>
 		  You need to pass in the data and the length of the data.
 		  The base_uri is used to resolve internal references in the document and the mime_type is used to determine how to render the document internally.
@@ -266,9 +266,9 @@ namespace GtkMozTest
         <Parameter Name="mime_type" Type="System.String" />
       </Parameters>
       <Docs>
-        <summary>Start loading a document from an external source into the <see cref="T:GtkMozEmbed.EmbedWidget"/>.</summary>
-        <param name="base_uri">an object of type <see cref="T:System.String"/></param>
-        <param name="mime_type">an object of type <see cref="T:System.String"/></param>
+        <summary>Start loading a document from an external source into the <see cref="T:GtkMozEmbed.EmbedWidget" />.</summary>
+        <param name="base_uri">an object of type <see cref="T:System.String" /></param>
+        <param name="mime_type">an object of type <see cref="T:System.String" /></param>
         <remarks>You need to pass in the base_uri for resolving internal links and and the mime_type of the document.</remarks>
       </Docs>
     </Member>
@@ -295,9 +295,9 @@ namespace GtkMozTest
         <Parameter Name="len" Type="System.UInt32" />
       </Parameters>
       <Docs>
-        <summary>Allows you to append data to an already opened stream in the <see cref="T:GtkMozEmbed.EmbedWidget"/>.</summary>
-        <param name="data">an object of type <see cref="T:System.String"/></param>
-        <param name="len">an object of type <see cref="T:System.UInt32"/></param>
+        <summary>Allows you to append data to an already opened stream in the <see cref="T:GtkMozEmbed.EmbedWidget" />.</summary>
+        <param name="data">an object of type <see cref="T:System.String" /></param>
+        <param name="len">an object of type <see cref="T:System.UInt32" /></param>
         <remarks>You need to pass in the data that you want to append to the document and its length.</remarks>
       </Docs>
     </Member>
@@ -321,7 +321,7 @@ namespace GtkMozTest
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Closes the stream that you have been using to append data manually to the <see cref="T:GtkMozEmbed.EmbedWidget"/>.</summary>
+        <summary>Closes the stream that you have been using to append data manually to the <see cref="T:GtkMozEmbed.EmbedWidget" />.</summary>
         <remarks />
       </Docs>
     </Member>
@@ -336,8 +336,8 @@ namespace GtkMozTest
       </Parameters>
       <Docs>
         <summary>Reloads the document</summary>
-        <param name="flags">an object of type <see cref="T:System.Int32"/></param>
-        <remarks>The <see cref="T:GtkMozEmbed.ReloadFlags"/> argument can be used to control the behaviour of the reload.</remarks>
+        <param name="flags">an object of type <see cref="T:System.Int32" /></param>
+        <remarks>The <see cref="T:GtkMozEmbed.ReloadFlags" /> argument can be used to control the behaviour of the reload.</remarks>
       </Docs>
     </Member>
     <Member MemberName="StopLoad">
@@ -348,7 +348,7 @@ namespace GtkMozTest
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Stop the load of a document that is being loaded in the <see cref="T:GtkMozEmbed.EmbedWidget"/>.</summary>
+        <summary>Stop the load of a document that is being loaded in the <see cref="T:GtkMozEmbed.EmbedWidget" />.</summary>
         <remarks />
       </Docs>
     </Member>
@@ -361,8 +361,8 @@ namespace GtkMozTest
       <Parameters />
       <Docs>
         <summary>Whether or not you can go forward in the document's navigation history.</summary>
-        <returns>an object of type <see cref="T:System.Boolean"/></returns>
-        <remarks>It will return <see langword="true"/> if it can go forwards, <see langword="false"/> if it ca not.
+        <returns>an object of type <see cref="T:System.Boolean" /></returns>
+        <remarks>It will return <see langword="true" /> if it can go forwards, <see langword="false" /> if it ca not.
 		</remarks>
       </Docs>
     </Member>
@@ -376,8 +376,8 @@ namespace GtkMozTest
         <Parameter Name="url" Type="System.String" />
       </Parameters>
       <Docs>
-        <summary>Start loading a url in the <see cref="T:GtkMozEmbed.EmbedWidget"/>.</summary>
-        <param name="url">an object of type <see cref="T:System.String"/></param>
+        <summary>Start loading a url in the <see cref="T:GtkMozEmbed.EmbedWidget" />.</summary>
+        <param name="url">an object of type <see cref="T:System.String" /></param>
         <remarks>
 		  All loads are asynchronous.
 		  The url argument should be in the form of http://www.gnome.org.</remarks>
@@ -405,7 +405,7 @@ namespace GtkMozTest
       <Docs>
         <summary>Internal constructor</summary>
         <param name="gtype">an object of type 'GLib.Type'</param>
-        <returns>an object of type <see cref="T:GtkMozEmbed.EmbedWidget"/></returns>
+        <returns>an object of type <see cref="T:GtkMozEmbed.EmbedWidget" /></returns>
         <remarks>This is not typically called by C# code.</remarks>
       </Docs>
     </Member>
@@ -418,19 +418,8 @@ namespace GtkMozTest
       </Parameters>
       <Docs>
         <summary>Internal constructor</summary>
-        <param name="raw">an object of type <see cref="T:System.IntPtr"/></param>
-        <returns>an object of type <see cref="T:GtkMozEmbed.EmbedWidget"/></returns>
-        <remarks>This is not typically called by C# code.</remarks>
-      </Docs>
-    </Member>
-    <Member MemberName=".ctor">
-      <MemberSignature Language="C#" Value="protected EmbedWidget ();" />
-      <MemberType>Constructor</MemberType>
-      <ReturnValue />
-      <Parameters />
-      <Docs>
-        <summary>Internal constructor</summary>
-        <returns>an object of type <see cref="T:GtkMozEmbed.EmbedWidget"/></returns>
+        <param name="raw">an object of type <see cref="T:System.IntPtr" /></param>
+        <returns>an object of type <see cref="T:GtkMozEmbed.EmbedWidget" /></returns>
         <remarks>This is not typically called by C# code.</remarks>
       </Docs>
     </Member>
@@ -444,9 +433,9 @@ namespace GtkMozTest
       </Parameters>
       <Docs>
         <summary>Creates a new Gtk Mozilla embedding widget.</summary>
-        <param name="aPath">an object of type <see cref="T:System.String"/></param>
-        <param name="aDir">an object of type <see cref="T:System.String"/></param>
-        <returns>an object of type <see cref="T:GtkMozEmbed.EmbedWidget"/></returns>
+        <param name="aPath">an object of type <see cref="T:System.String" /></param>
+        <param name="aDir">an object of type <see cref="T:System.String" /></param>
+        <returns>an object of type <see cref="T:GtkMozEmbed.EmbedWidget" /></returns>
         <remarks>Creates a new Gtk Mozilla embedding widget. This is the most commonly used constructor.</remarks>
       </Docs>
     </Member>
@@ -457,7 +446,7 @@ namespace GtkMozTest
       <Parameters />
       <Docs>
         <summary>To be added</summary>
-        <returns>an object of type <see cref="T:GtkMozEmbed.EmbedWidget"/></returns>
+        <returns>an object of type <see cref="T:GtkMozEmbed.EmbedWidget" /></returns>
         <remarks>To be added</remarks>
       </Docs>
     </Member>
@@ -468,9 +457,9 @@ namespace GtkMozTest
         <ReturnType>System.UInt32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>The <see cref="T:GLib.Type"/> of the <see cref="T:GtkMozEmbed.EmbedWidget"/>.</summary>
-        <returns>an object of type <see cref="T:System.UInt32"/></returns>
-        <remarks>The <see cref="T:GLib.Type"/> of the <see cref="T:GtkMozEmbed.EmbedWidget"/>.</remarks>
+        <summary>The <see cref="T:GLib.Type" /> of the <see cref="T:GtkMozEmbed.EmbedWidget" />.</summary>
+        <returns>an object of type <see cref="T:System.UInt32" /></returns>
+        <remarks>The <see cref="T:GLib.Type" /> of the <see cref="T:GtkMozEmbed.EmbedWidget" />.</remarks>
       </Docs>
     </Member>
     <Member MemberName="CompPath">
@@ -484,10 +473,10 @@ namespace GtkMozTest
       </Parameters>
       <Docs>
         <summary>Allows you to set the path to the mozilla components.</summary>
-        <param name="value">an object of type <see cref="T:System.String"/></param>
-        <returns>an object of type <see cref="T:System.String"/></returns>
+        <param name="value">an object of type <see cref="T:System.String" /></param>
+        <returns>an object of type <see cref="T:System.String" /></returns>
         <remarks>
-		  This function must be called before the first <see cref="T:Gtk.Widget"/> is created or XPCOM is initialized. 
+		  This function must be called before the first <see cref="T:Gtk.Widget" /> is created or XPCOM is initialized. 
 		  It allows you to set the path to the mozilla components.
 		</remarks>
       </Docs>
@@ -502,10 +491,10 @@ namespace GtkMozTest
         <Parameter Name="value" Type="System.UInt32" />
       </Parameters>
       <Docs>
-        <summary>The chrome mask for this <see cref="T:GtkMozEmbed.EmbedWidget"/></summary>
-        <param name="value">an object of type <see cref="T:System.UInt32"/></param>
-        <returns>an object of type <see cref="T:System.UInt32"/></returns>
-        <remarks>It can be one of <see cref="T:GtkMozEmbed.ChromeFlags"/>.</remarks>
+        <summary>The chrome mask for this <see cref="T:GtkMozEmbed.EmbedWidget" /></summary>
+        <param name="value">an object of type <see cref="T:System.UInt32" /></param>
+        <returns>an object of type <see cref="T:System.UInt32" /></returns>
+        <remarks>It can be one of <see cref="T:GtkMozEmbed.ChromeFlags" />.</remarks>
       </Docs>
     </Member>
     <Member MemberName="GeckoTitle">
@@ -516,7 +505,7 @@ namespace GtkMozTest
       </ReturnValue>
       <Docs>
         <summary>Returns the current title for a document</summary>
-        <returns>an object of type <see cref="T:System.String"/></returns>
+        <returns>an object of type <see cref="T:System.String" /></returns>
         <remarks />
       </Docs>
     </Member>
@@ -528,7 +517,7 @@ namespace GtkMozTest
       </ReturnValue>
       <Docs>
         <summary>Returns the current location of the document</summary>
-        <returns>an object of type <see cref="T:System.String"/></returns>
+        <returns>an object of type <see cref="T:System.String" /></returns>
         <remarks />
       </Docs>
     </Member>
@@ -540,7 +529,7 @@ namespace GtkMozTest
       </ReturnValue>
       <Docs>
         <summary>Returns the js_status message if there is one</summary>
-        <returns>an object of type <see cref="T:System.String"/></returns>
+        <returns>an object of type <see cref="T:System.String" /></returns>
         <remarks />
       </Docs>
     </Member>
@@ -552,7 +541,7 @@ namespace GtkMozTest
       </ReturnValue>
       <Docs>
         <summary>Returns the current link message of the document if there is one</summary>
-        <returns>an object of type <see cref="T:System.String"/></returns>
+        <returns>an object of type <see cref="T:System.String" /></returns>
         <remarks />
       </Docs>
     </Member>
@@ -580,7 +569,7 @@ namespace GtkMozTest
           <para>
              The max value indicates the length of the document. If the value of max is less than one the full length of the document can not be determined.
           </para>
-		</remarks>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="DomKeyDown">
@@ -692,7 +681,7 @@ namespace GtkMozTest
         <summary>Emitted when the link message changes.</summary>
         <remarks>
           This happens when the user moves the mouse over a link in a web page.
-          Use <see cref="P:GtkMozEmbed.GeckoLinkMessage"/> to get the actual value of the link message.
+          Use <see cref="P:GtkMozEmbed.GeckoLinkMessage" /> to get the actual value of the link message.
 		</remarks>
       </Docs>
     </Member>
@@ -724,7 +713,7 @@ namespace GtkMozTest
       <Docs>
         <summary>Emitted any time that the title of a document has changed.</summary>
         <remarks>
-          Use the <see cref="P:GtkMozEmbed.GeckoTitle"/> to get the actual value of the title.
+          Use the <see cref="P:GtkMozEmbed.GeckoTitle" /> to get the actual value of the title.
 		</remarks>
       </Docs>
     </Member>
@@ -735,7 +724,7 @@ namespace GtkMozTest
       <Parameters />
       <Docs>
         <summary>Emitted any time that the location of the document has changed.</summary>
-        <remarks>Use <see cref="P:Gtk.Moz.Embed.GeckoLocation"/> to get the actual value of the location.</remarks>
+        <remarks>Use <see cref="P:Gtk.Moz.Embed.GeckoLocation" /> to get the actual value of the location.</remarks>
       </Docs>
     </Member>
     <Member MemberName="DomMouseOut">
@@ -786,19 +775,19 @@ namespace GtkMozTest
       <Docs>
         <summary>Emitted when the document tries to load a new document.</summary>
         <remarks>
-		  <para>
+          <para>
 			For example when someone clicks on a link in a web page.
 			This signal gives the embedder the opportunity to keep the new document from being loaded.
 			The uri argument is the uri that is going to be loaded.
 		  </para>
-		  <para>
-		    If you return <see langword="true"/> from this signal, the new document will NOT be loaded.
-			If you return <see langword="false"/> the new document will be loaded.
+          <para>
+		    If you return <see langword="true" /> from this signal, the new document will NOT be loaded.
+			If you return <see langword="false" /> the new document will be loaded.
 			This is somewhat non-intuitive.
 			Think of it as the Mozilla engine is asking if you want to interrupt the loading of a new document.
-			By returning <see langword="true"/> you are saying "do not load this document."
+			By returning <see langword="true" /> you are saying "do not load this document."
 		  </para>
-		</remarks>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="JsStatus">
@@ -808,7 +797,7 @@ namespace GtkMozTest
       <Parameters />
       <Docs>
         <summary>Emitted when the JavaScript status message changes.</summary>
-        <remarks>Use <see cref="P:GtkMozEmbed.GeckoJsStatus"/> to get the actual value of the js status message.</remarks>
+        <remarks>Use <see cref="P:GtkMozEmbed.GeckoJsStatus" /> to get the actual value of the js status message.</remarks>
       </Docs>
     </Member>
     <Member MemberName="NetStateAll">
@@ -825,6 +814,18 @@ namespace GtkMozTest
       <MemberSignature Language="C#" Value="public event GtkMozEmbedSharp.StatusChangeHandler StatusChange;" />
       <MemberType>Event</MemberType>
       <ReturnValue />
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewWindow">
+      <MemberSignature Language="C#" Value="public event GtkMozEmbedSharp.NewWindowHandler NewWindow;" />
+      <MemberType>Event</MemberType>
+      <ReturnValue>
+        <ReturnType>GtkMozEmbedSharp.NewWindowHandler</ReturnType>
+      </ReturnValue>
       <Parameters />
       <Docs>
         <summary>To be added</summary>

@@ -2,12 +2,12 @@
   <TypeSignature Language="C#" Value="public sealed delegate void DomMouseClickHandler (object o, GtkMozEmbedSharp.DomMouseClickArgs args);" Maintainer="auto" />
   <AssemblyInfo>
     <AssemblyName>gtkmozembed-sharp</AssemblyName>
-    <AssemblyPublicKey />
+    <AssemblyPublicKey></AssemblyPublicKey>
     <AssemblyVersion>0.0.0.0</AssemblyVersion>
     <AssemblyCulture>neutral</AssemblyCulture>
     <Attributes />
   </AssemblyInfo>
-  <ThreadSafetyStatement>Gtk# is thread aware, but not thread safe; See the &lt;link location="node:gtk-sharp/programming/threads"&gt;Gtk# Thread Programming&lt;/link&gt; for details.</ThreadSafetyStatement>
+  <ThreadSafetyStatement>Gtk# is thread aware, but not thread safe; See the <link location="node:gtk-sharp/programming/threads">Gtk# Thread Programming</link> for details.</ThreadSafetyStatement>
   <Docs>
     <summary>To be added</summary>
     <remarks>To be added</remarks>
@@ -25,4 +25,11 @@
   </Interfaces>
   <Attributes />
   <Members />
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Parameters>
+    <Parameter Name="o" Type="System.Object" />
+    <Parameter Name="args" Type="GtkMozEmbedSharp.DomMouseClickArgs" />
+  </Parameters>
 </Type>

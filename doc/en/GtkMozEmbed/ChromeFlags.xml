@@ -29,252 +29,252 @@
   <Attributes />
   <Members>
     <Member MemberName="Defaultchrome">
-      <MemberSignature Language="C#" Value="public static GtkMozEmbed.ChromeFlags Defaultchrome;" />
+      <MemberSignature Language="C#" Value="Defaultchrome" />
       <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>GtkMozEmbed.ChromeFlags</ReturnType>
       </ReturnValue>
-      <Parameters />
+      <Parameters></Parameters>
       <Docs>
         <summary>To be added</summary>
         <remarks>To be added</remarks>
       </Docs>
     </Member>
     <Member MemberName="Windowborderson">
-      <MemberSignature Language="C#" Value="public static GtkMozEmbed.ChromeFlags Windowborderson;" />
+      <MemberSignature Language="C#" Value="Windowborderson" />
       <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>GtkMozEmbed.ChromeFlags</ReturnType>
       </ReturnValue>
-      <Parameters />
+      <Parameters></Parameters>
       <Docs>
         <summary>To be added</summary>
         <remarks>To be added</remarks>
       </Docs>
     </Member>
     <Member MemberName="Windowcloseon">
-      <MemberSignature Language="C#" Value="public static GtkMozEmbed.ChromeFlags Windowcloseon;" />
+      <MemberSignature Language="C#" Value="Windowcloseon" />
       <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>GtkMozEmbed.ChromeFlags</ReturnType>
       </ReturnValue>
-      <Parameters />
+      <Parameters></Parameters>
       <Docs>
         <summary>To be added</summary>
         <remarks>To be added</remarks>
       </Docs>
     </Member>
     <Member MemberName="Windowresizeon">
-      <MemberSignature Language="C#" Value="public static GtkMozEmbed.ChromeFlags Windowresizeon;" />
+      <MemberSignature Language="C#" Value="Windowresizeon" />
       <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>GtkMozEmbed.ChromeFlags</ReturnType>
       </ReturnValue>
-      <Parameters />
+      <Parameters></Parameters>
       <Docs>
         <summary>To be added</summary>
         <remarks>To be added</remarks>
       </Docs>
     </Member>
     <Member MemberName="Menubaron">
-      <MemberSignature Language="C#" Value="public static GtkMozEmbed.ChromeFlags Menubaron;" />
+      <MemberSignature Language="C#" Value="Menubaron" />
       <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>GtkMozEmbed.ChromeFlags</ReturnType>
       </ReturnValue>
-      <Parameters />
+      <Parameters></Parameters>
       <Docs>
         <summary>To be added</summary>
         <remarks>To be added</remarks>
       </Docs>
     </Member>
     <Member MemberName="Toolbaron">
-      <MemberSignature Language="C#" Value="public static GtkMozEmbed.ChromeFlags Toolbaron;" />
+      <MemberSignature Language="C#" Value="Toolbaron" />
       <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>GtkMozEmbed.ChromeFlags</ReturnType>
       </ReturnValue>
-      <Parameters />
+      <Parameters></Parameters>
       <Docs>
         <summary>To be added</summary>
         <remarks>To be added</remarks>
       </Docs>
     </Member>
     <Member MemberName="Locationbaron">
-      <MemberSignature Language="C#" Value="public static GtkMozEmbed.ChromeFlags Locationbaron;" />
+      <MemberSignature Language="C#" Value="Locationbaron" />
       <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>GtkMozEmbed.ChromeFlags</ReturnType>
       </ReturnValue>
-      <Parameters />
+      <Parameters></Parameters>
       <Docs>
         <summary>To be added</summary>
         <remarks>To be added</remarks>
       </Docs>
     </Member>
     <Member MemberName="Statusbaron">
-      <MemberSignature Language="C#" Value="public static GtkMozEmbed.ChromeFlags Statusbaron;" />
+      <MemberSignature Language="C#" Value="Statusbaron" />
       <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>GtkMozEmbed.ChromeFlags</ReturnType>
       </ReturnValue>
-      <Parameters />
+      <Parameters></Parameters>
       <Docs>
         <summary>To be added</summary>
         <remarks>To be added</remarks>
       </Docs>
     </Member>
     <Member MemberName="Personaltoolbaron">
-      <MemberSignature Language="C#" Value="public static GtkMozEmbed.ChromeFlags Personaltoolbaron;" />
+      <MemberSignature Language="C#" Value="Personaltoolbaron" />
       <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>GtkMozEmbed.ChromeFlags</ReturnType>
       </ReturnValue>
-      <Parameters />
+      <Parameters></Parameters>
       <Docs>
         <summary>To be added</summary>
         <remarks>To be added</remarks>
       </Docs>
     </Member>
     <Member MemberName="Scrollbarson">
-      <MemberSignature Language="C#" Value="public static GtkMozEmbed.ChromeFlags Scrollbarson;" />
+      <MemberSignature Language="C#" Value="Scrollbarson" />
       <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>GtkMozEmbed.ChromeFlags</ReturnType>
       </ReturnValue>
-      <Parameters />
+      <Parameters></Parameters>
       <Docs>
         <summary>To be added</summary>
         <remarks>To be added</remarks>
       </Docs>
     </Member>
     <Member MemberName="Titlebaron">
-      <MemberSignature Language="C#" Value="public static GtkMozEmbed.ChromeFlags Titlebaron;" />
+      <MemberSignature Language="C#" Value="Titlebaron" />
       <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>GtkMozEmbed.ChromeFlags</ReturnType>
       </ReturnValue>
-      <Parameters />
+      <Parameters></Parameters>
       <Docs>
         <summary>To be added</summary>
         <remarks>To be added</remarks>
       </Docs>
     </Member>
     <Member MemberName="Extrachromeon">
-      <MemberSignature Language="C#" Value="public static GtkMozEmbed.ChromeFlags Extrachromeon;" />
+      <MemberSignature Language="C#" Value="Extrachromeon" />
       <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>GtkMozEmbed.ChromeFlags</ReturnType>
       </ReturnValue>
-      <Parameters />
+      <Parameters></Parameters>
       <Docs>
         <summary>To be added</summary>
         <remarks>To be added</remarks>
       </Docs>
     </Member>
     <Member MemberName="Allchrome">
-      <MemberSignature Language="C#" Value="public static GtkMozEmbed.ChromeFlags Allchrome;" />
+      <MemberSignature Language="C#" Value="Allchrome" />
       <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>GtkMozEmbed.ChromeFlags</ReturnType>
       </ReturnValue>
-      <Parameters />
+      <Parameters></Parameters>
       <Docs>
         <summary>To be added</summary>
         <remarks>To be added</remarks>
       </Docs>
     </Member>
     <Member MemberName="Windowraised">
-      <MemberSignature Language="C#" Value="public static GtkMozEmbed.ChromeFlags Windowraised;" />
+      <MemberSignature Language="C#" Value="Windowraised" />
       <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>GtkMozEmbed.ChromeFlags</ReturnType>
       </ReturnValue>
-      <Parameters />
+      <Parameters></Parameters>
       <Docs>
         <summary>To be added</summary>
         <remarks>To be added</remarks>
       </Docs>
     </Member>
     <Member MemberName="Windowlowered">
-      <MemberSignature Language="C#" Value="public static GtkMozEmbed.ChromeFlags Windowlowered;" />
+      <MemberSignature Language="C#" Value="Windowlowered" />
       <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>GtkMozEmbed.ChromeFlags</ReturnType>
       </ReturnValue>
-      <Parameters />
+      <Parameters></Parameters>
       <Docs>
         <summary>To be added</summary>
         <remarks>To be added</remarks>
       </Docs>
     </Member>
     <Member MemberName="Centerscreen">
-      <MemberSignature Language="C#" Value="public static GtkMozEmbed.ChromeFlags Centerscreen;" />
+      <MemberSignature Language="C#" Value="Centerscreen" />
       <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>GtkMozEmbed.ChromeFlags</ReturnType>
       </ReturnValue>
-      <Parameters />
+      <Parameters></Parameters>
       <Docs>
         <summary>To be added</summary>
         <remarks>To be added</remarks>
       </Docs>
     </Member>
     <Member MemberName="Dependent">
-      <MemberSignature Language="C#" Value="public static GtkMozEmbed.ChromeFlags Dependent;" />
+      <MemberSignature Language="C#" Value="Dependent" />
       <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>GtkMozEmbed.ChromeFlags</ReturnType>
       </ReturnValue>
-      <Parameters />
+      <Parameters></Parameters>
       <Docs>
         <summary>To be added</summary>
         <remarks>To be added</remarks>
       </Docs>
     </Member>
     <Member MemberName="Modal">
-      <MemberSignature Language="C#" Value="public static GtkMozEmbed.ChromeFlags Modal;" />
+      <MemberSignature Language="C#" Value="Modal" />
       <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>GtkMozEmbed.ChromeFlags</ReturnType>
       </ReturnValue>
-      <Parameters />
+      <Parameters></Parameters>
       <Docs>
         <summary>To be added</summary>
         <remarks>To be added</remarks>
       </Docs>
     </Member>
     <Member MemberName="Openasdialog">
-      <MemberSignature Language="C#" Value="public static GtkMozEmbed.ChromeFlags Openasdialog;" />
+      <MemberSignature Language="C#" Value="Openasdialog" />
       <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>GtkMozEmbed.ChromeFlags</ReturnType>
       </ReturnValue>
-      <Parameters />
+      <Parameters></Parameters>
       <Docs>
         <summary>To be added</summary>
         <remarks>To be added</remarks>
       </Docs>
     </Member>
     <Member MemberName="Openaschrome">
-      <MemberSignature Language="C#" Value="public static GtkMozEmbed.ChromeFlags Openaschrome;" />
+      <MemberSignature Language="C#" Value="Openaschrome" />
       <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>GtkMozEmbed.ChromeFlags</ReturnType>
       </ReturnValue>
-      <Parameters />
+      <Parameters></Parameters>
       <Docs>
         <summary>To be added</summary>
         <remarks>To be added</remarks>
       </Docs>
     </Member>
     <Member MemberName="value__">
-      <MemberSignature Language="C#" Value="public uint value__;" />
+      <MemberSignature Language="C#" Value="value__" />
       <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>System.UInt32</ReturnType>
       </ReturnValue>
-      <Parameters />
+      <Parameters></Parameters>
       <Docs>
         <summary>To be added</summary>
         <remarks>To be added</remarks>

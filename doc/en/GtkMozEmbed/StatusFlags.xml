@@ -29,60 +29,60 @@
   <Attributes />
   <Members>
     <Member MemberName="Dns">
-      <MemberSignature Language="C#" Value="public static GtkMozEmbed.StatusFlags Dns;" />
+      <MemberSignature Language="C#" Value="Dns" />
       <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>GtkMozEmbed.StatusFlags</ReturnType>
       </ReturnValue>
-      <Parameters />
+      <Parameters></Parameters>
       <Docs>
         <summary>To be added</summary>
         <remarks>To be added</remarks>
       </Docs>
     </Member>
     <Member MemberName="Connect">
-      <MemberSignature Language="C#" Value="public static GtkMozEmbed.StatusFlags Connect;" />
+      <MemberSignature Language="C#" Value="Connect" />
       <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>GtkMozEmbed.StatusFlags</ReturnType>
       </ReturnValue>
-      <Parameters />
+      <Parameters></Parameters>
       <Docs>
         <summary>To be added</summary>
         <remarks>To be added</remarks>
       </Docs>
     </Member>
     <Member MemberName="Timeout">
-      <MemberSignature Language="C#" Value="public static GtkMozEmbed.StatusFlags Timeout;" />
+      <MemberSignature Language="C#" Value="Timeout" />
       <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>GtkMozEmbed.StatusFlags</ReturnType>
       </ReturnValue>
-      <Parameters />
+      <Parameters></Parameters>
       <Docs>
         <summary>To be added</summary>
         <remarks>To be added</remarks>
       </Docs>
     </Member>
     <Member MemberName="Usercanceled">
-      <MemberSignature Language="C#" Value="public static GtkMozEmbed.StatusFlags Usercanceled;" />
+      <MemberSignature Language="C#" Value="Usercanceled" />
       <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>GtkMozEmbed.StatusFlags</ReturnType>
       </ReturnValue>
-      <Parameters />
+      <Parameters></Parameters>
       <Docs>
         <summary>To be added</summary>
         <remarks>To be added</remarks>
       </Docs>
     </Member>
     <Member MemberName="value__">
-      <MemberSignature Language="C#" Value="public uint value__;" />
+      <MemberSignature Language="C#" Value="value__" />
       <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>System.UInt32</ReturnType>
       </ReturnValue>
-      <Parameters />
+      <Parameters></Parameters>
       <Docs>
         <summary>To be added</summary>
         <remarks>To be added</remarks>

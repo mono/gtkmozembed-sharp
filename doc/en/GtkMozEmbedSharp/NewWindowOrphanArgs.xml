@@ -2,12 +2,12 @@
   <TypeSignature Language="C#" Value="public class NewWindowOrphanArgs : GtkSharp.SignalArgs" Maintainer="auto" />
   <AssemblyInfo>
     <AssemblyName>gtkmozembed-sharp</AssemblyName>
-    <AssemblyPublicKey />
+    <AssemblyPublicKey></AssemblyPublicKey>
     <AssemblyVersion>0.0.0.0</AssemblyVersion>
     <AssemblyCulture>neutral</AssemblyCulture>
     <Attributes />
   </AssemblyInfo>
-  <ThreadSafetyStatement>Gtk# is thread aware, but not thread safe; See the &lt;link location="node:gtk-sharp/programming/threads"&gt;Gtk# Thread Programming&lt;/link&gt; for details.</ThreadSafetyStatement>
+  <ThreadSafetyStatement>Gtk# is thread aware, but not thread safe; See the <link location="node:gtk-sharp/programming/threads">Gtk# Thread Programming</link> for details.</ThreadSafetyStatement>
   <Docs>
     <summary>To be added</summary>
     <remarks>To be added</remarks>
@@ -25,7 +25,19 @@
       <Parameters />
       <Docs>
         <summary>To be added</summary>
-        <returns>To be added: an object of type 'GtkMozEmbedSharp.NewWindowOrphanArgs'</returns>
+        <returns>a <see cref="T:GtkMozEmbedSharp.NewWindowOrphanArgs" /></returns>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewEmbed">
+      <MemberSignature Language="C#" Value="public GtkMozEmbed.EmbedWidget NewEmbed { set; };" />
+      <MemberType>Property</MemberType>
+      <ReturnValue>
+        <ReturnType>GtkMozEmbed.EmbedWidget</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added</summary>
+        <returns>a <see cref="T:GtkMozEmbed.EmbedWidget" /></returns>
         <remarks>To be added</remarks>
       </Docs>
     </Member>
@@ -35,21 +47,10 @@
       <ReturnValue>
         <ReturnType>System.UInt32</ReturnType>
       </ReturnValue>
+      <Parameters />
       <Docs>
         <summary>To be added</summary>
-        <returns>To be added: an object of type 'uint'</returns>
-        <remarks>To be added</remarks>
-      </Docs>
-    </Member>
-    <Member MemberName="NewEmbed">
-      <MemberSignature Language="C#" Value="public GtkMozEmbed.EmbedWidget NewEmbed { get; };" />
-      <MemberType>Property</MemberType>
-      <ReturnValue>
-        <ReturnType>GtkMozEmbed.EmbedWidget</ReturnType>
-      </ReturnValue>
-      <Docs>
-        <summary>To be added</summary>
-        <returns>To be added: an object of type 'GtkMozEmbed.EmbedWidget'</returns>
+        <returns>a <see cref="T:System.UInt32" /></returns>
         <remarks>To be added</remarks>
       </Docs>
     </Member>

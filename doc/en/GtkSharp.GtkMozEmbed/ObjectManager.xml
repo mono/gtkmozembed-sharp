@@ -1,5 +1,5 @@
-<Type Name="DomMouseUpArgs" FullName="GtkMozEmbedSharp.DomMouseUpArgs">
-  <TypeSignature Language="C#" Value="public class DomMouseUpArgs : GtkSharp.SignalArgs" Maintainer="auto" />
+<Type Name="ObjectManager" FullName="GtkSharp.GtkMozEmbed.ObjectManager">
+  <TypeSignature Language="C#" Value="public class ObjectManager" Maintainer="auto" />
   <AssemblyInfo>
     <AssemblyName>gtkmozembed-sharp</AssemblyName>
     <AssemblyPublicKey></AssemblyPublicKey>
@@ -13,32 +13,31 @@
     <remarks>To be added</remarks>
   </Docs>
   <Base>
-    <BaseTypeName>GtkSharp.SignalArgs</BaseTypeName>
+    <BaseTypeName>System.Object</BaseTypeName>
   </Base>
   <Interfaces />
   <Attributes />
   <Members>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public static void Initialize ();" />
+      <MemberType>Method</MemberType>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
     <Member MemberName=".ctor">
-      <MemberSignature Language="C#" Value="public DomMouseUpArgs ();" />
+      <MemberSignature Language="C#" Value="public ObjectManager ();" />
       <MemberType>Constructor</MemberType>
       <ReturnValue />
       <Parameters />
       <Docs>
         <summary>To be added</summary>
-        <returns>a <see cref="T:GtkMozEmbedSharp.DomMouseUpArgs" /></returns>
-        <remarks>To be added</remarks>
-      </Docs>
-    </Member>
-    <Member MemberName="DomEvent">
-      <MemberSignature Language="C#" Value="public IntPtr DomEvent { get; };" />
-      <MemberType>Property</MemberType>
-      <ReturnValue>
-        <ReturnType>System.IntPtr</ReturnType>
-      </ReturnValue>
-      <Parameters />
-      <Docs>
-        <summary>To be added</summary>
-        <returns>a <see cref="T:System.IntPtr" /></returns>
+        <returns>a <see cref="T:GtkSharp.GtkMozEmbed.ObjectManager" /></returns>
         <remarks>To be added</remarks>
       </Docs>
     </Member>

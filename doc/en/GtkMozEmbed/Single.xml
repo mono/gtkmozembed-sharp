@@ -89,15 +89,15 @@
         <remarks>To be added</remarks>
       </Docs>
     </Member>
-    <Member MemberName="GType">
-      <MemberSignature Language="C#" Value="public static uint GType { get; };" />
-      <MemberType>Property</MemberType>
+    <Member MemberName="NewWindowOrphan">
+      <MemberSignature Language="C#" Value="public event GtkMozEmbedSharp.NewWindowOrphanHandler NewWindowOrphan;" />
+      <MemberType>Event</MemberType>
       <ReturnValue>
-        <ReturnType>System.UInt32</ReturnType>
+        <ReturnType>GtkMozEmbedSharp.NewWindowOrphanHandler</ReturnType>
       </ReturnValue>
+      <Parameters />
       <Docs>
         <summary>To be added</summary>
-        <returns>To be added: an object of type 'uint'</returns>
         <remarks>To be added</remarks>
       </Docs>
     </Member>
