@@ -12,23 +12,6 @@ else
 fi
 AC_MSG_RESULT($from_cvs)
 
-if test "x$from_cvs" = "xyes" ; then
-	AC_PATH_PROG(GAPI_CODEGEN, gapi_codegen.exe, no)
-	if test "x$GAPI_CODEGEN" != "xno"; then
-		gtksharp_path=`dirname $GAPI_CODEGEN`
-		GTKSHARP_PREFIX=`dirname $gtksharp_path`
-		have_gtk=yes
-	else
-		AC_MSG_WARN([Cannot find gtk-sharp, the GUI won't be build])
-		have_gtk=no
-	fi
-else
-	have_gtk=yes
-fi
-AC_SUBST(GTKSHARP_PREFIX)
-
-AM_CONDITIONAL(USE_GAPI_CODEGEN, test x$from_cvs = xyes)
-
 AC_PATH_PROG(MONO, mono)
 AC_PATH_PROG(MCS, mcs)
 if test "x$MONO" = "x" ; then
@@ -58,6 +41,11 @@ PKG_CHECK_MODULES(BASE_DEPENDENCIES, gtk+-2.0 >= $GTK_REQUIRED_VERSION gmodule-2
 
 AC_SUBST(BASE_DEPENDENCIES_CFLAGS)
 AC_SUBST(BASE_DEPENDENCIES_LIBS)
+
+dnl Find Gtk#
+PKG_CHECK_MODULES(GTK_SHARP, gtk-sharp >= 0.17)
+GTKSHARP_PREFIX=`pkg-config --variable=prefix gtk-sharp`
+AC_SUBST(GTKSHARP_PREFIX)
 
 dnl Find Mozilla
 dnl AC_ARG_WITH(mozilla-headers,
