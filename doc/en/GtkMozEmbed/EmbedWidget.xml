@@ -15,6 +15,147 @@
 	     It is designed to be easy to use and uncomplicated to make the barrier for use as low as possible.
 		 This means that the functionality exposed should cover about 80% of uses.
 	  </para>
+	  <para>
+	    The following sample is a very minimal web browser.
+	  </para>
+	  <example>
+	    <code language="C#">
+using System;
+using Gtk;
+using GtkSharp;
+using GtkMozEmbed;
+using GtkMozEmbedSharp;
+
+namespace GtkMozTest
+{
+	class GtkMozTest
+	{
+		EmbedWidget moz;
+		Entry entry;
+		string currentUrl;
+		Statusbar sb;
+		ProgressBar pb;
+		
+		static void Main (string[] args)
+		{
+			new GtkMozTest ();
+		}
+		
+		GtkMozTest ()
+		{
+			Application.Init ();
+			
+			Window win = new Window ("GtkMozTest");
+			win.SetDefaultSize (800, 600);
+			win.DeleteEvent += new DeleteEventHandler (window_delete);
+			
+			VBox vbox = new VBox (false, 1);
+			win.Add (vbox);
+			
+			HBox tb = new HBox (true, 1);
+			Button btnBack = Button.NewFromStock (Gtk.Stock.GoBack);
+			btnBack.Clicked += new EventHandler (on_btnBack_clicked);
+			Button btnForward = Button.NewFromStock (Gtk.Stock.GoForward);
+			btnForward.Clicked += new EventHandler (on_btnForward_clicked);
+			Button btnStop = Button.NewFromStock (Gtk.Stock.Stop);
+			btnStop.Clicked += new EventHandler (on_btnStop_clicked);
+			Button btnRefresh = Button.NewFromStock (Gtk.Stock.Refresh);
+			btnRefresh.Clicked += new EventHandler (on_btnRefresh_clicked);
+			tb.Add (btnBack);
+			tb.Add (btnForward);
+			tb.Add (btnStop);
+			tb.Add (btnRefresh);
+			
+			vbox.PackStart (tb, false, false, 1);
+			
+			HBox hbox = new HBox (false, 1);
+			
+			Label label = new Label ("Address:");
+			
+			entry = new Entry ("URL");
+			entry.Activated += new EventHandler (entry_activated);
+			
+			Button button = new Button ("GO!");
+			button.Clicked += new EventHandler (button_clicked);
+			
+			hbox.PackStart (label, false, false, 1);
+			hbox.PackStart (entry, true, true, 1);
+			hbox.PackStart (button, false, false, 1);
+			
+			vbox.PackStart (hbox, false, false, 1);
+			
+			moz = new EmbedWidget ("/tmp/csharp", "GtkMozTest");
+			moz.LinkMessage += new EventHandler(on_moz_linkmessage);
+			vbox.PackStart(moz, true, true, 1);
+			
+			HBox hbox2 = new HBox (false, 1);
+			vbox.PackStart (hbox2, false, false, 1);
+			
+			sb = new Statusbar ();
+			sb.Push (1, "Welcome!");
+			hbox2.Add (sb);
+			
+			pb = new ProgressBar ();
+			pb.Orientation = ProgressBarOrientation.LeftToRight;
+			hbox2.Add (pb);
+			
+			win.ShowAll ();
+			
+			Application.Run ();
+		}
+		
+		void window_delete (object obj, DeleteEventArgs args)
+		{
+			Application.Quit();
+		}
+		
+		void button_clicked (object obj, EventArgs args)
+		{
+			LoadHtml (entry.Text.Trim());
+		}
+		
+		void on_moz_linkmessage (object obj, EventArgs args)
+		{
+			sb.Pop (1);
+			sb.Push (1, moz.GeckoLinkMessage);
+		}
+		
+		void entry_activated (object obj, EventArgs args)
+		{
+			button_clicked (obj, args);
+		}
+		
+		void LoadHtml (string URL)
+		{
+			moz.LoadUrl (URL);
+		}
+		
+		void on_btnBack_clicked (object obj, EventArgs args)
+		{
+			moz.GoBack();
+		}
+
+		void on_btnStop_clicked (object obj, EventArgs args)
+		{
+			moz.StopLoad();
+		}
+
+		void on_btnForward_clicked (object obj, EventArgs args)
+		{
+			moz.GoForward();
+		}
+
+		void on_btnRefresh_clicked (object obj, EventArgs args)
+		{
+			moz.Reload(0);
+		}	
+	}
+}
+	    </code>
+	  </example>
+	  <para>
+	    Compile with: mcs GtkMozTest.cs -r gtk-sharp -r gtkmozembed-sharp
+	  </para>
 	</remarks>
   </Docs>
   <Base>
