@@ -50,6 +50,9 @@ PKG_CHECK_MODULES(GTK_SHARP, gtk-sharp-2.0 >= 1.9.0)
 AC_SUBST(GTK_SHARP_CFLAGS)
 AC_SUBST(GTK_SHARP_LIBS)
 
+dnl Find Gtk#
+PKG_CHECK_MODULES(GAPI, gapi-2.0 >= 1.9.0)
+
 dnl Find Mozilla
 dnl AC_ARG_WITH(mozilla-headers,
 dnl        [  --with-mozilla-headers  Specify location of MOZILLA headers],

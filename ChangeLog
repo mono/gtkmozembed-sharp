@@ -1,3 +1,7 @@
+2005-01-24  Mike Kestner  <mkestner@novell.com>
+
+	* configure.in : add a gapi pkgconfig check. [Fixes #71668]
+
 2005-01-08  Mike Kestner  <mkestner@novell.com>
 
 	* configure.in : AC_SUBST the cflags and libs for Gtk#.
