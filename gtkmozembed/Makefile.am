@@ -1,3 +1,4 @@
+MCS=mcs
 
 INCLUDE_APIS = \
 	$(GTKSHARP_PREFIX)/share/gapi/gdk-api.xml \
@@ -7,8 +8,8 @@ INCLUDE_APIS = \
 all: generated-stamp gtkmozembed-sharp.dll
 
 generated-stamp: gtkmozembed-api.xml
-	$(GTKSHARP_PREFIX)/bin/gapi-fixup.exe --api=gtkmozembed-api.xml --metadata=GtkMozEmbed.metadata && \
-	 	$(GTKSHARP_PREFIX)/bin/gapi_codegen.exe --generate gtkmozembed-api.xml --include $(INCLUDE_APIS) --outdir=generated --customdir=. --assembly-name=gtkmozembed-sharp && touch generated-stamp
+	mono $(GTKSHARP_PREFIX)/bin/gapi-fixup.exe --api=gtkmozembed-api.xml --metadata=GtkMozEmbed.metadata && \
+	 	mono $(GTKSHARP_PREFIX)/bin/gapi_codegen.exe --generate gtkmozembed-api.xml --include $(INCLUDE_APIS) --outdir=generated --customdir=. --assembly-name=gtkmozembed-sharp && touch generated-stamp
  
 gtkmozembed-sharp.dll: generated-stamp
 	$(MCS) --unsafe --target library -L $(GTKSHARP_PREFIX)/lib \
