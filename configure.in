@@ -63,6 +63,12 @@ dnl        [MOZ_LIBS="-L/usr/lib/mozilla"])
 dnl AC_SUBST(MOZ_LIBS)
 dnl AC_SUBST(MOZ_CFLAGS)
 
+AC_PATH_PROG(GACUTIL, gacutil, no)
+if test "x$GACUTIL" = "xno" ; then
+        AC_MSG_ERROR([No gacutil tool found])
+fi
+
+AC_SUBST(GACUTIL)
 
 AC_OUTPUT([
 Makefile

@@ -3,6 +3,9 @@ RAW_API=gtkgecko-api.raw
 API=gtkgecko-api.xml
 METADATA=gtkgecko.metadata
 
+ASSEMBLY_NAME= gecko-sharp
+ASSEMBLY= $(ASSEMBLY_NAME).dll
+
 INCLUDE_APIS = \
 	$(GTKSHARP_PREFIX)/share/gapi/gdk-api.xml \
 	$(GTKSHARP_PREFIX)/share/gapi/gtk-api.xml \
@@ -10,16 +13,18 @@ INCLUDE_APIS = \
 
 sources = NewWindowOrphan_handler.cs \
 	  NewWindow_delegate.cs      \
-	  NewWindow_handler.cs
+	  NewWindow_handler.cs	     \
+	  AssemblyInfo.cs
 
 build_sources = $(addprefix $(srcdir)/, $(sources))
 
 customs = Single.custom WebControl.custom
 
-CLEANFILES = gecko-sharp.dll generated-stamp generated/*.cs $(API)
+CLEANFILES = gecko-sharp.dll generated-stamp generated/*.cs $(API) crichtma.pub
 
-assemblydir = $(libdir)
-assembly_DATA = gecko-sharp.dll
+DISTCLEANFILES= AssemblyInfo.cs
+
+noinst_DATA = gecko-sharp.dll
 			
 all: generated-stamp gecko-sharp.dll
 
@@ -30,10 +35,21 @@ $(API): $(srcdir)/$(RAW_API) $(srcdir)/$(METADATA)
 
 generated-stamp: $(API)
 	 mono $(GTKSHARP_PREFIX)/bin/gapi_codegen.exe --generate $(srcdir)/$(API) --include $(INCLUDE_APIS) --outdir=generated --customdir=$(srcdir) --assembly-name=gecko-sharp && touch generated-stamp
- 
-gecko-sharp.dll: $(build_sources) generated-stamp
+
+crichtma.pub: $(top_srcdir)/crichtma.pub
+	cp $(top_srcdir)/crichtma.pub .
+
+gecko-sharp.dll: $(build_sources) generated-stamp crichtma.pub
 	$(MCS) --unsafe --target library -L $(GTKSHARP_PREFIX)/lib \
 	-r glib-sharp.dll -r gtk-sharp.dll -r gdk-sharp.dll \
 	$(build_sources) generated/*.cs -o gecko-sharp.dll
+
+install-data-local:
+	echo "$(GACUTIL) /i $(ASSEMBLY) /f /root $(DESTDIR)$(libdir)";  \
+        $(GACUTIL) /i $(ASSEMBLY) /f /root $(DESTDIR)$(libdir) || exit 1;
+                                                                                
+uninstall-local:
+	echo "$(GACUTIL) /u $(ASSEMBLY_NAME) /root $(DESTDIR)$(libdir)"; \
+        $(GACUTIL) /u $(ASSEMBLY_NAME) /root $(DESTDIR)$(libdir) || exit 1;
  
-EXTRA_DIST = $(API) $(RAW_API) $(sources) $(customs) $(METADATA)
+EXTRA_DIST = $(API) $(RAW_API) $(sources) $(customs) $(METADATA) AssemblyInfo.cs.in
