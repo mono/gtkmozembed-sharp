@@ -1,2 +1,7 @@
+2003-07-02  John Luke  <jluke@cfl.rr.com>
+
+	* en/GtkMozEmbed/EmbedWidget.xml: add info (from http://www.mozilla.org/unix/gtk-embedding.html)
+
 2003-07-01  John Luke  <jluke@cfl.rr.com>
+
 	* Makefile: update to match gtk-sharp one

@@ -9,8 +9,13 @@
   </AssemblyInfo>
   <ThreadSafetyStatement>Gtk# is thread aware, but not thread safe; See the &lt;link location="node:gtk-sharp/programming/threads"&gt;Gtk# Thread Programming&lt;/link&gt; for details.</ThreadSafetyStatement>
   <Docs>
-    <summary>To be added</summary>
-    <remarks>To be added</remarks>
+    <summary>Embed a Mozilla browser window into your Gtk# application.</summary>
+    <remarks>
+	  <para>
+	     It is designed to be easy to use and uncomplicated to make the barrier for use as low as possible.
+		 This means that the functionality exposed should cover about 80% of uses.
+	  </para>
+	</remarks>
   </Docs>
   <Base>
     <BaseTypeName>Gtk.Bin</BaseTypeName>
@@ -43,8 +48,8 @@
       </Parameters>
       <Docs>
         <summary>To be added</summary>
-        <param name="aDir">To be added: an object of type 'string'</param>
-        <param name="aName">To be added: an object of type 'string'</param>
+        <param name="aDir">an object of type <see cref="T:System.String"/></param>
+        <param name="aName">an object of type <see cref="T:System.String"/></param>
         <remarks>To be added</remarks>
       </Docs>
     </Member>
@@ -80,9 +85,9 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added</summary>
-        <returns>To be added: an object of type 'bool'</returns>
-        <remarks>To be added</remarks>
+        <summary>Whether or not you can go backwards in the document's navigation history.</summary>
+        <returns>an object of type <see cref="T:System.Boolean"/></returns>
+        <remarks>It will return <see langword="true"/> if it can go backwards, <see langword="false"/> if it can't.</remarks>
       </Docs>
     </Member>
     <Member MemberName="RenderData">
@@ -98,12 +103,15 @@
         <Parameter Name="mime_type" Type="System.String" />
       </Parameters>
       <Docs>
-        <summary>To be added</summary>
-        <param name="data">To be added: an object of type 'string'</param>
-        <param name="len">To be added: an object of type 'uint'</param>
-        <param name="base_uri">To be added: an object of type 'string'</param>
-        <param name="mime_type">To be added: an object of type 'string'</param>
-        <remarks>To be added</remarks>
+        <summary>Allows you to take a chunk of random data and render it into the document.</summary>
+        <param name="data">an object of type <see cref="T:System.String"/></param>
+        <param name="len">an object of type <see cref="T:System.UInt32"/></param>
+        <param name="base_uri">an object of type <see cref="T:System.String"/></param>
+        <param name="mime_type">an object of type <see cref="T:System.String"/></param>
+        <remarks>
+		  You need to pass in the data and the length of the data.
+		  The base_uri is used to resolve internal references in the document and the mime_type is used to determine how to render the document internally.
+		</remarks>
       </Docs>
     </Member>
     <Member MemberName="OpenStream">
@@ -117,10 +125,10 @@
         <Parameter Name="mime_type" Type="System.String" />
       </Parameters>
       <Docs>
-        <summary>To be added</summary>
-        <param name="base_uri">To be added: an object of type 'string'</param>
-        <param name="mime_type">To be added: an object of type 'string'</param>
-        <remarks>To be added</remarks>
+        <summary>Start loading a document from an external source into the <see cref="T:GtkMozEmbed.EmbedWidget"/>.</summary>
+        <param name="base_uri">an object of type <see cref="T:System.String"/></param>
+        <param name="mime_type">an object of type <see cref="T:System.String"/></param>
+        <remarks>You need to pass in the base_uri for resolving internal links and and the mime_type of the document.</remarks>
       </Docs>
     </Member>
     <Member MemberName="GoForward">
@@ -131,8 +139,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added</summary>
-        <remarks>To be added</remarks>
+        <summary>Go forward one step in the document's navigation history.</summary>
+        <remarks />
       </Docs>
     </Member>
     <Member MemberName="AppendData">
@@ -146,10 +154,10 @@
         <Parameter Name="len" Type="System.UInt32" />
       </Parameters>
       <Docs>
-        <summary>To be added</summary>
-        <param name="data">To be added: an object of type 'string'</param>
-        <param name="len">To be added: an object of type 'uint'</param>
-        <remarks>To be added</remarks>
+        <summary>Allows you to append data to an already opened stream in the <see cref="T:GtkMozEmbed.EmbedWidget"/>.</summary>
+        <param name="data">an object of type <see cref="T:System.String"/></param>
+        <param name="len">an object of type <see cref="T:System.UInt32"/></param>
+        <remarks>You need to pass in the data that you want to append to the document and its length.</remarks>
       </Docs>
     </Member>
     <Member MemberName="GoBack">
@@ -160,8 +168,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added</summary>
-        <remarks>To be added</remarks>
+        <summary>Go backwards one step in the document's navigation history.</summary>
+        <remarks />
       </Docs>
     </Member>
     <Member MemberName="CloseStream">
@@ -172,8 +180,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added</summary>
-        <remarks>To be added</remarks>
+        <summary>Closes the stream that you have been using to append data manually to the <see cref="T:GtkMozEmbed.EmbedWidget"/>.</summary>
+        <remarks />
       </Docs>
     </Member>
     <Member MemberName="Reload">
@@ -186,9 +194,9 @@
         <Parameter Name="flags" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <summary>To be added</summary>
-        <param name="flags">To be added: an object of type 'int'</param>
-        <remarks>To be added</remarks>
+        <summary>Reloads the document</summary>
+        <param name="flags">an object of type <see cref="T:System.Int32"/></param>
+        <remarks>The <see cref="T:GtkMozEmbed.ReloadFlags"/> argument can be used to control the behaviour of the reload.</remarks>
       </Docs>
     </Member>
     <Member MemberName="StopLoad">
@@ -199,8 +207,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added</summary>
-        <remarks>To be added</remarks>
+        <summary>Stop the load of a document that is being loaded in the <see cref="T:GtkMozEmbed.EmbedWidget"/>.</summary>
+        <remarks />
       </Docs>
     </Member>
     <Member MemberName="CanGoForward">
@@ -211,9 +219,10 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added</summary>
-        <returns>To be added: an object of type 'bool'</returns>
-        <remarks>To be added</remarks>
+        <summary>Whether or not you can go forward in the document's navigation history.</summary>
+        <returns>an object of type <see cref="T:System.Boolean"/></returns>
+        <remarks>It will return <see langword="true"/> if it can go forwards, <see langword="false"/> if it ca not.
+		</remarks>
       </Docs>
     </Member>
     <Member MemberName="LoadUrl">
@@ -226,9 +235,11 @@
         <Parameter Name="url" Type="System.String" />
       </Parameters>
       <Docs>
-        <summary>To be added</summary>
-        <param name="url">To be added: an object of type 'string'</param>
-        <remarks>To be added</remarks>
+        <summary>Start loading a url in the <see cref="T:GtkMozEmbed.EmbedWidget"/>.</summary>
+        <param name="url">an object of type <see cref="T:System.String"/></param>
+        <remarks>
+		  All loads are asynchronous.
+		  The url argument should be in the form of http://www.gnome.org.</remarks>
       </Docs>
     </Member>
     <Member MemberName="Finalize">
@@ -251,10 +262,10 @@
         <Parameter Name="gtype" Type="GLib.Type" />
       </Parameters>
       <Docs>
-        <summary>To be added</summary>
-        <param name="gtype">To be added: an object of type 'GLib.Type'</param>
-        <returns>To be added: an object of type 'GtkMozEmbed.EmbedWidget'</returns>
-        <remarks>To be added</remarks>
+        <summary>Internal constructor</summary>
+        <param name="gtype">an object of type 'GLib.Type'</param>
+        <returns>an object of type <see cref="T:GtkMozEmbed.EmbedWidget"/></returns>
+        <remarks>This is not typically called by C# code.</remarks>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -265,10 +276,10 @@
         <Parameter Name="raw" Type="System.IntPtr" />
       </Parameters>
       <Docs>
-        <summary>To be added</summary>
-        <param name="raw">To be added: an object of type 'IntPtr'</param>
-        <returns>To be added: an object of type 'GtkMozEmbed.EmbedWidget'</returns>
-        <remarks>To be added</remarks>
+        <summary>Internal constructor</summary>
+        <param name="raw">an object of type <see cref="T:System.IntPtr"/></param>
+        <returns>an object of type <see cref="T:GtkMozEmbed.EmbedWidget"/></returns>
+        <remarks>This is not typically called by C# code.</remarks>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -277,9 +288,9 @@
       <ReturnValue />
       <Parameters />
       <Docs>
-        <summary>To be added</summary>
-        <returns>To be added: an object of type 'GtkMozEmbed.EmbedWidget'</returns>
-        <remarks>To be added</remarks>
+        <summary>Internal constructor</summary>
+        <returns>an object of type <see cref="T:GtkMozEmbed.EmbedWidget"/></returns>
+        <remarks>This is not typically called by C# code.</remarks>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -291,11 +302,11 @@
         <Parameter Name="aDir" Type="System.String" />
       </Parameters>
       <Docs>
-        <summary>To be added</summary>
-        <param name="aPath">To be added: an object of type 'string'</param>
-        <param name="aDir">To be added: an object of type 'string'</param>
-        <returns>To be added: an object of type 'GtkMozEmbed.EmbedWidget'</returns>
-        <remarks>To be added</remarks>
+        <summary>Creates a new Gtk Mozilla embedding widget.</summary>
+        <param name="aPath">an object of type <see cref="T:System.String"/></param>
+        <param name="aDir">an object of type <see cref="T:System.String"/></param>
+        <returns>an object of type <see cref="T:GtkMozEmbed.EmbedWidget"/></returns>
+        <remarks>Creates a new Gtk Mozilla embedding widget. This is the most commonly used constructor.</remarks>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -305,7 +316,7 @@
       <Parameters />
       <Docs>
         <summary>To be added</summary>
-        <returns>To be added: an object of type 'GtkMozEmbed.EmbedWidget'</returns>
+        <returns>an object of type <see cref="T:GtkMozEmbed.EmbedWidget"/></returns>
         <remarks>To be added</remarks>
       </Docs>
     </Member>
@@ -316,9 +327,9 @@
         <ReturnType>System.UInt32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added</summary>
-        <returns>To be added: an object of type 'uint'</returns>
-        <remarks>To be added</remarks>
+        <summary>The <see cref="T:GLib.Type"/> of the <see cref="T:GtkMozEmbed.EmbedWidget"/>.</summary>
+        <returns>an object of type <see cref="T:System.UInt32"/></returns>
+        <remarks>The <see cref="T:GLib.Type"/> of the <see cref="T:GtkMozEmbed.EmbedWidget"/>.</remarks>
       </Docs>
     </Member>
     <Member MemberName="CompPath">
@@ -331,10 +342,13 @@
         <Parameter Name="value" Type="System.String" />
       </Parameters>
       <Docs>
-        <summary>To be added</summary>
-        <param name="value">To be added: an object of type 'string'</param>
-        <returns>To be added: an object of type 'string'</returns>
-        <remarks>To be added</remarks>
+        <summary>Allows you to set the path to the mozilla components.</summary>
+        <param name="value">an object of type <see cref="T:System.String"/></param>
+        <returns>an object of type <see cref="T:System.String"/></returns>
+        <remarks>
+		  This function must be called before the first <see cref="T:Gtk.Widget"/> is created or XPCOM is initialized. 
+		  It allows you to set the path to the mozilla components.
+		</remarks>
       </Docs>
     </Member>
     <Member MemberName="ChromeMask">
@@ -347,10 +361,10 @@
         <Parameter Name="value" Type="System.UInt32" />
       </Parameters>
       <Docs>
-        <summary>To be added</summary>
-        <param name="value">To be added: an object of type 'uint'</param>
-        <returns>To be added: an object of type 'uint'</returns>
-        <remarks>To be added</remarks>
+        <summary>The chrome mask for this <see cref="T:GtkMozEmbed.EmbedWidget"/></summary>
+        <param name="value">an object of type <see cref="T:System.UInt32"/></param>
+        <returns>an object of type <see cref="T:System.UInt32"/></returns>
+        <remarks>It can be one of <see cref="T:GtkMozEmbed.ChromeFlags"/>.</remarks>
       </Docs>
     </Member>
     <Member MemberName="GeckoTitle">
@@ -360,9 +374,9 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added</summary>
-        <returns>To be added: an object of type 'string'</returns>
-        <remarks>To be added</remarks>
+        <summary>Returns the current title for a document</summary>
+        <returns>an object of type <see cref="T:System.String"/></returns>
+        <remarks />
       </Docs>
     </Member>
     <Member MemberName="GeckoLocation">
@@ -372,9 +386,9 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added</summary>
-        <returns>To be added: an object of type 'string'</returns>
-        <remarks>To be added</remarks>
+        <summary>Returns the current location of the document</summary>
+        <returns>an object of type <see cref="T:System.String"/></returns>
+        <remarks />
       </Docs>
     </Member>
     <Member MemberName="GeckoJsStatus">
@@ -384,9 +398,9 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added</summary>
-        <returns>To be added: an object of type 'string'</returns>
-        <remarks>To be added</remarks>
+        <summary>Returns the js_status message if there is one</summary>
+        <returns>an object of type <see cref="T:System.String"/></returns>
+        <remarks />
       </Docs>
     </Member>
     <Member MemberName="GeckoLinkMessage">
@@ -396,9 +410,9 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added</summary>
-        <returns>To be added: an object of type 'string'</returns>
-        <remarks>To be added</remarks>
+        <summary>Returns the current link message of the document if there is one</summary>
+        <returns>an object of type <see cref="T:System.String"/></returns>
+        <remarks />
       </Docs>
     </Member>
     <Member MemberName="Visibility">
@@ -407,8 +421,8 @@
       <ReturnValue />
       <Parameters />
       <Docs>
-        <summary>To be added</summary>
-        <remarks>To be added</remarks>
+        <summary>Emitted when the toplevel window in question needs to be shown or hidden.</summary>
+        <remarks />
       </Docs>
     </Member>
     <Member MemberName="Progress">
@@ -417,8 +431,15 @@
       <ReturnValue />
       <Parameters />
       <Docs>
-        <summary>To be added</summary>
-        <remarks>To be added</remarks>
+        <summary>Emitted any time that there is a change in the progress of loading a document.</summary>
+        <remarks>
+          <para>
+             The cur value indicates how much of the document has been downloaded.
+          </para>
+          <para>
+             The max value indicates the length of the document. If the value of max is less than one the full length of the document can not be determined.
+          </para>
+		</remarks>
       </Docs>
     </Member>
     <Member MemberName="DomKeyDown">
@@ -477,8 +498,8 @@
       <ReturnValue />
       <Parameters />
       <Docs>
-        <summary>To be added</summary>
-        <remarks>To be added</remarks>
+        <summary>Emitted any time that the loading of a document has completed.</summary>
+        <remarks />
       </Docs>
     </Member>
     <Member MemberName="DestroyBrowser">
@@ -487,8 +508,8 @@
       <ReturnValue />
       <Parameters />
       <Docs>
-        <summary>To be added</summary>
-        <remarks>To be added</remarks>
+        <summary>Emitted when the document as requested that the toplevel window be closed.</summary>
+        <remarks>This will happen in the case of a JavaScript window.close().</remarks>
       </Docs>
     </Member>
     <Member MemberName="NetStart">
@@ -497,8 +518,8 @@
       <ReturnValue />
       <Parameters />
       <Docs>
-        <summary>To be added</summary>
-        <remarks>To be added</remarks>
+        <summary>Emitted any time that the load of a document has been started.</summary>
+        <remarks />
       </Docs>
     </Member>
     <Member MemberName="NetState">
@@ -507,8 +528,8 @@
       <ReturnValue />
       <Parameters />
       <Docs>
-        <summary>To be added</summary>
-        <remarks>To be added</remarks>
+        <summary>Emitted when there is a change in the state of the loading of a document.</summary>
+        <remarks />
       </Docs>
     </Member>
     <Member MemberName="SecurityChange">
@@ -527,8 +548,11 @@
       <ReturnValue />
       <Parameters />
       <Docs>
-        <summary>To be added</summary>
-        <remarks>To be added</remarks>
+        <summary>Emitted when the link message changes.</summary>
+        <remarks>
+          This happens when the user moves the mouse over a link in a web page.
+          Use <see cref="P:GtkMozEmbed.GeckoLinkMessage"/> to get the actual value of the link message.
+		</remarks>
       </Docs>
     </Member>
     <Member MemberName="DomMouseDblClick">
@@ -557,8 +581,10 @@
       <ReturnValue />
       <Parameters />
       <Docs>
-        <summary>To be added</summary>
-        <remarks>To be added</remarks>
+        <summary>Emitted any time that the title of a document has changed.</summary>
+        <remarks>
+          Use the <see cref="P:GtkMozEmbed.GeckoTitle"/> to get the actual value of the title.
+		</remarks>
       </Docs>
     </Member>
     <Member MemberName="Location">
@@ -567,8 +593,8 @@
       <ReturnValue />
       <Parameters />
       <Docs>
-        <summary>To be added</summary>
-        <remarks>To be added</remarks>
+        <summary>Emitted any time that the location of the document has changed.</summary>
+        <remarks>Use <see cref="P:Gtk.Moz.Embed.GeckoLocation"/> to get the actual value of the location.</remarks>
       </Docs>
     </Member>
     <Member MemberName="DomMouseOut">
@@ -617,8 +643,21 @@
       <ReturnValue />
       <Parameters />
       <Docs>
-        <summary>To be added</summary>
-        <remarks>To be added</remarks>
+        <summary>Emitted when the document tries to load a new document.</summary>
+        <remarks>
+		  <para>
+			For example when someone clicks on a link in a web page.
+			This signal gives the embedder the opportunity to keep the new document from being loaded.
+			The uri argument is the uri that is going to be loaded.
+		  </para>
+		  <para>
+		    If you return <see langword="true"/> from this signal, the new document will NOT be loaded.
+			If you return <see langword="false"/> the new document will be loaded.
+			This is somewhat non-intuitive.
+			Think of it as the Mozilla engine is asking if you want to interrupt the loading of a new document.
+			By returning <see langword="true"/> you are saying "do not load this document."
+		  </para>
+		</remarks>
       </Docs>
     </Member>
     <Member MemberName="JsStatus">
@@ -627,8 +666,8 @@
       <ReturnValue />
       <Parameters />
       <Docs>
-        <summary>To be added</summary>
-        <remarks>To be added</remarks>
+        <summary>Emitted when the JavaScript status message changes.</summary>
+        <remarks>Use <see cref="P:GtkMozEmbed.GeckoJsStatus"/> to get the actual value of the js status message.</remarks>
       </Docs>
     </Member>
     <Member MemberName="NetStateAll">
