@@ -7,9 +7,6 @@ INCLUDE_APIS = \
 			
 all: generated-stamp gtkmozembed-sharp.dll
 
-gtkmozembed-api.xml:
-	ln ../api/gtkmozembed-api.xml gtkmozembed-api.xml
-
 generated-stamp: gtkmozembed-api.xml
 	mono $(GTKSHARP_PREFIX)/bin/gapi-fixup.exe --api=gtkmozembed-api.xml --metadata=GtkMozEmbed.metadata && \
 	 	mono $(GTKSHARP_PREFIX)/bin/gapi_codegen.exe --generate gtkmozembed-api.xml --include $(INCLUDE_APIS) --outdir=generated --customdir=. --assembly-name=gtkmozembed-sharp && touch generated-stamp
@@ -23,7 +20,6 @@ clean:
 	rm -f *.dll
 	rm -f generated-stamp
 	rm -f generated/*.cs
-	rm gtkmozembed-api.xml
  
 maintainerclean: clean
 	rm -rf generated

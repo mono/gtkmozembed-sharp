@@ -8,14 +8,14 @@ namespace GtkSamples {
 
   using Gtk;
   using GtkSharp;
-  using GtkMozEmbed;
-  using GtkMozEmbedSharp;
+  using Gtk.Gecko;
+  using Gtk.GeckoSharp;
   using System;
   using System.Drawing;
   
   public class MozWindow  {
 
-    private EmbedWidget moz;
+    private WebControl moz;
     private Entry editbox;
     private ProgressBar pbar;
     private Statusbar sbar;
@@ -60,7 +60,7 @@ namespace GtkSamples {
       CreateWindow(chrome);
     }
     
-    public EmbedWidget moz_widget{
+    public WebControl moz_widget{
       get {
 	return moz;
       }
@@ -90,7 +90,6 @@ namespace GtkSamples {
       }
 
       win = new Window ("Gecko Tester");
-      win.DefaultSize = new Size (800, 600);
       win.DeleteEvent += new DeleteEventHandler (Window_Delete);
       
       vbox = new VBox (false, 0);
@@ -126,19 +125,19 @@ namespace GtkSamples {
       // Now, if we are initialized, we need to set the profile
       // and set initialized state to 2
       if (initialized != 2) {
-	moz = new EmbedWidget(path, pname);
+	moz = new WebControl(path, pname);
 	initialized = 2;
       } else {
         Console.WriteLine("Calling EmbedWidget()");
-	moz = new EmbedWidget();
+	moz = new WebControl();
 	Console.WriteLine("Done calling EmbedWidget()");
       }
     
       vbox.PackStart (moz, true, true, 0);
       
       // Ok, we have a LOT of GtkMozEmbed signals...
-      moz.Location += new EventHandler(moz_location_cb);
-      moz.Title += new EventHandler(moz_title_cb);
+      moz.LocChange += new EventHandler(moz_location_cb);
+      moz.TitleChange += new EventHandler(moz_title_cb);
       moz.NetStart += new EventHandler(moz_netstart_cb);
       moz.NetStop += new EventHandler(moz_netstop_cb);
       moz.DestroyBrowser += new EventHandler(moz_destroybrsr_cb);
@@ -217,7 +216,7 @@ namespace GtkSamples {
       string newLocation = null;
       int newPosition = 0;
       
-      newLocation = moz.GeckoLocation;
+      newLocation = moz.Location;
       if (newLocation != null) {
 	editbox.DeleteText(0, -1);
 	editbox.Text = newLocation;
@@ -226,7 +225,7 @@ namespace GtkSamples {
     
     void moz_title_cb (object obj, EventArgs args)
     {
-      string newTitle = moz.GeckoTitle;
+      string newTitle = moz.Title;
 
       win.Title = newTitle;
     }

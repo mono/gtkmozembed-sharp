@@ -8,8 +8,8 @@ namespace GtkSamples {
 
 	using Gtk;
 	using GtkSharp;
-	using GtkMozEmbed;
-	using GtkMozEmbedSharp;
+	using Gtk.Gecko;
+	using Gtk.GeckoSharp;
 	using System;
 	using System.Drawing;
 

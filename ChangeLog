@@ -1,3 +1,9 @@
+2004-03-24  Mark Crichton  <crichton@gimp.org>
+	
+	* api: Not used anymore.
+	* gtkmozembed/*: Everything changed around to support new signal
+	handling.  Also moved everything to the Gtk.Gecko class.
+
 2004-03-11  Mark Crichton  <crichton@gimp.org>
 
 	* api/gtkmozmebed-api.xml: Minor changes.

@@ -1,7 +1,7 @@
 // Generated File.  Do not modify.
 // <c> 2001-2002 Mike Kestner
 
-namespace GtkMozEmbedSharp {
+namespace Gtk.GeckoSharp {
 
 	using System;
 	using System.Runtime.InteropServices;
@@ -40,13 +40,13 @@ namespace GtkMozEmbedSharp {
 		[DllImport("libgobject-2.0-0.dll")]
 		static extern uint g_signal_connect_data(IntPtr obj, String name, voidObjectObjectuintDelegate cb, int key, IntPtr p, int flags);
 
-		public voidObjectObjectuintSignal(GLib.Object obj, IntPtr raw, String name, Delegate eh, Type argstype) : base(obj, eh, argstype)
+		public voidObjectObjectuintSignal(GLib.Object obj, IntPtr raw, String name, Delegate eh, Type argstype, int connect_flags) : base(obj, eh, argstype)
 		{
 			if (_Delegate == null) {
 				_Delegate = new voidObjectObjectuintDelegate(voidObjectObjectuintCallback);
 			}
 			_raw = raw;
-			_HandlerID = g_signal_connect_data(raw, name, _Delegate, _key, new IntPtr(0), 0);
+			_HandlerID = g_signal_connect_data(raw, name, _Delegate, _key, new IntPtr(0), connect_flags);
 		}
 
 		[DllImport("libgobject-2.0-0.dll")]
