@@ -1,4 +1,4 @@
-EXTRA_DIST = GtkMozApp.cs MozWindow.cs
+EXTRA_DIST = GtkMozApp.cs MozWindow.cs webshot.in WebThumbnailer.cs
 CLEANFILES = GtkMozApp.exe WebThumbnailer.exe webshot
 
 bin_SCRIPTS = webshot
@@ -24,7 +24,5 @@ GtkMozApp.exe: $(srcdir)/GtkMozApp.cs $(srcdir)/MozWindow.cs
 WebThumbnailer.exe: $(srcdir)/WebThumbnailer.cs
 	$(MCS) 	-L @top_builddir@/gtkmozembed \
 	-r gecko-sharp.dll \
-	-pkg:gtk-sharp $(srcdir)/WebThumbnailer.cs
-
-clean:
-	rm -f GtkMozApp.exe
+	-pkg:gtk-sharp $(srcdir)/WebThumbnailer.cs \
+	-o WebThumbnailer.exe
