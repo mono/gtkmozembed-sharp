@@ -20,12 +20,19 @@ namespace GtkSamples {
     private ProgressBar pbar;
     private Statusbar sbar;
     private Window win;
+    private VBox vbox;
+    private HBox hbox;
+    private HBox hbox2;
+    
     private string tempMessage;
     private int loadPercent;
     private uint actualchrome;
 
     private static int win_count = 0;
     private static int initialized = 0;
+
+    private bool toolBarOn;
+    private bool statusBarOn;
     
     public static readonly string path;
     public static readonly string pname;
@@ -56,15 +63,30 @@ namespace GtkSamples {
 
       // Put actualchrome in
       actualchrome = chrome;
-      
+
+      // Init chrome
+      toolBarOn = false;
+      statusBarOn = false;
+
+      if (chrome == (uint)ChromeFlags.Defaultchrome)
+      	actualchrome = (uint)ChromeFlags.Allchrome;
+
+      if ((actualchrome & (uint)ChromeFlags.Toolbaron) == (uint)ChromeFlags.Toolbaron) {
+        toolBarOn = true;
+      }
+
+      if ((actualchrome & (uint)ChromeFlags.Statusbaron) == (uint)ChromeFlags.Statusbaron) {
+        statusBarOn = true;
+      }
+
       win = new Window ("Gecko Tester");
       win.DefaultSize = new Size (800, 600);
       win.DeleteEvent += new DeleteEventHandler (Window_Delete);
       
-      VBox vbox = new VBox (false, 0);
+      vbox = new VBox (false, 0);
       win.Add (vbox);
       
-      HBox hbox = new HBox (false, 0);
+      hbox = new HBox (false, 0);
       vbox.PackStart (hbox, false, false, 0);
       
       Toolbar toolbar = new Toolbar();
@@ -119,15 +141,15 @@ namespace GtkSamples {
       //moz.ProgressAll += new ProgressAllHandler(moz_progressall_cb);
       //moz.NetState += new NetStateHandler(moz_netstate_cb);
       //moz.NetStateAll += new NetStateAllHandler(moz_netstateall_cb);
-      //moz.Visibility += new VisibilityHandler(moz_visibility_cb);
+      moz.Visibility += new VisibilityHandler(moz_visibility_cb);
       //moz.OpenUri += new OpenUriHandler(moz_openuri_cb);
       //moz.SizeTo += new SizeToHandler(moz_sizeto_cb);
       
-      HBox hbox2 = new HBox (false, 0);
+      hbox2 = new HBox (false, 0);
       vbox.PackStart (hbox2, false, false, 0);
       
       pbar = new ProgressBar();
-      hbox2.PackStart (pbar, 	false, false, 0);
+      hbox2.PackStart (pbar, false, false, 0);
       
       Alignment salign = new Alignment (0, 0, 1, 1);
       // usize here
@@ -136,18 +158,41 @@ namespace GtkSamples {
       salign.Add (sbar);
       hbox2.PackStart(salign, true, true, 0);
       
-      win.ShowAll ();
       moz.LoadUrl("http://www.go-mono.com");
+
+      set_moz_visibility(true);      
     }
     
     void update_status_bar_text()
     {
-      this.sbar.Pop(1);
+      sbar.Pop(1);
       if (tempMessage != null) {
-	this.sbar.Push(1, tempMessage);
+	sbar.Push(1, tempMessage);
       } else {
 	if (loadPercent != 0) {}
       }
+    }
+
+    void set_moz_visibility(bool vis)
+    {
+      if (!vis) {
+      	win.Hide();
+      	return;
+      }
+
+      if (toolBarOn)
+      	hbox.ShowAll();
+      else
+        hbox.HideAll();
+
+      if (statusBarOn)
+        hbox2.ShowAll();
+      else
+        hbox2.HideAll();
+
+      moz.Show();
+      vbox.Show();
+      win.Show();
     }
     
     void moz_new_win_cb (object obj, NewWindowArgs args)
@@ -172,7 +217,7 @@ namespace GtkSamples {
     void moz_title_cb (object obj, EventArgs args)
     {
       string newTitle = moz.GeckoTitle;
-      
+
       win.Title = newTitle;
     }
     
@@ -185,6 +230,11 @@ namespace GtkSamples {
     void moz_netstop_cb (object obj, EventArgs args)
     {
       Console.Error.WriteLine("Done");
+    }
+
+    void moz_visibility_cb (object obj, VisibilityArgs args)
+    {
+      set_moz_visibility(args.Visibility);
     }
     
     void moz_destroybrsr_cb (object obj, EventArgs args)
