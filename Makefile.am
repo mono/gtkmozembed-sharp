@@ -1,6 +1,6 @@
 SUBDIRS = gtkmozembed sample
 
 pkgconfigdir = $(libdir)/pkgconfig
-pkgconfig_DATA = gtkmozembed-sharp.pc
+pkgconfig_DATA = gecko-sharp.pc
 
-EXTRA_DIST = gtkmozembed-sharp.pc
+EXTRA_DIST = gecko-sharp.pc

@@ -8,7 +8,7 @@ INCLUDE_APIS = \
 	$(GTKSHARP_PREFIX)/share/gapi/gtk-api.xml \
 	$(GTKSHARP_PREFIX)/share/gapi/atk-api.xml
 			
-all: generated-stamp gtkgecko-sharp.dll
+all: generated-stamp gecko-sharp.dll
 
 $(API): $(srcdir)/$(RAW_API) $(srcdir)/$(METADATA)
 	cp $(srcdir)/$(RAW_API) $(API)
@@ -18,10 +18,10 @@ $(API): $(srcdir)/$(RAW_API) $(srcdir)/$(METADATA)
 generated-stamp: gtkgecko-api.xml
 	 mono $(GTKSHARP_PREFIX)/bin/gapi_codegen.exe --generate gtkgecko-api.xml --include $(INCLUDE_APIS) --outdir=generated --customdir=. --assembly-name=gtkgecko-sharp && touch generated-stamp
  
-gtkgecko-sharp.dll: generated-stamp
+gecko-sharp.dll: generated-stamp
 	$(MCS) --unsafe --target library -L $(GTKSHARP_PREFIX)/lib \
 	-r glib-sharp.dll -r gtk-sharp.dll -r gdk-sharp.dll \
-	--recurse '@srcdir@/*.cs' -o gtkgecko-sharp.dll
+	--recurse '@srcdir@/*.cs' -o gecko-sharp.dll
  
 clean:
 	rm -f *.dll
@@ -30,6 +30,7 @@ clean:
  
 maintainerclean: clean
 	rm -rf generated
+	rm -f $(API)
  
 install: all
 	cp gtkgecko-sharp.dll $(DESTDIR)@prefix@/lib
