@@ -1,0 +1,48 @@
+AC_INIT(README)
+AC_CANONICAL_SYSTEM
+AM_INIT_AUTOMAKE(gtkmozemebd, 0.1)
+AM_MAINTAINER_MODE
+
+AC_MSG_CHECKING([whether we're compiling from CVS])
+if test -f "$srcdir/.cvs_version" ; then
+	from_cvs=yes
+else
+	from_cvs=no
+fi
+AC_MSG_RESULT($from_cvs)
+
+if test "x$from_cvs" = "xyes" ; then
+	AC_PATH_PROG(GAPI_CODEGEN, gapi_codegen.exe, no)
+	if test "x$GAPI_CODEGEN" != "xno"; then
+		gtksharp_path=`dirname $GAPI_CODEGEN`
+		GTKSHARP_PREFIX=`dirname $gtksharp_path`
+		have_gtk=yes
+	else
+		AC_MSG_WARN([Cannot find gtk-sharp, the GUI won't be build])
+		have_gtk=no
+	fi
+else
+	have_gtk=yes
+fi
+AC_SUBST(GTKSHARP_PREFIX)
+
+AM_CONDITIONAL(USE_GAPI_CODEGEN, test x$from_cvs = xyes)
+
+AC_PATH_PROG(MONO, mono)
+AC_PATH_PROG(MCS, mcs)
+if test "x$MONO" = "x" ; then
+  AC_MSG_ERROR([Can't find "mono" in your PATH])
+fi
+if test "x$MCS" = "x" ; then
+  AC_MSG_ERROR([Can't find "mcs" in your PATH])
+fi
+AC_SUBST(PATH)
+AC_SUBST(LD_LIBRARY_PATH)
+
+AC_OUTPUT([
+Makefile
+api/Makefile
+gtkmozembed/Makefile
+sample/Makefile
+sources/Makefile
+])
