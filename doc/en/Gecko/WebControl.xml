@@ -888,7 +888,9 @@ namespace GeckoTest
       <Parameters />
       <Docs>
         <summary>To be added</summary>
-        <returns>a <see cref="T:System.String" /></returns>
+        <returns>a <see cref="T:System.String" /><para>
+	Returns the requested URL.
+</para></returns>
         <remarks>To be added</remarks>
       </Docs>
     </Member>
@@ -901,7 +903,9 @@ namespace GeckoTest
       <Parameters />
       <Docs>
         <summary>To be added</summary>
-        <returns>a <see cref="T:System.String" /></returns>
+        <returns>a <see cref="T:System.String" /><para>
+Returns the title of the requested website.
+</para></returns>
         <remarks>To be added</remarks>
       </Docs>
     </Member>
@@ -1182,7 +1186,7 @@ namespace GeckoTest
       <Parameters />
       <Docs>
         <summary>To be added</summary>
-        <remarks>To be added</remarks>
+        <remarks>Reports the change of the title of a loaded website.</remarks>
       </Docs>
     </Member>
     <Member MemberName="DomMouseUp">
