@@ -16,7 +16,7 @@ $(API): $(srcdir)/$(RAW_API) $(srcdir)/$(METADATA)
 	mono $(GTKSHARP_PREFIX)/bin/gapi-fixup.exe --api=$(API) --metadata=$(srcdir)/$(METADATA)
 
 generated-stamp: gtkgecko-api.xml
-	 mono $(GTKSHARP_PREFIX)/bin/gapi_codegen.exe --generate gtkgecko-api.xml --include $(INCLUDE_APIS) --outdir=generated --customdir=. --assembly-name=gtkgecko-sharp && touch generated-stamp
+	 mono $(GTKSHARP_PREFIX)/bin/gapi_codegen.exe --generate gtkgecko-api.xml --include $(INCLUDE_APIS) --outdir=generated --customdir=. --assembly-name=gecko-sharp && touch generated-stamp
  
 gecko-sharp.dll: generated-stamp
 	$(MCS) --unsafe --target library -L $(GTKSHARP_PREFIX)/lib \
