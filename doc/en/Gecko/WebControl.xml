@@ -18,16 +18,18 @@
       <para>
 	    The following sample is a very minimal web browser.
 	  </para>
+	  <para>
+	    Compile with: mcs GeckoTest.cs -pkg:gtk-sharp -pkg:gecko-sharp
+	  </para>
       <example>
         <code language="C#">
 using System;
 using Gtk;
-using GtkSharp;
 using Gecko;
 
-namespace GtkMozTest
+namespace GeckoTest
 {
-	class GtkMozTest
+	class GeckoTest
 	{
 		WebControl moz;
 		Entry entry;
@@ -37,14 +39,14 @@ namespace GtkMozTest
 		
 		static void Main (string[] args)
 		{
-			new GtkMozTest ();
+			new GeckoTest ();
 		}
 		
-		GtkMozTest ()
+		GeckoTest ()
 		{
 			Application.Init ();
 			
-			Window win = new Window ("GtkMozTest");
+			Window win = new Window ("GeckoTest");
 			win.SetDefaultSize (800, 600);
 			win.DeleteEvent += new DeleteEventHandler (window_delete);
 			
@@ -52,13 +54,13 @@ namespace GtkMozTest
 			win.Add (vbox);
 			
 			HBox tb = new HBox (true, 1);
-			Button btnBack = Button.NewFromStock (Gtk.Stock.GoBack);
+			Button btnBack = new Button (Gtk.Stock.GoBack);
 			btnBack.Clicked += new EventHandler (on_btnBack_clicked);
-			Button btnForward = Button.NewFromStock (Gtk.Stock.GoForward);
+			Button btnForward = new Button (Gtk.Stock.GoForward);
 			btnForward.Clicked += new EventHandler (on_btnForward_clicked);
-			Button btnStop = Button.NewFromStock (Gtk.Stock.Stop);
+			Button btnStop = new Button (Gtk.Stock.Stop);
 			btnStop.Clicked += new EventHandler (on_btnStop_clicked);
-			Button btnRefresh = Button.NewFromStock (Gtk.Stock.Refresh);
+			Button btnRefresh = new Button (Gtk.Stock.Refresh);
 			btnRefresh.Clicked += new EventHandler (on_btnRefresh_clicked);
 			tb.Add (btnBack);
 			tb.Add (btnForward);
@@ -83,8 +85,8 @@ namespace GtkMozTest
 			
 			vbox.PackStart (hbox, false, false, 1);
 			
-			moz = new WebControl ("/tmp/csharp", "GtkMozTest");
-			moz.LinkMessage += new EventHandler(on_moz_linkmessage);
+			moz = new WebControl ("/tmp/csharp", "GeckoTest");
+			moz.LinkMsg += new EventHandler(on_moz_linkmessage);
 			vbox.PackStart(moz, true, true, 1);
 			
 			HBox hbox2 = new HBox (false, 1);
@@ -116,7 +118,7 @@ namespace GtkMozTest
 		void on_moz_linkmessage (object obj, EventArgs args)
 		{
 			sb.Pop (1);
-			sb.Push (1, moz.GeckoLinkMessage);
+			sb.Push (1, moz.LinkMessage);
 		}
 		
 		void entry_activated (object obj, EventArgs args)
@@ -152,9 +154,6 @@ namespace GtkMozTest
 }
 	    </code>
       </example>
-      <para>
-	    Compile with: mcs GtkMozTest.cs -r gtk-sharp -r gecko-sharp
-	  </para>
     </remarks>
   </Docs>
   <Base>
