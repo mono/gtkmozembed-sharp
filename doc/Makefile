@@ -13,6 +13,9 @@ install: gtkmozembed-sharp-docs.zip gtkmozembed-sharp-docs.tree
 	install -m 644 gtkmozembed-sharp-docs.zip gtkmozembed-sharp-docs.tree `monodoc --get-sourcesdir`
 	install -m 644 gtkmozembed-sharp-docs.source `monodoc --get-sourcesdir`
 
+update: ../gtkmozembed/gtkmozembed-sharp.dll
+	mono $(UPDATER) ../gtkmozembed/gtkmozembed-sharp.dll -o en/ -f
+
 clean:
 	rm *.tree
 	rm *zip
