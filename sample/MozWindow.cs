@@ -8,14 +8,12 @@ namespace GtkSamples {
 
   using Gtk;
   using GtkSharp;
-  using Gtk.Gecko;
-  using Gtk.GeckoSharp;
   using System;
   using System.Drawing;
   
   public class MozWindow  {
 
-    private WebControl moz;
+    private GeckoWebControl moz;
     private Entry editbox;
     private ProgressBar pbar;
     private Statusbar sbar;
@@ -60,7 +58,7 @@ namespace GtkSamples {
       CreateWindow(chrome);
     }
     
-    public WebControl moz_widget{
+    public GeckoWebControl moz_widget{
       get {
 	return moz;
       }
@@ -125,11 +123,11 @@ namespace GtkSamples {
       // Now, if we are initialized, we need to set the profile
       // and set initialized state to 2
       if (initialized != 2) {
-	moz = new WebControl(path, pname);
+	moz = new GeckoWebControl(path, pname);
 	initialized = 2;
       } else {
         Console.WriteLine("Calling EmbedWidget()");
-	moz = new WebControl();
+	moz = new GeckoWebControl();
 	Console.WriteLine("Done calling EmbedWidget()");
       }
     

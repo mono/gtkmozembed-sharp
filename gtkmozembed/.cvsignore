@@ -1,6 +1,5 @@
 Makefile.in
 Makefile
-gtkmozembed-sharp.dll
+gtkgecko-sharp.dll
 generated
 generated-stamp
-gtkmozembed-api.xml
