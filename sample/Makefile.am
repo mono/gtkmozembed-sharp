@@ -17,12 +17,12 @@ GtkMozApp.exe: $(srcdir)/GtkMozApp.cs $(srcdir)/MozWindow.cs
 	-L @top_builddir@/gtkmozembed \
 	-r gecko-sharp.dll \
 	-L $(GTKSHARP_PREFIX)/lib \
-	-pkg:gtk-sharp \
+	-pkg:gtk-sharp-2.0 \
 	-r System.Drawing \
 	-o GtkMozApp.exe $(srcdir)/GtkMozApp.cs $(srcdir)/MozWindow.cs
 
 WebThumbnailer.exe: $(srcdir)/WebThumbnailer.cs
 	$(MCS) 	-L @top_builddir@/gtkmozembed \
 	-r gecko-sharp.dll \
-	-pkg:gtk-sharp $(srcdir)/WebThumbnailer.cs \
+	-pkg:gtk-sharp-2.0 $(srcdir)/WebThumbnailer.cs \
 	-o WebThumbnailer.exe

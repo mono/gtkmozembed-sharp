@@ -7,9 +7,9 @@ ASSEMBLY_NAME= gecko-sharp
 ASSEMBLY= $(ASSEMBLY_NAME).dll
 
 INCLUDE_APIS = \
-	$(GTKSHARP_PREFIX)/share/gapi/gdk-api.xml \
-	$(GTKSHARP_PREFIX)/share/gapi/gtk-api.xml \
-	$(GTKSHARP_PREFIX)/share/gapi/atk-api.xml
+	$(GTKSHARP_PREFIX)/share/gapi-2.0/gdk-api.xml \
+	$(GTKSHARP_PREFIX)/share/gapi-2.0/gtk-api.xml \
+	$(GTKSHARP_PREFIX)/share/gapi-2.0/atk-api.xml
 
 sources = NewWindowOrphan_handler.cs \
 	  NewWindow_delegate.cs      \
@@ -31,17 +31,17 @@ all: generated-stamp gecko-sharp.dll
 $(API): $(srcdir)/$(RAW_API) $(srcdir)/$(METADATA)
 	cp $(srcdir)/$(RAW_API) $(API)
 	chmod u+w $(API)
-	mono $(GTKSHARP_PREFIX)/bin/gapi-fixup.exe --api=$(srcdir)/$(API) --metadata=$(srcdir)/$(METADATA)
+	gapi2-fixup --api=$(srcdir)/$(API) --metadata=$(srcdir)/$(METADATA)
 
 generated-stamp: $(API)
-	 mono $(GTKSHARP_PREFIX)/bin/gapi_codegen.exe --generate $(srcdir)/$(API) --include $(INCLUDE_APIS) --outdir=generated --customdir=$(srcdir) --assembly-name=gecko-sharp && touch generated-stamp
+	 gapi2-codegen --generate $(srcdir)/$(API) --include $(INCLUDE_APIS) --outdir=generated --customdir=$(srcdir) --assembly-name=gecko-sharp && touch generated-stamp
 
 gecko-sharp.snk: $(top_srcdir)/gecko-sharp.snk
 	cp $(top_srcdir)/gecko-sharp.snk .
 
 gecko-sharp.dll: $(build_sources) generated-stamp gecko-sharp.snk
 	$(MCS) --unsafe --target library -L $(GTKSHARP_PREFIX)/lib \
-	/pkg:gtk-sharp \
+	/pkg:gtk-sharp-2.0 \
 	$(build_sources) generated/*.cs -o gecko-sharp.dll
 
 install-data-local:
