@@ -60,25 +60,24 @@ AC_SUBST(BASE_DEPENDENCIES_CFLAGS)
 AC_SUBST(BASE_DEPENDENCIES_LIBS)
 
 dnl Find Mozilla
-AC_ARG_WITH(mozilla-headers,
-        [  --with-mozilla-headers  Specify location of MOZILLA headers],
-        [MOZ_CFLAGS="-I$withval"],
-        [MOZ_CFLAGS="-I/usr/include/mozilla"])
+dnl AC_ARG_WITH(mozilla-headers,
+dnl        [  --with-mozilla-headers  Specify location of MOZILLA headers],
+dnl        [MOZ_CFLAGS="-I$withval"],
+dnl        [MOZ_CFLAGS="-I/usr/include/mozilla"])
                                                                                 
-AC_ARG_WITH(mozilla-libs,
-        [  --with-mozilla-libs     Specify location of MOZILLA libs],
-        [MOZ_LIBS="-L$withval"],
-        [MOZ_LIBS="-L/usr/lib/mozilla"])
+dnl AC_ARG_WITH(mozilla-libs,
+dnl        [  --with-mozilla-libs     Specify location of MOZILLA libs],
+dnl        [MOZ_LIBS="-L$withval"],
+dnl        [MOZ_LIBS="-L/usr/lib/mozilla"])
 
-AC_SUBST(MOZ_LIBS)
-AC_SUBST(MOZ_CFLAGS)
+dnl AC_SUBST(MOZ_LIBS)
+dnl AC_SUBST(MOZ_CFLAGS)
 
 
 AC_OUTPUT([
 Makefile
 api/Makefile
 gtkmozembed/Makefile
-glue/Makefile
 sample/Makefile
 sources/Makefile
 ])
