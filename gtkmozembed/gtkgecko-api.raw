@@ -6,8 +6,8 @@
         Please DO NOT MODIFY THIS FILE, modify .metadata files instead.
 
 -->
-  <namespace name="Gtk" library="gtkembedmoz">
-    <enum name="MozEmbedChromeFlags" cname="GtkMozEmbedChromeFlags" type="enum">
+  <namespace name="Gecko" library="gtkembedmoz">
+    <enum name="GtkMozEmbedChromeFlags" cname="GtkMozEmbedChromeFlags" type="enum">
       <member cname="GTK_MOZ_EMBED_FLAG_DEFAULTCHROME" name="Defaultchrome" value="1U"/>
       <member cname="GTK_MOZ_EMBED_FLAG_WINDOWBORDERSON" name="Windowborderson" value="2U"/>
       <member cname="GTK_MOZ_EMBED_FLAG_WINDOWCLOSEON" name="Windowcloseon" value="4U"/>
@@ -29,7 +29,7 @@
       <member cname="GTK_MOZ_EMBED_FLAG_OPENASDIALOG" name="Openasdialog" value="1073741824U"/>
       <member cname="GTK_MOZ_EMBED_FLAG_OPENASCHROME" name="Openaschrome" value="2147483648U"/>
     </enum>
-    <enum name="MozEmbedProgressFlags" cname="GtkMozEmbedProgressFlags" type="enum">
+    <enum name="GtkMozEmbedProgressFlags" cname="GtkMozEmbedProgressFlags" type="enum">
       <member cname="GTK_MOZ_EMBED_FLAG_START" name="Start" value="1"/>
       <member cname="GTK_MOZ_EMBED_FLAG_REDIRECTING" name="Redirecting" value="2"/>
       <member cname="GTK_MOZ_EMBED_FLAG_TRANSFERRING" name="Transferring" value="4"/>
@@ -40,20 +40,20 @@
       <member cname="GTK_MOZ_EMBED_FLAG_IS_NETWORK" name="IsNetwork" value="262144"/>
       <member cname="GTK_MOZ_EMBED_FLAG_IS_WINDOW" name="IsWindow" value="524288"/>
     </enum>
-    <enum name="MozEmbedReloadFlags" cname="GtkMozEmbedReloadFlags" type="enum">
+    <enum name="GtkMozEmbedReloadFlags" cname="GtkMozEmbedReloadFlags" type="enum">
       <member cname="GTK_MOZ_EMBED_FLAG_RELOADNORMAL" name="Reloadnormal"/>
       <member cname="GTK_MOZ_EMBED_FLAG_RELOADBYPASSCACHE" name="Reloadbypasscache" value="1"/>
       <member cname="GTK_MOZ_EMBED_FLAG_RELOADBYPASSPROXY" name="Reloadbypassproxy" value="2"/>
       <member cname="GTK_MOZ_EMBED_FLAG_RELOADBYPASSPROXYANDCACHE" name="Reloadbypassproxyandcache" value="3"/>
       <member cname="GTK_MOZ_EMBED_FLAG_RELOADCHARSETCHANGE" name="Reloadcharsetchange" value="4"/>
     </enum>
-    <enum name="MozEmbedStatusFlags" cname="GtkMozEmbedStatusFlags" type="enum">
+    <enum name="GtkMozEmbedStatusFlags" cname="GtkMozEmbedStatusFlags" type="enum">
       <member cname="GTK_MOZ_EMBED_STATUS_FAILED_DNS" name="Dns" value="2152398878U"/>
       <member cname="GTK_MOZ_EMBED_STATUS_FAILED_CONNECT" name="Connect" value="2152398861U"/>
       <member cname="GTK_MOZ_EMBED_STATUS_FAILED_TIMEOUT" name="Timeout" value="2152398862U"/>
       <member cname="GTK_MOZ_EMBED_STATUS_FAILED_USERCANCELED" name="Usercanceled" value="2152398850U"/>
     </enum>
-    <object name="MozEmbed" cname="GtkMozEmbed" parent="GtkBin">
+    <object name="GtkMozEmbed" cname="GtkMozEmbed" parent="GtkBin">
       <field cname="data" type="void*"/>
       <signal name="LinkMessage" cname="link_message" when="FIRST">
         <return-type type="void"/>
@@ -342,7 +342,7 @@
         <return-type type="void"/>
       </method>
     </object>
-    <object name="MozEmbedSingle" cname="GtkMozEmbedSingle" parent="GtkObject">
+    <object name="GtkMozEmbedSingle" cname="GtkMozEmbedSingle" parent="GtkObject">
       <field cname="data" type="void*"/>
       <signal name="NewWindowOrphan" cname="new_window_orphan" when="FIRST">
         <return-type type="void"/>

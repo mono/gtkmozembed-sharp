@@ -1,7 +1,7 @@
 <gapi-parser-input>
-  <api filename="../gtkmozembed/gtkmozembed-api.xml">
+  <api filename="../gtkmozembed/gtkgecko-api.raw">
     <library name="gtkembedmoz">
-      <namespace name="GtkMozEmbed">
+      <namespace name="Gecko">
         <dir>gtkmozembed</dir>
       </namespace>
     </library>
