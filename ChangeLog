@@ -1,3 +1,11 @@
+2004-05-05  Todd Berman  <tberman@sevenl.net>
+
+	* configure.in: bump to 0.3
+	* gtkmozembed/Makefile.am: change to gtk-sharp package to fix broken
+	examples and autodetect for now on compilation.
+	* gtkmozembed/gecko-sharp.dll.config: add config-fu for gecko-sharp
+	to work properly.
+
 2004-05-01  Mark Crichton  <crichton@gimp.org>
 
 	* gtkmozembed/AssemblyInfo.cs.in: Added some AssemblyInfo stuff
