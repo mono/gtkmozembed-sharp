@@ -120,5 +120,29 @@
   </data>
 </rule>
 
+<!-- These signals are a mess.  We have to handle them differently -->
+<rule>
+  <class name="GtkMozEmbed">
+    <signal>NewWindow</signal>
+  </class>
+  <data>
+    <attribute target="signal">
+      <name>hidden</name>
+      <value>1</value>
+    </attribute>
+  </data>
+</rule>
+
+<rule>
+  <class name="GtkMozEmbedSingle">
+    <signal>NewWindowOrphan</signal>
+  </class>
+  <data>
+    <attribute target="signal">
+      <name>hidden</name>
+      <value>1</value>
+    </attribute>
+  </data>
+</rule>
 
 </metadata>

@@ -71,7 +71,7 @@ namespace GtkSamples {
 			//moz.JsStatus += new EventHandler(moz_jsstatus_cb);
 
 			// Now the ones with args!
-			//moz.NewWindow2 += new NewWindow2Handler(moz_new_win_cb);
+			moz.NewWindow += new NewWindowHandler(moz_new_win_cb);
 			//moz.Progress += new ProgressHandler(moz_progress_cb);
 			//moz.ProgressAll += new ProgressAllHandler(moz_progressall_cb);
 			//moz.NetState += new NetStateHandler(moz_netstate_cb);
@@ -145,10 +145,10 @@ namespace GtkSamples {
 			win.Destroy();
 		}
 
-		static void moz_new_win_cb (object obj, NewWindow2Args args)
+		static void moz_new_win_cb (object obj, NewWindowArgs args)
 		{
 			Console.Error.WriteLine("Mozilla threw a newwin.");
-			args.RetVal = new EmbedWidget();
+			//args.RetVal = new EmbedWidget();
 		}
 		static void entry_act (object obj, EventArgs args)
 		{
