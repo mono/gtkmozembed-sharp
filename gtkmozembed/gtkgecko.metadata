@@ -15,6 +15,9 @@
   <attr path="/api/namespace/object[@cname='GtkMozEmbed']/signal[@cname='new_window']" name="hidden">1</attr>
   <attr path="/api/namespace/object[@cname='GtkMozEmbedSingle']/signal[@cname='new_window_orphan']" name="hidden">1</attr>
 
+<!-- Fix the open_uri signal slightly -->
+  <attr path="/api/namespace/object[@cname='GtkMozEmbed']/signal[@cname='open_uri']/return-type" name="type">gboolean</attr>
+
 <!-- Rename some signals.  They're _get_, which is bad -->
   <attr path="/api/namespace/object[@cname='GtkMozEmbed']/signal[@name='LinkMessage']" name="name">LinkMsg</attr>
   <attr path="/api/namespace/object[@cname='GtkMozEmbed']/signal[@name='Title']" name="name">TitleChange</attr>
