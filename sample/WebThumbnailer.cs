@@ -54,6 +54,8 @@ class X {
 				break;
 			}
 		}
+		if (url == null)
+			Help ();
 
 		Application.Init();
 		Window w = new Window ("test");
