@@ -3,21 +3,11 @@ This is gtkmozembed-sharp.  To use it, you need two things:
 1) A working mozilla build.
    Note, the build *must* use gtk2.  You can do this by adding:
    ac_add_options --enable-default-toolkit=gtk2
-   to your .mozconfig file.  Also, you *need* the patches attached to
-   the following bugs:
-
-   http://bugzilla.mozilla.org/show_bug.cgi?id=120034
-   http://bugzilla.mozilla.org/show_bug.cgi?id=120035
-
-   I'm (still) trying to get them pushed upstream.  These are necessary
-   patches for other bindings (namely Python).  We may be able to get
-   around the issue for C#.
-
-   I'll try to get a mega-patch included in CVS, so people won't have
-   to hunt around collecting little bits here-and-there.
+   to your .mozconfig file.
 
    Also note, this needs gtk2.  The Win32 version of mozilla doesn't
-   even touch gtk.  Therefore, this will *not* work on Win32.
+   even touch gtk.  Therefore, this will *not* work on Win32.  It might,
+   however.  Someone enterprising needs to try it.
 
 2) The CVS release of gtk-sharp.  There was a bug in the generator
    which is now fixed.  gtk-sharp also needs to be installed.
