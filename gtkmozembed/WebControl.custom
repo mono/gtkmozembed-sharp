@@ -75,7 +75,7 @@ private void InitProfile (string aPath, string aDir)
 	// Check for Windows
 	// On .NET 2.0 its "3" for Unix, Linux, and Mac
 	// On any version of Mono for anything but Windows (pre 2.0 api) its "128"
-	if (!((int) System.Environment.OSVersion.Platform) >= 4) 
+	if (((int) System.Environment.OSVersion.Platform) < 4) 
 	{
         	// HACK: This is to fix shared profile issues on WIN32
         	// We append a unique string to the end of the path.

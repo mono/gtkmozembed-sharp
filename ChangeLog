@@ -1,5 +1,9 @@
 2005-03-06  Zac Bowling  <zac@zacbowling.com>
 
+	* gtkmozembed/WebControl.custom: typo made backword logic
+
+2005-03-06  Zac Bowling  <zac@zacbowling.com>
+
 	* autogen.sh: Added new in file for autoconf blender
 	* gtkmozembed/gecko-sharp.dll.config.in: Added for WIN32 dll search
 	* configure.in: updated for building csc and without mono
