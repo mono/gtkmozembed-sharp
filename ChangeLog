@@ -1,3 +1,8 @@
+2004-04-12  Mike Kestner  <mkestner@ximian.com>
+
+	* gtkmozembed/WebControl.custom : chain to base (IntPtr) on ctors and
+	fix custom base virtual method to use new valuetype GValues api.
+
 2004-03-24  Mark Crichton  <crichton@gimp.org>
 	
 	* api: Not used anymore.

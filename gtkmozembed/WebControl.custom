@@ -26,7 +26,7 @@
 			inst_and_params.Append (vals [1]);
 			vals [2] = new GLib.Value (chromemask);
 			inst_and_params.Append (vals [2]);
-			g_signal_chain_from_overridden (inst_and_params.ArrayPtr, IntPtr.Zero);
+			g_signal_chain_from_overridden (inst_and_params.ArrayPtr, ref GLib.Value.Empty);
 		}
 
 		[GLib.Signal("new_window")]
@@ -70,13 +70,13 @@
 [DllImport("gtkembedmoz")]
 static extern IntPtr gtk_moz_embed_new();
 
-public WebControl(string aPath, string aDir)
+public WebControl(string aPath, string aDir) : base (IntPtr.Zero)
 {
 	gtk_moz_embed_set_profile_path(aPath, aDir);
 	Raw = gtk_moz_embed_new ();
 }
 
-public WebControl()
+public WebControl() : base (IntPtr.Zero)
 {
 	Raw = gtk_moz_embed_new();
 }
