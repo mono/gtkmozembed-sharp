@@ -1,3 +1,10 @@
+2005-02-22  Raja R Harinath  <rharinath@novell.com>
+
+	* gtkmozembed/Makefile.am (sources): Move AssemblyInfo.cs ...
+	(build_sources): ... here.
+	($(API), generated-stamp): Don't look for $(API) in $(srcdir).
+	(EXTRA_DIST): Don't distribute generated file $(API).
+
 2005-02-11  Geoff Norton  <gnorton@customerdna.com>
 
 	* configure.in: Bumped assembly version to 2.0

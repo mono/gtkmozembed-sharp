@@ -8,10 +8,9 @@ ASSEMBLY= $(ASSEMBLY_NAME).dll
 
 sources = NewWindowOrphan_handler.cs \
 	  NewWindow_delegate.cs      \
-	  NewWindow_handler.cs	     \
-	  AssemblyInfo.cs
+	  NewWindow_handler.cs
 
-build_sources = $(addprefix $(srcdir)/, $(sources))
+build_sources = $(addprefix $(srcdir)/, $(sources)) AssemblyInfo.cs
 
 customs = Single.custom WebControl.custom
 
@@ -20,16 +19,16 @@ CLEANFILES = gecko-sharp.dll generated-stamp generated/*.cs $(API) gecko-sharp.s
 DISTCLEANFILES= AssemblyInfo.cs
 
 noinst_DATA = gecko-sharp.dll
-			
+
 all: generated-stamp gecko-sharp.dll
 
 $(API): $(srcdir)/$(RAW_API) $(srcdir)/$(METADATA)
 	cp $(srcdir)/$(RAW_API) $(API)
 	chmod u+w $(API)
-	gapi2-fixup --api=$(srcdir)/$(API) --metadata=$(srcdir)/$(METADATA)
+	gapi2-fixup --api=$(API) --metadata=$(srcdir)/$(METADATA)
 
 generated-stamp: $(API)
-	 gapi2-codegen --generate $(srcdir)/$(API) $(GTK_SHARP_CFLAGS) --outdir=generated --customdir=$(srcdir) --assembly-name=gecko-sharp && touch generated-stamp
+	 gapi2-codegen --generate $(API) $(GTK_SHARP_CFLAGS) --outdir=generated --customdir=$(srcdir) --assembly-name=gecko-sharp && touch generated-stamp
 
 gecko-sharp.snk: $(top_srcdir)/gecko-sharp.snk
 	cp $(top_srcdir)/gecko-sharp.snk .
@@ -41,9 +40,9 @@ gecko-sharp.dll: $(build_sources) generated-stamp gecko-sharp.snk
 install-data-local:
 	echo "$(GACUTIL) /i $(ASSEMBLY) /f /package gecko-sharp-2.0 /root $(DESTDIR)$(libdir)";  \
         $(GACUTIL) /i $(ASSEMBLY) /f /package gecko-sharp-2.0 /root $(DESTDIR)$(libdir) || exit 1;
-                                                                                
+
 uninstall-local:
 	echo "$(GACUTIL) /u $(ASSEMBLY_NAME) /package gecko-sharp-2.0 /root $(DESTDIR)$(libdir)"; \
         $(GACUTIL) /u $(ASSEMBLY_NAME) /package gecko-sharp-2.0 /root $(DESTDIR)$(libdir) || exit 1;
- 
-EXTRA_DIST = $(API) $(RAW_API) $(sources) $(customs) $(METADATA) AssemblyInfo.cs.in gecko-sharp.dll.config
+
+EXTRA_DIST = $(RAW_API) $(sources) $(customs) $(METADATA) AssemblyInfo.cs.in gecko-sharp.dll.config
