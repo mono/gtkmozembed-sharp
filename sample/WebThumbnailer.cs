@@ -71,7 +71,7 @@ class X {
 
 	static void Help ()
 	{
-		Console.WriteLine ("Usage is: shot [-width N] [-height N] url [shot]");
+		Console.WriteLine ("Usage is: webshot [-width N] [-height N] url [shot]");
 		Environment.Exit (0);
 	}
 	
