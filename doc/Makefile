@@ -17,5 +17,5 @@ update: ../gtkmozembed/gtkmozembed-sharp.dll
 	mono $(UPDATER) ../gtkmozembed/gtkmozembed-sharp.dll -o en/ -f
 
 clean:
-	rm *.tree
-	rm *zip
+	-rm *.tree
+	-rm *zip
