@@ -5,4 +5,4 @@ libdir=${exec_prefix}/lib
 Name: Gecko#
 Description: Gecko# - A Gtk# Mozilla binding
 Version: @VERSION@
-Libs: -lib:${exec_prefix}/lib/mono/gtk-sharp -r:gecko-sharp.dll
+Libs: -r:${libdir}/mono/gecko-sharp/gecko-sharp.dll
