@@ -1,8 +1,8 @@
-// ButtonApp.cs - Gtk.Button class Test implementation
+// GtkMozEmbed test app
 //
-// Author: Mike Kestner <mkestner@speakeasy.net>
+// Author: Mark Crichton <crichton@gimp.org>
 //
-// (c) 2001-2002 Mike Kestner
+// (c) 2002-2003 Mark Crichton
 
 namespace GtkSamples {
 
@@ -71,7 +71,7 @@ namespace GtkSamples {
 			//moz.JsStatus += new EventHandler(moz_jsstatus_cb);
 
 			// Now the ones with args!
-			//moz.NewWindow += new NewWindowHandler(moz_new_win_cb);
+			moz.NewWindow += new NewWindowHandler(moz_new_win_cb);
 			//moz.Progress += new ProgressHandler(moz_progress_cb);
 			//moz.ProgressAll += new ProgressAllHandler(moz_progressall_cb);
 			//moz.NetState += new NetStateHandler(moz_netstate_cb);
@@ -108,6 +108,13 @@ namespace GtkSamples {
 			} else {
 				if (loadPercent != 0) {}
 			}
+		}
+
+		static void moz_new_win_cb (object obj, NewWindowArgs args)
+		{
+			EmbedWidget foo = new EmbedWidget();
+
+			args.NewEmbed = foo;
 		}
 			
 		static void moz_location_cb (object obj, EventArgs args)
