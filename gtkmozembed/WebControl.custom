@@ -4,8 +4,8 @@
 
 		static void newwindow_cb (IntPtr embed, IntPtr newEmbed, uint chromemask)
 		{
-			GeckoWebControl obj = GLib.Object.GetObject (embed, false) as GeckoWebControl;
-			obj.OnNewWindow ((Gtk.GeckoWebControl) GLib.Object.GetObject(newEmbed), chromemask);
+			WebControl obj = GLib.Object.GetObject (embed, false) as WebControl;
+			obj.OnNewWindow ((Gecko.WebControl) GLib.Object.GetObject(newEmbed), chromemask);
 		}
 
 		protected static void OverrideNewWindow (GLib.GType gtype)
@@ -15,8 +15,8 @@
 			OverrideVirtualMethod (gtype, "new_window", NewWindowCallback);
 		}
 
-		[GLib.DefaultSignalHandler(Type=typeof(Gtk.GeckoWebControl), ConnectionMethod="OverrideNewWindow")]
-		protected virtual void OnNewWindow (Gtk.GeckoWebControl newEmbed, uint chromemask)
+		[GLib.DefaultSignalHandler(Type=typeof(Gecko.WebControl), ConnectionMethod="OverrideNewWindow")]
+		protected virtual void OnNewWindow (Gecko.WebControl newEmbed, uint chromemask)
 		{
 			GLib.ValueArray inst_and_params = new GLib.ValueArray (3);
 			GLib.Value[] vals = new GLib.Value [3];
@@ -30,7 +30,7 @@
 		}
 
 		[GLib.Signal("new_window")]
-		public event Gtk.NewWindowHandler NewWindow {
+		public event Gecko.NewWindowHandler NewWindow {
 			add {
 				if (value.Method.GetCustomAttributes(typeof(GLib.ConnectBeforeAttribute), false).Length > 0) {
 					if (BeforeHandlers["new_window"] == null)
@@ -70,13 +70,13 @@
 [DllImport("gtkembedmoz")]
 static extern IntPtr gtk_moz_embed_new();
 
-public GeckoWebControl(string aPath, string aDir)
+public WebControl(string aPath, string aDir)
 {
 	gtk_moz_embed_set_profile_path(aPath, aDir);
 	Raw = gtk_moz_embed_new ();
 }
 
-public GeckoWebControl()
+public WebControl()
 {
 	Raw = gtk_moz_embed_new();
 }
