@@ -4,17 +4,17 @@ ASSEMBLER=../../monodoc/browser/assembler.exe
 GENERATOR=../../monodoc/generator/generator.exe
 UPDATER=../../monodoc/generator/updater.exe
 
-all: gtkmozembed-sharp-docs.zip gtkmozembed-sharp-docs.tree
+all: gecko-sharp-docs.zip gecko-sharp-docs.tree
 
-gtkmozembed-sharp-docs.zip gtkmozembed-sharp-docs.tree: en/*/*.xml
-	mono $(ASSEMBLER) --ecma en -o gtkmozembed-sharp-docs
+gecko-sharp-docs.zip gecko-sharp-docs.tree: en/*/*.xml
+	mono $(ASSEMBLER) --ecma en -o gecko-sharp-docs
 
-install: gtkmozembed-sharp-docs.zip gtkmozembed-sharp-docs.tree 
-	install -m 644 gtkmozembed-sharp-docs.zip gtkmozembed-sharp-docs.tree `monodoc --get-sourcesdir`
-	install -m 644 gtkmozembed-sharp-docs.source `monodoc --get-sourcesdir`
+install: gecko-sharp-docs.zip gecko-sharp-docs.tree 
+	install -m 644 gecko-sharp-docs.zip gecko-sharp-docs.tree `monodoc --get-sourcesdir`
+	install -m 644 gecko-sharp-docs.source `monodoc --get-sourcesdir`
 
-update: ../gtkmozembed/gtkmozembed-sharp.dll
-	mono $(UPDATER) ../gtkmozembed/gtkmozembed-sharp.dll -o en/ -f
+update: ../gtkmozembed/gecko-sharp.dll
+	mono $(UPDATER) ../gtkmozembed/gecko-sharp.dll -o en/
 
 clean:
 	-rm *.tree

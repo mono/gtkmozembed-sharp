@@ -1,0 +1,1271 @@
+<Type Name="WebControl" FullName="Gecko.WebControl">
+  <TypeSignature Language="C#" Value="public class WebControl : Gtk.Bin, Implementor, IWrapper, IDisposable" Maintainer="auto" />
+  <AssemblyInfo>
+    <AssemblyName>gecko-sharp</AssemblyName>
+    <AssemblyPublicKey>[00 24 00 00 04 80 00 00 94 00 00 00 06 02 00 00 00 24 00 00 52 53 41 31 00 04 00 00 11 00 00 00 31 90 94 63 21 EC 14 EF 8C 5E DD 38 E6 B5 DE E6 9D 9C F4 B9 4C 23 5D 3A 08 30 8F 17 ED F3 5B 72 B9 81 E3 D4 68 94 78 E1 5C 08 BA 5C 0C D8 11 4A 12 2F 57 C8 82 8E D8 14 D4 34 13 24 23 A6 28 18 A7 DA C7 8F 1A A2 00 0A 94 BD 84 EE B8 47 3B 83 8B F8 01 83 6F 75 0A 93 2E E6 00 AA 3D C5 00 9B 89 05 25 58 11 76 2D C2 22 CA FB B2 99 03 1C 12 C6 54 81 F3 29 49 70 0D 4D 96 98 0E 90 6D BF A1]</AssemblyPublicKey>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <AssemblyCulture>neutral</AssemblyCulture>
+    <Attributes />
+  </AssemblyInfo>
+  <ThreadSafetyStatement>Gtk# is thread aware, but not thread safe; See the <link location="node:gtk-sharp/programming/threads">Gtk# Thread Programming</link> for details.</ThreadSafetyStatement>
+  <Docs>
+    <summary>Embed a Mozilla browser window into your Gtk# application.</summary>
+    <remarks>
+      <para>
+	     It is designed to be easy to use and uncomplicated to make the barrier for use as low as possible.
+		 This means that the functionality exposed should cover about 80% of uses.
+	  </para>
+      <para>
+	    The following sample is a very minimal web browser.
+	  </para>
+      <example>
+        <code language="C#">
+using System;
+using Gtk;
+using GtkSharp;
+using Gecko;
+
+namespace GtkMozTest
+{
+	class GtkMozTest
+	{
+		WebControl moz;
+		Entry entry;
+		string currentUrl;
+		Statusbar sb;
+		ProgressBar pb;
+		
+		static void Main (string[] args)
+		{
+			new GtkMozTest ();
+		}
+		
+		GtkMozTest ()
+		{
+			Application.Init ();
+			
+			Window win = new Window ("GtkMozTest");
+			win.SetDefaultSize (800, 600);
+			win.DeleteEvent += new DeleteEventHandler (window_delete);
+			
+			VBox vbox = new VBox (false, 1);
+			win.Add (vbox);
+			
+			HBox tb = new HBox (true, 1);
+			Button btnBack = Button.NewFromStock (Gtk.Stock.GoBack);
+			btnBack.Clicked += new EventHandler (on_btnBack_clicked);
+			Button btnForward = Button.NewFromStock (Gtk.Stock.GoForward);
+			btnForward.Clicked += new EventHandler (on_btnForward_clicked);
+			Button btnStop = Button.NewFromStock (Gtk.Stock.Stop);
+			btnStop.Clicked += new EventHandler (on_btnStop_clicked);
+			Button btnRefresh = Button.NewFromStock (Gtk.Stock.Refresh);
+			btnRefresh.Clicked += new EventHandler (on_btnRefresh_clicked);
+			tb.Add (btnBack);
+			tb.Add (btnForward);
+			tb.Add (btnStop);
+			tb.Add (btnRefresh);
+			
+			vbox.PackStart (tb, false, false, 1);
+			
+			HBox hbox = new HBox (false, 1);
+			
+			Label label = new Label ("Address:");
+			
+			entry = new Entry ("URL");
+			entry.Activated += new EventHandler (entry_activated);
+			
+			Button button = new Button ("GO!");
+			button.Clicked += new EventHandler (button_clicked);
+			
+			hbox.PackStart (label, false, false, 1);
+			hbox.PackStart (entry, true, true, 1);
+			hbox.PackStart (button, false, false, 1);
+			
+			vbox.PackStart (hbox, false, false, 1);
+			
+			moz = new WebControl ("/tmp/csharp", "GtkMozTest");
+			moz.LinkMessage += new EventHandler(on_moz_linkmessage);
+			vbox.PackStart(moz, true, true, 1);
+			
+			HBox hbox2 = new HBox (false, 1);
+			vbox.PackStart (hbox2, false, false, 1);
+			
+			sb = new Statusbar ();
+			sb.Push (1, "Welcome!");
+			hbox2.Add (sb);
+			
+			pb = new ProgressBar ();
+			pb.Orientation = ProgressBarOrientation.LeftToRight;
+			hbox2.Add (pb);
+			
+			win.ShowAll ();
+			
+			Application.Run ();
+		}
+		
+		void window_delete (object obj, DeleteEventArgs args)
+		{
+			Application.Quit();
+		}
+		
+		void button_clicked (object obj, EventArgs args)
+		{
+			LoadHtml (entry.Text.Trim());
+		}
+		
+		void on_moz_linkmessage (object obj, EventArgs args)
+		{
+			sb.Pop (1);
+			sb.Push (1, moz.GeckoLinkMessage);
+		}
+		
+		void entry_activated (object obj, EventArgs args)
+		{
+			button_clicked (obj, args);
+		}
+		
+		void LoadHtml (string URL)
+		{
+			moz.LoadUrl (URL);
+		}
+		
+		void on_btnBack_clicked (object obj, EventArgs args)
+		{
+			moz.GoBack();
+		}
+
+		void on_btnStop_clicked (object obj, EventArgs args)
+		{
+			moz.StopLoad();
+		}
+
+		void on_btnForward_clicked (object obj, EventArgs args)
+		{
+			moz.GoForward();
+		}
+
+		void on_btnRefresh_clicked (object obj, EventArgs args)
+		{
+			moz.Reload(0);
+		}	
+	}
+}
+	    </code>
+      </example>
+      <para>
+	    Compile with: mcs GtkMozTest.cs -r gtk-sharp -r gecko-sharp
+	  </para>
+    </remarks>
+  </Docs>
+  <Base>
+    <BaseTypeName>Gtk.Bin</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>Atk.Implementor</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>GLib.IWrapper</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes />
+  <Members>
+    <Member MemberName="PushStartup">
+      <MemberSignature Language="C#" Value="public static void PushStartup ();" />
+      <MemberType>Method</MemberType>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PopStartup">
+      <MemberSignature Language="C#" Value="public static void PopStartup ();" />
+      <MemberType>Method</MemberType>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetProfilePath">
+      <MemberSignature Language="C#" Value="public static void SetProfilePath (string aDir, string aName);" />
+      <MemberType>Method</MemberType>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="aDir" Type="System.String" />
+        <Parameter Name="aName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <summary>To be added</summary>
+        <param name="aDir">a <see cref="T:System.String" /></param>
+        <param name="aName">a <see cref="T:System.String" /></param>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OverrideNewWindow">
+      <MemberSignature Language="C#" Value="protected static void OverrideNewWindow (GLib.GType gtype);" />
+      <MemberType>Method</MemberType>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="gtype" Type="GLib.GType" />
+      </Parameters>
+      <Docs>
+        <summary>To be added</summary>
+        <param name="gtype">a <see cref="T:GLib.GType" /></param>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Finalize">
+      <MemberSignature Language="C#" Value="protected override void Finalize ();" />
+      <MemberType>Method</MemberType>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnStatusChange">
+      <MemberSignature Language="C#" Value="protected virtual void OnStatusChange (IntPtr request, int status, IntPtr message);" />
+      <MemberType>Method</MemberType>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="request" Type="System.IntPtr" />
+        <Parameter Name="status" Type="System.Int32" />
+        <Parameter Name="message" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <summary>To be added</summary>
+        <param name="request">a <see cref="T:System.IntPtr" /></param>
+        <param name="status">a <see cref="T:System.Int32" /></param>
+        <param name="message">a <see cref="T:System.IntPtr" /></param>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnNetStateAll">
+      <MemberSignature Language="C#" Value="protected virtual void OnNetStateAll (string aURI, int state, uint status);" />
+      <MemberType>Method</MemberType>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="aURI" Type="System.String" />
+        <Parameter Name="state" Type="System.Int32" />
+        <Parameter Name="status" Type="System.UInt32" />
+      </Parameters>
+      <Docs>
+        <summary>To be added</summary>
+        <param name="aURI">a <see cref="T:System.String" /></param>
+        <param name="state">a <see cref="T:System.Int32" /></param>
+        <param name="status">a <see cref="T:System.UInt32" /></param>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnECMAStatus">
+      <MemberSignature Language="C#" Value="protected virtual void OnECMAStatus ();" />
+      <MemberType>Method</MemberType>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnOpenUri">
+      <MemberSignature Language="C#" Value="protected virtual int OnOpenUri (string aURI);" />
+      <MemberType>Method</MemberType>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="aURI" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <summary>To be added</summary>
+        <param name="aURI">a <see cref="T:System.String" /></param>
+        <returns>a <see cref="T:System.Int32" /></returns>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDomMouseDblClick">
+      <MemberSignature Language="C#" Value="protected virtual int OnDomMouseDblClick (IntPtr dom_event);" />
+      <MemberType>Method</MemberType>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dom_event" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <summary>To be added</summary>
+        <param name="dom_event">a <see cref="T:System.IntPtr" /></param>
+        <returns>a <see cref="T:System.Int32" /></returns>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnSizeTo">
+      <MemberSignature Language="C#" Value="protected virtual void OnSizeTo (int width, int height);" />
+      <MemberType>Method</MemberType>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="width" Type="System.Int32" />
+        <Parameter Name="height" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <summary>To be added</summary>
+        <param name="width">a <see cref="T:System.Int32" /></param>
+        <param name="height">a <see cref="T:System.Int32" /></param>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnLinkMsg">
+      <MemberSignature Language="C#" Value="protected virtual void OnLinkMsg ();" />
+      <MemberType>Method</MemberType>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDomMouseOut">
+      <MemberSignature Language="C#" Value="protected virtual int OnDomMouseOut (IntPtr dom_event);" />
+      <MemberType>Method</MemberType>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dom_event" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <summary>To be added</summary>
+        <param name="dom_event">a <see cref="T:System.IntPtr" /></param>
+        <returns>a <see cref="T:System.Int32" /></returns>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDomMouseOver">
+      <MemberSignature Language="C#" Value="protected virtual int OnDomMouseOver (IntPtr dom_event);" />
+      <MemberType>Method</MemberType>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dom_event" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <summary>To be added</summary>
+        <param name="dom_event">a <see cref="T:System.IntPtr" /></param>
+        <returns>a <see cref="T:System.Int32" /></returns>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnNetStop">
+      <MemberSignature Language="C#" Value="protected virtual void OnNetStop ();" />
+      <MemberType>Method</MemberType>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDomKeyPress">
+      <MemberSignature Language="C#" Value="protected virtual int OnDomKeyPress (IntPtr dom_event);" />
+      <MemberType>Method</MemberType>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dom_event" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <summary>To be added</summary>
+        <param name="dom_event">a <see cref="T:System.IntPtr" /></param>
+        <returns>a <see cref="T:System.Int32" /></returns>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDomKeyUp">
+      <MemberSignature Language="C#" Value="protected virtual int OnDomKeyUp (IntPtr dom_event);" />
+      <MemberType>Method</MemberType>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dom_event" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <summary>To be added</summary>
+        <param name="dom_event">a <see cref="T:System.IntPtr" /></param>
+        <returns>a <see cref="T:System.Int32" /></returns>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnSecurityChange">
+      <MemberSignature Language="C#" Value="protected virtual void OnSecurityChange (IntPtr request, uint state);" />
+      <MemberType>Method</MemberType>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="request" Type="System.IntPtr" />
+        <Parameter Name="state" Type="System.UInt32" />
+      </Parameters>
+      <Docs>
+        <summary>To be added</summary>
+        <param name="request">a <see cref="T:System.IntPtr" /></param>
+        <param name="state">a <see cref="T:System.UInt32" /></param>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnNetState">
+      <MemberSignature Language="C#" Value="protected virtual void OnNetState (int state, uint status);" />
+      <MemberType>Method</MemberType>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="state" Type="System.Int32" />
+        <Parameter Name="status" Type="System.UInt32" />
+      </Parameters>
+      <Docs>
+        <summary>To be added</summary>
+        <param name="state">a <see cref="T:System.Int32" /></param>
+        <param name="status">a <see cref="T:System.UInt32" /></param>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnNetStart">
+      <MemberSignature Language="C#" Value="protected virtual void OnNetStart ();" />
+      <MemberType>Method</MemberType>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnVisibility">
+      <MemberSignature Language="C#" Value="protected virtual void OnVisibility (bool visibility);" />
+      <MemberType>Method</MemberType>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="visibility" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <summary>To be added</summary>
+        <param name="visibility">a <see cref="T:System.Boolean" /></param>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDestroyBrowser">
+      <MemberSignature Language="C#" Value="protected virtual void OnDestroyBrowser ();" />
+      <MemberType>Method</MemberType>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDomMouseClick">
+      <MemberSignature Language="C#" Value="protected virtual int OnDomMouseClick (IntPtr dom_event);" />
+      <MemberType>Method</MemberType>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dom_event" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <summary>To be added</summary>
+        <param name="dom_event">a <see cref="T:System.IntPtr" /></param>
+        <returns>a <see cref="T:System.Int32" /></returns>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnTitleChange">
+      <MemberSignature Language="C#" Value="protected virtual void OnTitleChange ();" />
+      <MemberType>Method</MemberType>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDomMouseUp">
+      <MemberSignature Language="C#" Value="protected virtual int OnDomMouseUp (IntPtr dom_event);" />
+      <MemberType>Method</MemberType>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dom_event" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <summary>To be added</summary>
+        <param name="dom_event">a <see cref="T:System.IntPtr" /></param>
+        <returns>a <see cref="T:System.Int32" /></returns>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnProgressAll">
+      <MemberSignature Language="C#" Value="protected virtual void OnProgressAll (string aURI, int curprogress, int maxprogress);" />
+      <MemberType>Method</MemberType>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="aURI" Type="System.String" />
+        <Parameter Name="curprogress" Type="System.Int32" />
+        <Parameter Name="maxprogress" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <summary>To be added</summary>
+        <param name="aURI">a <see cref="T:System.String" /></param>
+        <param name="curprogress">a <see cref="T:System.Int32" /></param>
+        <param name="maxprogress">a <see cref="T:System.Int32" /></param>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDomMouseDown">
+      <MemberSignature Language="C#" Value="protected virtual int OnDomMouseDown (IntPtr dom_event);" />
+      <MemberType>Method</MemberType>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dom_event" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <summary>To be added</summary>
+        <param name="dom_event">a <see cref="T:System.IntPtr" /></param>
+        <returns>a <see cref="T:System.Int32" /></returns>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDomKeyDown">
+      <MemberSignature Language="C#" Value="protected virtual int OnDomKeyDown (IntPtr dom_event);" />
+      <MemberType>Method</MemberType>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dom_event" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <summary>To be added</summary>
+        <param name="dom_event">a <see cref="T:System.IntPtr" /></param>
+        <returns>a <see cref="T:System.Int32" /></returns>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnProgress">
+      <MemberSignature Language="C#" Value="protected virtual void OnProgress (int curprogress, int maxprogress);" />
+      <MemberType>Method</MemberType>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="curprogress" Type="System.Int32" />
+        <Parameter Name="maxprogress" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <summary>To be added</summary>
+        <param name="curprogress">a <see cref="T:System.Int32" /></param>
+        <param name="maxprogress">a <see cref="T:System.Int32" /></param>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnLocChange">
+      <MemberSignature Language="C#" Value="protected virtual void OnLocChange ();" />
+      <MemberType>Method</MemberType>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanGoForward">
+      <MemberSignature Language="C#" Value="public bool CanGoForward ();" />
+      <MemberType>Method</MemberType>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Whether or not you can go forward in the navigation history.</summary>
+        <returns>a <see cref="T:System.Boolean" /></returns>
+        <remarks>It will return <see langword="true" /> if it can go forwards, <see langword="false" /> if it can not.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StopLoad">
+      <MemberSignature Language="C#" Value="public void StopLoad ();" />
+      <MemberType>Method</MemberType>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Stop the load of a document that is being loaded in the <see cref="T:Gecko.WebControl" />.</summary>
+        <remarks/>
+      </Docs>
+    </Member>
+    <Member MemberName="GoForward">
+      <MemberSignature Language="C#" Value="public void GoForward ();" />
+      <MemberType>Method</MemberType>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Go forward one step in the navigation history.</summary>
+        <remarks></remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reload">
+      <MemberSignature Language="C#" Value="public void Reload (int flags);" />
+      <MemberType>Method</MemberType>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="flags" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <summary>Reloads the document.</summary>
+        <param name="flags">a <see cref="T:System.Int32" /></param>
+        <remarks>The <see cref="T:Gecko.ReloadFlags" /> argument can be used to control the behaviour of the reload.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloseStream">
+      <MemberSignature Language="C#" Value="public void CloseStream ();" />
+      <MemberType>Method</MemberType>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Closes the stream that you have been using to append data manually to the <see cref="T:Gecko.WebControl" />.</summary>
+        <remarks/>
+      </Docs>
+    </Member>
+    <Member MemberName="GoBack">
+      <MemberSignature Language="C#" Value="public void GoBack ();" />
+      <MemberType>Method</MemberType>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Go backwards one step in the navigation history.</summary>
+        <remarks></remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendData">
+      <MemberSignature Language="C#" Value="public void AppendData (string data);" />
+      <MemberType>Method</MemberType>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <summary>Allows you to append data to an already opened stream in the <see cref="T:Gecko.WebControl" />.</summary>
+        <param name="data">a <see cref="T:System.String" /></param>
+        <remarks></remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadUrl">
+      <MemberSignature Language="C#" Value="public void LoadUrl (string url);" />
+      <MemberType>Method</MemberType>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="url" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <summary>Start loading a url in the <see cref="T:Gecko.WebControl" />.</summary>
+        <param name="url">a <see cref="T:System.String" /></param>
+        <remarks>All loads are asynchronous.  The url argument should be in the form of http://www.gnome.org.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenStream">
+      <MemberSignature Language="C#" Value="public void OpenStream (string base_uri, string mime_type);" />
+      <MemberType>Method</MemberType>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="base_uri" Type="System.String" />
+        <Parameter Name="mime_type" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <summary>Start loading a document from an external source into the <see cref="T:Gecko.WebControl" />.</summary>
+        <param name="base_uri">a <see cref="T:System.String" /></param>
+        <param name="mime_type">a <see cref="T:System.String" /></param>
+        <remarks>You need to pass in the <paramref name="base_uri" /> for resolving internal links and and the <paramref name="mime_type" /> of the document.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderData">
+      <MemberSignature Language="C#" Value="public void RenderData (string data, string base_uri, string mime_type);" />
+      <MemberType>Method</MemberType>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.String" />
+        <Parameter Name="base_uri" Type="System.String" />
+        <Parameter Name="mime_type" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <summary>Allows you to take a chunk of random data and render it into the document.</summary>
+        <param name="data">a <see cref="T:System.String" /></param>
+        <param name="base_uri">a <see cref="T:System.String" /></param>
+        <param name="mime_type">a <see cref="T:System.String" /></param>
+        <remarks>The <paramref name="base_uri" /> is used to resolve internal references in the document and the         <paramref name="mime_type" /> is used to determine how to render the document internally.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanGoBack">
+      <MemberSignature Language="C#" Value="public bool CanGoBack ();" />
+      <MemberType>Method</MemberType>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Whether or not you can go backwards in the navigation history.</summary>
+        <returns>a <see cref="T:System.Boolean" /></returns>
+        <remarks>It will return <see langword="true" /> if it can go backwards, <see langword="false" /> if it can not.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnNewWindow">
+      <MemberSignature Language="C#" Value="protected virtual void OnNewWindow (Gecko.WebControl newEmbed, uint chromemask);" />
+      <MemberType>Method</MemberType>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newEmbed" Type="Gecko.WebControl" />
+        <Parameter Name="chromemask" Type="System.UInt32" />
+      </Parameters>
+      <Docs>
+        <summary>To be added</summary>
+        <param name="newEmbed">a <see cref="T:Gecko.WebControl" /></param>
+        <param name="chromemask">a <see cref="T:System.UInt32" /></param>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected WebControl (GLib.GType gtype);" />
+      <MemberType>Constructor</MemberType>
+      <ReturnValue />
+      <Parameters>
+        <Parameter Name="gtype" Type="GLib.GType" />
+      </Parameters>
+      <Docs>
+        <summary>To be added</summary>
+        <param name="gtype">a <see cref="T:GLib.GType" /></param>
+        <returns>a <see cref="T:Gecko.WebControl" /></returns>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebControl (IntPtr raw);" />
+      <MemberType>Constructor</MemberType>
+      <ReturnValue />
+      <Parameters>
+        <Parameter Name="raw" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <summary>To be added</summary>
+        <param name="raw">a <see cref="T:System.IntPtr" /></param>
+        <returns>a <see cref="T:Gecko.WebControl" /></returns>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebControl (string aPath, string aDir);" />
+      <MemberType>Constructor</MemberType>
+      <ReturnValue />
+      <Parameters>
+        <Parameter Name="aPath" Type="System.String" />
+        <Parameter Name="aDir" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <summary>To be added</summary>
+        <param name="aPath">a <see cref="T:System.String" /></param>
+        <param name="aDir">a <see cref="T:System.String" /></param>
+        <returns>a <see cref="T:Gecko.WebControl" /></returns>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebControl ();" />
+      <MemberType>Constructor</MemberType>
+      <ReturnValue />
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <returns>a <see cref="T:Gecko.WebControl" /></returns>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CompPath">
+      <MemberSignature Language="C#" Value="public static string CompPath { set; };" />
+      <MemberType>Property</MemberType>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Allows you to set the path to the mozilla components.</summary>
+        <returns>a <see cref="T:System.String" /></returns>
+        <remarks>This function must be called before the first <see cref="T:Gtk.Widget" /> is created or XPCOM is initialized.  It allows you to set the path to the mozilla components.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GType">
+      <MemberSignature Language="C#" Value="public static GLib.GType GType { get; };" />
+      <MemberType>Property</MemberType>
+      <ReturnValue>
+        <ReturnType>GLib.GType</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <returns>a <see cref="T:GLib.GType" /></returns>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LinkMessage">
+      <MemberSignature Language="C#" Value="public string LinkMessage { get; };" />
+      <MemberType>Property</MemberType>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <returns>a <see cref="T:System.String" /></returns>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Title">
+      <MemberSignature Language="C#" Value="public string Title { get; };" />
+      <MemberType>Property</MemberType>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <returns>a <see cref="T:System.String" /></returns>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Location">
+      <MemberSignature Language="C#" Value="public string Location { get; };" />
+      <MemberType>Property</MemberType>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <returns>a <see cref="T:System.String" /></returns>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="JsStatus">
+      <MemberSignature Language="C#" Value="public string JsStatus { get; };" />
+      <MemberType>Property</MemberType>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <returns>a <see cref="T:System.String" /></returns>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChromeMask">
+      <MemberSignature Language="C#" Value="public uint ChromeMask { set; get; };" />
+      <MemberType>Property</MemberType>
+      <ReturnValue>
+        <ReturnType>System.UInt32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>The chrome mask for this <see cref="T:Gecko.WebControl" /></summary>
+        <returns>a <see cref="T:System.UInt32" /></returns>
+        <remarks>It can be one of <see cref="T:Gecko.ChromeFlags" />.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StatusChange">
+      <MemberSignature Language="C#" Value="public event Gecko.StatusChangeHandler StatusChange;" />
+      <MemberType>Event</MemberType>
+      <ReturnValue>
+        <ReturnType>Gecko.StatusChangeHandler</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NetStateAll">
+      <MemberSignature Language="C#" Value="public event Gecko.NetStateAllHandler NetStateAll;" />
+      <MemberType>Event</MemberType>
+      <ReturnValue>
+        <ReturnType>Gecko.NetStateAllHandler</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ECMAStatus">
+      <MemberSignature Language="C#" Value="public event EventHandler ECMAStatus;" />
+      <MemberType>Event</MemberType>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenUri">
+      <MemberSignature Language="C#" Value="public event Gecko.OpenUriHandler OpenUri;" />
+      <MemberType>Event</MemberType>
+      <ReturnValue>
+        <ReturnType>Gecko.OpenUriHandler</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Emitted when the document tries to load a new document.</summary>
+        <remarks>
+          <para>
+                        For example when someone clicks on a link in a web page.
+                        This signal gives the embedder the opportunity to keep the new document from being loaded.
+                        The uri argument is the uri that is going to be loaded.
+          </para>
+          <para>
+                    If you return <see langword="true" /> from this signal, the new document will NOT be loaded.
+                    If you return <see langword="false" /> the new document will be loaded.
+                    This is somewhat non-intuitive.
+                    Think of it as the Mozilla engine is asking if you want to interrupt the loading of a new document.
+                    By returning <see langword="true" /> you are saying "do not load this document."
+          </para>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DomMouseDblClick">
+      <MemberSignature Language="C#" Value="public event Gecko.DomMouseDblClickHandler DomMouseDblClick;" />
+      <MemberType>Event</MemberType>
+      <ReturnValue>
+        <ReturnType>Gecko.DomMouseDblClickHandler</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SizeTo">
+      <MemberSignature Language="C#" Value="public event Gecko.SizeToHandler SizeTo;" />
+      <MemberType>Event</MemberType>
+      <ReturnValue>
+        <ReturnType>Gecko.SizeToHandler</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LinkMsg">
+      <MemberSignature Language="C#" Value="public event EventHandler LinkMsg;" />
+      <MemberType>Event</MemberType>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DomMouseOut">
+      <MemberSignature Language="C#" Value="public event Gecko.DomMouseOutHandler DomMouseOut;" />
+      <MemberType>Event</MemberType>
+      <ReturnValue>
+        <ReturnType>Gecko.DomMouseOutHandler</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DomMouseOver">
+      <MemberSignature Language="C#" Value="public event Gecko.DomMouseOverHandler DomMouseOver;" />
+      <MemberType>Event</MemberType>
+      <ReturnValue>
+        <ReturnType>Gecko.DomMouseOverHandler</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NetStop">
+      <MemberSignature Language="C#" Value="public event EventHandler NetStop;" />
+      <MemberType>Event</MemberType>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DomKeyPress">
+      <MemberSignature Language="C#" Value="public event Gecko.DomKeyPressHandler DomKeyPress;" />
+      <MemberType>Event</MemberType>
+      <ReturnValue>
+        <ReturnType>Gecko.DomKeyPressHandler</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DomKeyUp">
+      <MemberSignature Language="C#" Value="public event Gecko.DomKeyUpHandler DomKeyUp;" />
+      <MemberType>Event</MemberType>
+      <ReturnValue>
+        <ReturnType>Gecko.DomKeyUpHandler</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SecurityChange">
+      <MemberSignature Language="C#" Value="public event Gecko.SecurityChangeHandler SecurityChange;" />
+      <MemberType>Event</MemberType>
+      <ReturnValue>
+        <ReturnType>Gecko.SecurityChangeHandler</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NetState">
+      <MemberSignature Language="C#" Value="public event Gecko.NetStateHandler NetState;" />
+      <MemberType>Event</MemberType>
+      <ReturnValue>
+        <ReturnType>Gecko.NetStateHandler</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NetStart">
+      <MemberSignature Language="C#" Value="public event EventHandler NetStart;" />
+      <MemberType>Event</MemberType>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Visibility">
+      <MemberSignature Language="C#" Value="public event Gecko.VisibilityHandler Visibility;" />
+      <MemberType>Event</MemberType>
+      <ReturnValue>
+        <ReturnType>Gecko.VisibilityHandler</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DestroyBrowser">
+      <MemberSignature Language="C#" Value="public event EventHandler DestroyBrowser;" />
+      <MemberType>Event</MemberType>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DomMouseClick">
+      <MemberSignature Language="C#" Value="public event Gecko.DomMouseClickHandler DomMouseClick;" />
+      <MemberType>Event</MemberType>
+      <ReturnValue>
+        <ReturnType>Gecko.DomMouseClickHandler</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TitleChange">
+      <MemberSignature Language="C#" Value="public event EventHandler TitleChange;" />
+      <MemberType>Event</MemberType>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DomMouseUp">
+      <MemberSignature Language="C#" Value="public event Gecko.DomMouseUpHandler DomMouseUp;" />
+      <MemberType>Event</MemberType>
+      <ReturnValue>
+        <ReturnType>Gecko.DomMouseUpHandler</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProgressAll">
+      <MemberSignature Language="C#" Value="public event Gecko.ProgressAllHandler ProgressAll;" />
+      <MemberType>Event</MemberType>
+      <ReturnValue>
+        <ReturnType>Gecko.ProgressAllHandler</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DomMouseDown">
+      <MemberSignature Language="C#" Value="public event Gecko.DomMouseDownHandler DomMouseDown;" />
+      <MemberType>Event</MemberType>
+      <ReturnValue>
+        <ReturnType>Gecko.DomMouseDownHandler</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DomKeyDown">
+      <MemberSignature Language="C#" Value="public event Gecko.DomKeyDownHandler DomKeyDown;" />
+      <MemberType>Event</MemberType>
+      <ReturnValue>
+        <ReturnType>Gecko.DomKeyDownHandler</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Progress">
+      <MemberSignature Language="C#" Value="public event Gecko.ProgressHandler Progress;" />
+      <MemberType>Event</MemberType>
+      <ReturnValue>
+        <ReturnType>Gecko.ProgressHandler</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocChange">
+      <MemberSignature Language="C#" Value="public event EventHandler LocChange;" />
+      <MemberType>Event</MemberType>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewWindow">
+      <MemberSignature Language="C#" Value="public event Gecko.NewWindowHandler NewWindow;" />
+      <MemberType>Event</MemberType>
+      <ReturnValue>
+        <ReturnType>Gecko.NewWindowHandler</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>
