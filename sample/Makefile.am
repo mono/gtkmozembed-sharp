@@ -1,3 +1,5 @@
+EXTRA_SOURCES = GtkMozApp.cs
+
 all: GtkMozApp.exe
 
 GtkMozApp.exe: GtkMozApp.cs
