@@ -1,8 +1,0 @@
-prefix=@prefix@
-exec_prefix=${prefix}
-libdir=${exec_prefix}/lib
-
-Name: GtkMozEmbed#
-Description: GtkMozEmbed# - A Gtk# Mozilla binding
-Version: @VERSION@
-Libs: -lib:${exec_prefix}/lib -r:gtkmozembed-sharp
