@@ -20,7 +20,7 @@ build_sources = $(addprefix $(srcdir)/, $(sources))
 
 customs = Single.custom WebControl.custom
 
-CLEANFILES = gecko-sharp.dll generated-stamp generated/*.cs $(API) crichtma.pub
+CLEANFILES = gecko-sharp.dll generated-stamp generated/*.cs $(API) gecko-sharp.snk
 
 DISTCLEANFILES= AssemblyInfo.cs
 
@@ -36,20 +36,20 @@ $(API): $(srcdir)/$(RAW_API) $(srcdir)/$(METADATA)
 generated-stamp: $(API)
 	 mono $(GTKSHARP_PREFIX)/bin/gapi_codegen.exe --generate $(srcdir)/$(API) --include $(INCLUDE_APIS) --outdir=generated --customdir=$(srcdir) --assembly-name=gecko-sharp && touch generated-stamp
 
-crichtma.pub: $(top_srcdir)/crichtma.pub
-	cp $(top_srcdir)/crichtma.pub .
+gecko-sharp.snk: $(top_srcdir)/gecko-sharp.snk
+	cp $(top_srcdir)/gecko-sharp.snk .
 
-gecko-sharp.dll: $(build_sources) generated-stamp crichtma.pub
+gecko-sharp.dll: $(build_sources) generated-stamp gecko-sharp.snk
 	$(MCS) --unsafe --target library -L $(GTKSHARP_PREFIX)/lib \
 	/pkg:gtk-sharp \
 	$(build_sources) generated/*.cs -o gecko-sharp.dll
 
 install-data-local:
-	echo "$(GACUTIL) /i $(ASSEMBLY) /f /package gtk-sharp /root $(DESTDIR)$(libdir)";  \
-        $(GACUTIL) /i $(ASSEMBLY) /f /package gtk-sharp /root $(DESTDIR)$(libdir) || exit 1;
+	echo "$(GACUTIL) /i $(ASSEMBLY) /f /package gecko-sharp /root $(DESTDIR)$(libdir)";  \
+        $(GACUTIL) /i $(ASSEMBLY) /f /package gecko-sharp /root $(DESTDIR)$(libdir) || exit 1;
                                                                                 
 uninstall-local:
-	echo "$(GACUTIL) /u $(ASSEMBLY_NAME) /package gtk-sharp /root $(DESTDIR)$(libdir)"; \
-        $(GACUTIL) /u $(ASSEMBLY_NAME) /package gtk-sharp /root $(DESTDIR)$(libdir) || exit 1;
+	echo "$(GACUTIL) /u $(ASSEMBLY_NAME) /package gecko-sharp /root $(DESTDIR)$(libdir)"; \
+        $(GACUTIL) /u $(ASSEMBLY_NAME) /package gecko-sharp /root $(DESTDIR)$(libdir) || exit 1;
  
 EXTRA_DIST = $(API) $(RAW_API) $(sources) $(customs) $(METADATA) AssemblyInfo.cs.in gecko-sharp.dll.config
