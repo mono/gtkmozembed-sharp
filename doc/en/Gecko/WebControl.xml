@@ -18,7 +18,7 @@
       <para>
 	    The following sample is a very minimal web browser.
 	  </para>
-	  <para>
+      <para>
 	    Compile with: mcs GeckoTest.cs -pkg:gtk-sharp -pkg:gecko-sharp
 	  </para>
       <example>
@@ -762,7 +762,7 @@ namespace GeckoTest
         <Parameter Name="mime_type" Type="System.String" />
       </Parameters>
       <Docs>
-        <summary>Allows you to take a chunk of random data and render it into the document.</summary>
+        <summary>Allows you to take a chunk of arbitrary data and render it into the document.</summary>
         <param name="data">a <see cref="T:System.String" /></param>
         <param name="base_uri">a <see cref="T:System.String" /></param>
         <param name="mime_type">a <see cref="T:System.String" /></param>
