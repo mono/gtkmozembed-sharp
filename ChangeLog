@@ -2,6 +2,8 @@
 
 	* gtkmozembed/WebControl.custom: use generated SetProfilePath
 	method to adjust for gtk# changes, fixes build with gtk# HEAD
+	* gtkmozembed/gecko-sharp.dll.config: change mapping of
+	gtkmozembed.dll to libgtkmozembed.so (not versioned)
 
 2005-03-06  Zac Bowling  <zac@zacbowling.com>
 
