@@ -6,7 +6,7 @@
         Please DO NOT MODIFY THIS FILE, modify .metadata files instead.
 
 -->
-  <namespace name="GtkMozEmbed" library="gtkmozembed">
+  <namespace name="GtkMozEmbed" library="gtkembedmoz">
     <enum name="ChromeFlags" cname="GtkMozEmbedChromeFlags" type="enum">
       <member cname="GTK_MOZ_EMBED_FLAG_DEFAULTCHROME" name="Defaultchrome" value="1U"/>
       <member cname="GTK_MOZ_EMBED_FLAG_WINDOWBORDERSON" name="Windowborderson" value="2U"/>
