@@ -53,7 +53,7 @@
       <member cname="GTK_MOZ_EMBED_STATUS_FAILED_TIMEOUT" name="Timeout" value="2152398862U"/>
       <member cname="GTK_MOZ_EMBED_STATUS_FAILED_USERCANCELED" name="Usercanceled" value="2152398850U"/>
     </enum>
-    <object name="EmbedWidget" cname="GtkMozEmbed" parent="GtkBin">
+    <object name="EmbedWidget" cname="GtkMozEmbed" parent="GtkBin" disabledefaultconstructor="1">
       <field cname="data" type="void*"/>
       <signal name="LinkMessage" cname="link_message" when="FIRST">
         <return-type type="void"/>
