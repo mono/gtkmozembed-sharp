@@ -34,13 +34,23 @@ namespace GtkSamples {
     private bool toolBarOn;
     private bool statusBarOn;
     
-    public static readonly string path;
-    public static readonly string pname;
+    static string _path;
+
+    public static string path {
+    	get { return _path; }
+    }
+
+    static string _pname;
+
+    public static string pname {
+    	get { return _pname; }
+    }
+
 
     public MozWindow (string p1, string p2)
     {
-      path = p1;
-      pname = p2;
+      _path = p1;
+      _pname = p2;
       initialized = 1;
       CreateWindow((uint)ChromeFlags.Defaultchrome);
     }
