@@ -1,0 +1,284 @@
+<Type Name="ChromeFlags" FullName="GtkMozEmbed.ChromeFlags">
+  <TypeSignature Language="C#" Value="public sealed struct ChromeFlags;" Maintainer="auto" />
+  <AssemblyInfo>
+    <AssemblyName>gtkmozembed-sharp</AssemblyName>
+    <AssemblyPublicKey />
+    <AssemblyVersion>0.0.0.0</AssemblyVersion>
+    <AssemblyCulture>neutral</AssemblyCulture>
+    <Attributes />
+  </AssemblyInfo>
+  <ThreadSafetyStatement>Gtk# is thread aware, but not thread safe; See the &lt;link location="node:gtk-sharp/programming/threads"&gt;Gtk# Thread Programming&lt;/link&gt; for details.</ThreadSafetyStatement>
+  <Docs>
+    <summary>To be added</summary>
+    <remarks>To be added</remarks>
+  </Docs>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IComparable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IConvertible</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IFormattable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes />
+  <Members>
+    <Member MemberName="Defaultchrome">
+      <MemberSignature Language="C#" Value="public static GtkMozEmbed.ChromeFlags Defaultchrome;" />
+      <MemberType>Field</MemberType>
+      <ReturnValue>
+        <ReturnType>GtkMozEmbed.ChromeFlags</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Windowborderson">
+      <MemberSignature Language="C#" Value="public static GtkMozEmbed.ChromeFlags Windowborderson;" />
+      <MemberType>Field</MemberType>
+      <ReturnValue>
+        <ReturnType>GtkMozEmbed.ChromeFlags</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Windowcloseon">
+      <MemberSignature Language="C#" Value="public static GtkMozEmbed.ChromeFlags Windowcloseon;" />
+      <MemberType>Field</MemberType>
+      <ReturnValue>
+        <ReturnType>GtkMozEmbed.ChromeFlags</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Windowresizeon">
+      <MemberSignature Language="C#" Value="public static GtkMozEmbed.ChromeFlags Windowresizeon;" />
+      <MemberType>Field</MemberType>
+      <ReturnValue>
+        <ReturnType>GtkMozEmbed.ChromeFlags</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Menubaron">
+      <MemberSignature Language="C#" Value="public static GtkMozEmbed.ChromeFlags Menubaron;" />
+      <MemberType>Field</MemberType>
+      <ReturnValue>
+        <ReturnType>GtkMozEmbed.ChromeFlags</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Toolbaron">
+      <MemberSignature Language="C#" Value="public static GtkMozEmbed.ChromeFlags Toolbaron;" />
+      <MemberType>Field</MemberType>
+      <ReturnValue>
+        <ReturnType>GtkMozEmbed.ChromeFlags</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Locationbaron">
+      <MemberSignature Language="C#" Value="public static GtkMozEmbed.ChromeFlags Locationbaron;" />
+      <MemberType>Field</MemberType>
+      <ReturnValue>
+        <ReturnType>GtkMozEmbed.ChromeFlags</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Statusbaron">
+      <MemberSignature Language="C#" Value="public static GtkMozEmbed.ChromeFlags Statusbaron;" />
+      <MemberType>Field</MemberType>
+      <ReturnValue>
+        <ReturnType>GtkMozEmbed.ChromeFlags</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Personaltoolbaron">
+      <MemberSignature Language="C#" Value="public static GtkMozEmbed.ChromeFlags Personaltoolbaron;" />
+      <MemberType>Field</MemberType>
+      <ReturnValue>
+        <ReturnType>GtkMozEmbed.ChromeFlags</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Scrollbarson">
+      <MemberSignature Language="C#" Value="public static GtkMozEmbed.ChromeFlags Scrollbarson;" />
+      <MemberType>Field</MemberType>
+      <ReturnValue>
+        <ReturnType>GtkMozEmbed.ChromeFlags</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Titlebaron">
+      <MemberSignature Language="C#" Value="public static GtkMozEmbed.ChromeFlags Titlebaron;" />
+      <MemberType>Field</MemberType>
+      <ReturnValue>
+        <ReturnType>GtkMozEmbed.ChromeFlags</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Extrachromeon">
+      <MemberSignature Language="C#" Value="public static GtkMozEmbed.ChromeFlags Extrachromeon;" />
+      <MemberType>Field</MemberType>
+      <ReturnValue>
+        <ReturnType>GtkMozEmbed.ChromeFlags</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Allchrome">
+      <MemberSignature Language="C#" Value="public static GtkMozEmbed.ChromeFlags Allchrome;" />
+      <MemberType>Field</MemberType>
+      <ReturnValue>
+        <ReturnType>GtkMozEmbed.ChromeFlags</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Windowraised">
+      <MemberSignature Language="C#" Value="public static GtkMozEmbed.ChromeFlags Windowraised;" />
+      <MemberType>Field</MemberType>
+      <ReturnValue>
+        <ReturnType>GtkMozEmbed.ChromeFlags</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Windowlowered">
+      <MemberSignature Language="C#" Value="public static GtkMozEmbed.ChromeFlags Windowlowered;" />
+      <MemberType>Field</MemberType>
+      <ReturnValue>
+        <ReturnType>GtkMozEmbed.ChromeFlags</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Centerscreen">
+      <MemberSignature Language="C#" Value="public static GtkMozEmbed.ChromeFlags Centerscreen;" />
+      <MemberType>Field</MemberType>
+      <ReturnValue>
+        <ReturnType>GtkMozEmbed.ChromeFlags</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dependent">
+      <MemberSignature Language="C#" Value="public static GtkMozEmbed.ChromeFlags Dependent;" />
+      <MemberType>Field</MemberType>
+      <ReturnValue>
+        <ReturnType>GtkMozEmbed.ChromeFlags</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Modal">
+      <MemberSignature Language="C#" Value="public static GtkMozEmbed.ChromeFlags Modal;" />
+      <MemberType>Field</MemberType>
+      <ReturnValue>
+        <ReturnType>GtkMozEmbed.ChromeFlags</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Openasdialog">
+      <MemberSignature Language="C#" Value="public static GtkMozEmbed.ChromeFlags Openasdialog;" />
+      <MemberType>Field</MemberType>
+      <ReturnValue>
+        <ReturnType>GtkMozEmbed.ChromeFlags</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Openaschrome">
+      <MemberSignature Language="C#" Value="public static GtkMozEmbed.ChromeFlags Openaschrome;" />
+      <MemberType>Field</MemberType>
+      <ReturnValue>
+        <ReturnType>GtkMozEmbed.ChromeFlags</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="value__">
+      <MemberSignature Language="C#" Value="public uint value__;" />
+      <MemberType>Field</MemberType>
+      <ReturnValue>
+        <ReturnType>System.UInt32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added</summary>
+        <remarks>To be added</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>
