@@ -1,3 +1,10 @@
+2005-03-07  Zac Bowling  <zac@zacbowling.com>
+
+	* configure.in: conditional fix for WIN32
+	* gtkmozembed/gecko-sharp.dll.config.in: libgtkmozembed.so again 
+	(not versioned)
+	* gtkmozembed/Makefile.am: changed *.config to *.config.in (thanks Chris)
+
 2005-03-07	Christian Hergert	<christian.hergert@gmail.com>
 
 	* configure.in: Add AM_CONDITIONAL for WINBUILD. Still needs to have
