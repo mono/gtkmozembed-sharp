@@ -6,3 +6,4 @@ aclocal
 automake --add-missing --gnu
 autoconf
 
+./configure $@

@@ -1,0 +1,9 @@
+<gapi-parser-input>
+  <api filename="../gtkmozembed/gtkmozembed-api.xml">
+    <library name="gtkembedmoz">
+      <namespace name="GtkMozEmbed">
+        <dir>gtkmozembed</dir>
+      </namespace>
+    </library>
+  </api>
+</gapi-parser-input>

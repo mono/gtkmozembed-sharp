@@ -1,15 +1,5 @@
-if MAINTAINER_MODE
- 
-api:
+all: gtkmozembed/*.h
 	PERLLIB=$(GTKSHARP_PREFIX)/share/perl5  \
 	PATH=$(GTKSHARP_PREFIX)/bin:$$PATH \
-	gapi.pl gtkmozembed.sources @top_srcdir@/api
-
-else
-
-api:
-
-endif
-
-all: api
+	gapi-parser gtkmozembed-sharp-sources.xml
 

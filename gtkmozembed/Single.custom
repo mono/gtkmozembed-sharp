@@ -1,4 +1,5 @@
-		[GLib.Signal("new_window_orphan")]
+/*
+	[GLib.Signal("new_window_orphan")]
 		public event GtkMozEmbedSharp.NewWindowOrphanHandler NewWindowOrphan {
 			add {
 				if (EventList["new_window_orphan"] == null)
@@ -21,3 +22,4 @@
 				}
 			}
 		}
+*/
