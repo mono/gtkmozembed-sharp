@@ -22,6 +22,8 @@ namespace GtkSamples {
     private Window win;
     private string tempMessage;
     private int loadPercent;
+    private uint actualchrome;
+
     private static int win_count = 0;
     private static int initialized = 0;
     
@@ -33,12 +35,12 @@ namespace GtkSamples {
       path = p1;
       pname = p2;
       initialized = 1;
-      CreateWindow();
+      CreateWindow((uint)ChromeFlags.Defaultchrome);
     }
     
-    public MozWindow ()
+    public MozWindow (uint chrome)
     {
-      CreateWindow();
+      CreateWindow(chrome);
     }
     
     public EmbedWidget moz_widget{
@@ -47,10 +49,13 @@ namespace GtkSamples {
       }
     }
     
-    private void CreateWindow ()
+    private void CreateWindow (uint chrome)
     {
       // Increment Window count
       win_count += 1;
+
+      // Put actualchrome in
+      actualchrome = chrome;
       
       win = new Window ("Gecko Tester");
       win.DefaultSize = new Size (800, 600);
@@ -147,7 +152,7 @@ namespace GtkSamples {
     
     void moz_new_win_cb (object obj, NewWindowArgs args)
     {
-      MozWindow new_win  = new MozWindow();
+      MozWindow new_win  = new MozWindow(args.Chromemask);
       
       args.NewEmbed = new_win.moz_widget;
     }
