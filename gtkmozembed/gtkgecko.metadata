@@ -22,8 +22,8 @@
   <attr path="/api/namespace/object[@cname='GtkMozEmbed']/signal[@name='JsStatus']" name="name">ECMAStatus</attr>
 
 <!-- rename the enums -->
-  <attr path="/api/namespace/enum[@name='MozEmbedChromeFlags']" name="name">ChromeFlags</attr>
-  <attr path="/api/namespace/enum[@name='MozEmbedProgressFlags']" name="name">ProgressFlags</attr>
-  <attr path="/api/namespace/enum[@name='MozEmbedReloadFlags']" name="name">ReloadFlags</attr>
-  <attr path="/api/namespace/enum[@name='MozEmbedStatusFlags']" name="name">StatusFlags</attr>
+  <attr path="/api/namespace/enum[@name='GtkMozEmbedChromeFlags']" name="name">ChromeFlags</attr>
+  <attr path="/api/namespace/enum[@name='GtkMozEmbedProgressFlags']" name="name">ProgressFlags</attr>
+  <attr path="/api/namespace/enum[@name='GtkMozEmbedReloadFlags']" name="name">ReloadFlags</attr>
+  <attr path="/api/namespace/enum[@name='GtkMozEmbedStatusFlags']" name="name">StatusFlags</attr>
 </metadata>
