@@ -10,8 +10,9 @@ gtkmozembed-sharp-docs.zip gtkmozembed-sharp-docs.tree: en/*/*.xml
 	mono $(ASSEMBLER) --ecma en -o gtkmozembed-sharp-docs
 
 install: gtkmozembed-sharp-docs.zip gtkmozembed-sharp-docs.tree 
-	install -m 644 gtkmozembed-sharp-docs.zip gtkmozembed-sharp-docs.tree $(prefix)/lib/monodoc/sources
-	install -m 644 gtkmozembed-sharp-docs.source $(prefix)/lib/monodoc/sources
+	install -m 644 gtkmozembed-sharp-docs.zip gtkmozembed-sharp-docs.tree `monodoc --get-sourcesdir`
+	install -m 644 gtkmozembed-sharp-docs.source `monodoc --get-sourcesdir`
+
 clean:
 	rm *.tree
 	rm *zip
