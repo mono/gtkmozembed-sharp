@@ -1,6 +1,6 @@
 AC_INIT(README)
 AC_CANONICAL_SYSTEM
-AM_INIT_AUTOMAKE(gtkmozembed, 0.1)
+AM_INIT_AUTOMAKE(gecko-sharp, 0.1)
 AM_MAINTAINER_MODE
 AM_PROG_LIBTOOL
 
@@ -79,5 +79,5 @@ Makefile
 gtkmozembed/Makefile
 sample/Makefile
 sources/Makefile
-gtkmozembed-sharp.pc
+gecko-sharp.pc
 ])
