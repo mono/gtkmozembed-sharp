@@ -1,1 +1,1 @@
-SUBDIRS = sources api gtkmozembed sample
+SUBDIRS = sources api glue gtkmozembed sample

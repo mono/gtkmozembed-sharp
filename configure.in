@@ -2,6 +2,7 @@ AC_INIT(README)
 AC_CANONICAL_SYSTEM
 AM_INIT_AUTOMAKE(gtkmozembed, 0.1)
 AM_MAINTAINER_MODE
+AM_PROG_LIBTOOL
 
 AC_MSG_CHECKING([whether we're compiling from CVS])
 if test -f "$srcdir/.cvs_version" ; then
@@ -39,10 +40,45 @@ fi
 AC_SUBST(PATH)
 AC_SUBST(LD_LIBRARY_PATH)
 
+dnl Find pkg-config
+AC_PATH_PROG(PKG_CONFIG, pkg-config, no)
+if test "x$PKG_CONFIG" = "xno"; then
+        AC_MSG_ERROR([You need to install pkg-config])
+fi
+
+dnl Find GTK
+BUILD_GTK_CFLAGS=`$PKG_CONFIG --cflags gtk+-2.0`
+BUILD_GTK_LIBS=`$PKG_CONFIG --libs gtk+-2.0`
+AC_SUBST(BUILD_GTK_CFLAGS)
+AC_SUBST(BUILD_GTK_LIBS)
+
+GTK_REQUIRED_VERSION=2.0.0
+
+PKG_CHECK_MODULES(BASE_DEPENDENCIES, gtk+-2.0 >= $GTK_REQUIRED_VERSION gmodule-2.0 >= $GTK_REQUIRED_VERSION) 
+
+AC_SUBST(BASE_DEPENDENCIES_CFLAGS)
+AC_SUBST(BASE_DEPENDENCIES_LIBS)
+
+dnl Find Mozilla
+AC_ARG_WITH(mozilla-headers,
+        [  --with-mozilla-headers  Specify location of MOZILLA headers],
+        [MOZ_CFLAGS="-I$withval"],
+        [MOZ_CFLAGS="-I/usr/include/mozilla"])
+                                                                                
+AC_ARG_WITH(mozilla-libs,
+        [  --with-mozilla-libs     Specify location of MOZILLA libs],
+        [MOZ_LIBS="-L$withval"],
+        [MOZ_LIBS="-L/usr/lib/mozilla"])
+
+AC_SUBST(MOZ_LIBS)
+AC_SUBST(MOZ_CFLAGS)
+
+
 AC_OUTPUT([
 Makefile
 api/Makefile
 gtkmozembed/Makefile
+glue/Makefile
 sample/Makefile
 sources/Makefile
 ])
