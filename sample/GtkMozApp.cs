@@ -42,17 +42,17 @@ namespace GtkSamples {
 			toolbar.Orientation = Orientation.Horizontal;
 			hbox.PackStart(toolbar, false, false, 0);
 
-			toolbar.AppendItem("Go Back", "Go Back",
-					   "Go Back",  new SignalFunc (back_clicked_cb));
+			toolbar.AppendItem("Go Back", "Go Back", "Go Back",
+				new Label("Go Back"),  new SignalFunc (back_clicked_cb));
 
-			toolbar.AppendItem("Stop", "Stop",
-                                           "Stop", new SignalFunc (stop_clicked_cb));
+			toolbar.AppendItem("Stop", "Stop", "Stop",
+				new Label("Stop"), new SignalFunc (stop_clicked_cb));
 
-			toolbar.AppendItem("Forward", "Go Forward",
-                                           "Go Forward", new SignalFunc (forward_clicked_cb));
+			toolbar.AppendItem("Forward", "Go Forward", "Go Forward",
+				new Label("Go Forward"), new SignalFunc (forward_clicked_cb));
 
-			toolbar.AppendItem("Reload", "Reload",
-					   "Reload", new SignalFunc (reload_clicked_cb));
+			toolbar.AppendItem("Reload", "Reload", "Reload",
+				new Label("Reload"), new SignalFunc (reload_clicked_cb));
 
 			editbox = new Entry();
 			editbox.Activated += new EventHandler(entry_act);
