@@ -1,3 +1,7 @@
+2004-05-13  Todd Berman  <tberman@sevenl.net>
+
+	* gecko-sharp.pc.in: make this actually work.
+
 2004-05-05  Todd Berman  <tberman@sevenl.net>
 
 	* configure.in: bump to 0.3
