@@ -107,6 +107,11 @@ if test "x$GACUTIL" = "xno" ; then
         AC_MSG_ERROR([No gacutil tool found])
 fi
 
+
+dnl WINBUILD
+dnl Need to set $enable_winbuild with compile option or some other way
+AM_CONDITIONAL(WINBUILD, test x$enable_winbuild = xyes)
+
 AC_SUBST(GACUTIL)
 
 AC_OUTPUT([

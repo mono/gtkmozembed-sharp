@@ -1,3 +1,9 @@
+2005-03-07	Christian Hergert	<christian.hergert@gmail.com>
+
+	* configure.in: Add AM_CONDITIONAL for WINBUILD. Still needs to have
+	a configure switch added or some other way of determining WINBUILD. But
+	this allows us to still build.
+
 2005-03-06  Zac Bowling  <zac@zacbowling.com>
 
 	* gtkmozembed/WebControl.custom: typo made backword logic
