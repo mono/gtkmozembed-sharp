@@ -226,13 +226,13 @@ namespace GtkMozTest
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Whether or not you can go backwards in the document's navigation history.</summary>
+        <summary>Whether or not you can go backwards in the navigation history.</summary>
         <returns>an object of type <see cref="T:System.Boolean" /></returns>
-        <remarks>It will return <see langword="true" /> if it can go backwards, <see langword="false" /> if it can't.</remarks>
+        <remarks>It will return <see langword="true" /> if it can go backwards, <see langword="false" /> if it can not.</remarks>
       </Docs>
     </Member>
     <Member MemberName="RenderData">
-      <MemberSignature Language="C#" Value="public void RenderData (string data, uint len, string base_uri, string mime_type);" />
+      <MemberSignature Language="C#" Value="public void RenderData (string data, string base_uri, string mime_type);" />
       <MemberType>Method</MemberType>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -250,8 +250,7 @@ namespace GtkMozTest
         <param name="base_uri">an object of type <see cref="T:System.String" /></param>
         <param name="mime_type">an object of type <see cref="T:System.String" /></param>
         <remarks>
-		  You need to pass in the data and the length of the data.
-		  The base_uri is used to resolve internal references in the document and the mime_type is used to determine how to render the document internally.
+		  The <paramref name="base_uri" /> is used to resolve internal references in the document and the <paramref name="mime_type" /> is used to determine how to render the document internally.
 		</remarks>
       </Docs>
     </Member>
@@ -269,7 +268,7 @@ namespace GtkMozTest
         <summary>Start loading a document from an external source into the <see cref="T:GtkMozEmbed.EmbedWidget" />.</summary>
         <param name="base_uri">an object of type <see cref="T:System.String" /></param>
         <param name="mime_type">an object of type <see cref="T:System.String" /></param>
-        <remarks>You need to pass in the base_uri for resolving internal links and and the mime_type of the document.</remarks>
+        <remarks>You need to pass in the <paramref name="base_uri" /> for resolving internal links and and the <paramref name="mime_type" /> of the document.</remarks>
       </Docs>
     </Member>
     <Member MemberName="GoForward">
@@ -280,12 +279,12 @@ namespace GtkMozTest
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Go forward one step in the document's navigation history.</summary>
+        <summary>Go forward one step in the navigation history.</summary>
         <remarks />
       </Docs>
     </Member>
     <Member MemberName="AppendData">
-      <MemberSignature Language="C#" Value="public void AppendData (string data, uint len);" />
+      <MemberSignature Language="C#" Value="public void AppendData (string data);" />
       <MemberType>Method</MemberType>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -298,7 +297,7 @@ namespace GtkMozTest
         <summary>Allows you to append data to an already opened stream in the <see cref="T:GtkMozEmbed.EmbedWidget" />.</summary>
         <param name="data">an object of type <see cref="T:System.String" /></param>
         <param name="len">an object of type <see cref="T:System.UInt32" /></param>
-        <remarks>You need to pass in the data that you want to append to the document and its length.</remarks>
+        <remarks></remarks>
       </Docs>
     </Member>
     <Member MemberName="GoBack">
@@ -309,7 +308,7 @@ namespace GtkMozTest
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Go backwards one step in the document's navigation history.</summary>
+        <summary>Go backwards one step in the navigation history.</summary>
         <remarks />
       </Docs>
     </Member>
@@ -360,9 +359,9 @@ namespace GtkMozTest
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Whether or not you can go forward in the document's navigation history.</summary>
+        <summary>Whether or not you can go forward in the navigation history.</summary>
         <returns>an object of type <see cref="T:System.Boolean" /></returns>
-        <remarks>It will return <see langword="true" /> if it can go forwards, <see langword="false" /> if it ca not.
+        <remarks>It will return <see langword="true" /> if it can go forwards, <see langword="false" /> if it can not.
 		</remarks>
       </Docs>
     </Member>
@@ -384,7 +383,7 @@ namespace GtkMozTest
       </Docs>
     </Member>
     <Member MemberName="Finalize">
-      <MemberSignature Language="C#" Value="protected virtual void Finalize ();" />
+      <MemberSignature Language="C#" Value="protected override void Finalize ();" />
       <MemberType>Method</MemberType>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -392,7 +391,7 @@ namespace GtkMozTest
       <Parameters />
       <Docs>
         <summary>To be added</summary>
-        <remarks>To be added</remarks>
+        <remarks></remarks>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -432,11 +431,11 @@ namespace GtkMozTest
         <Parameter Name="aDir" Type="System.String" />
       </Parameters>
       <Docs>
-        <summary>Creates a new Gtk Mozilla embedding widget.</summary>
+        <summary>Creates a new <see cref="T:GtkMozEmbed.EmbedWidget" />.</summary>
         <param name="aPath">an object of type <see cref="T:System.String" /></param>
         <param name="aDir">an object of type <see cref="T:System.String" /></param>
         <returns>an object of type <see cref="T:GtkMozEmbed.EmbedWidget" /></returns>
-        <remarks>Creates a new Gtk Mozilla embedding widget. This is the most commonly used constructor.</remarks>
+        <remarks>Creates a new <see cref="T:GtkMozEmbed.EmbedWidget" />. This is the most commonly used constructor.</remarks>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -445,9 +444,9 @@ namespace GtkMozTest
       <ReturnValue />
       <Parameters />
       <Docs>
-        <summary>To be added</summary>
+        <summary>Default constructor</summary>
         <returns>an object of type <see cref="T:GtkMozEmbed.EmbedWidget" /></returns>
-        <remarks>To be added</remarks>
+        <remarks></remarks>
       </Docs>
     </Member>
     <Member MemberName="GType">

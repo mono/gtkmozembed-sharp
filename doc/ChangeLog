@@ -1,3 +1,7 @@
+2003-12-03  John Luke  <jluke@cfl.rr.com>
+	
+	* en/GtkMozEmbed/EmbedWidget: minor updates
+
 2003-07-30  John Luke  <jluke@cfl.rr.com>
 
 	* all: ran doc updater so it would compile with the assembler
