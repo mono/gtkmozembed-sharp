@@ -1,3 +1,13 @@
+2005-03-06  Zac Bowling  <zac@zacbowling.com>
+
+	* autogen.sh: Added new in file for autoconf blender
+	* gtkmozembed/gecko-sharp.dll.config.in: Added for WIN32 dll search
+	* configure.in: updated for building csc and without mono
+	* gtkmozembed/gtkgecko-api.raw: Updated for changes in the api
+	* gtkmozembed/Makefile.am: updated for gapi tool name differences
+	* gtkmozembed/WebControl.custom: added support for buggy profiles
+	* gtkmozembed/gecko-sharp.dll.config: Removed
+
 2005-03-06  John Luke  <john.luke@gmail.com>
 
 	* gtkmozembed/WebControl.custom: use generated SetProfilePath

@@ -6,6 +6,14 @@ METADATA=gtkgecko.metadata
 ASSEMBLY_NAME= gecko-sharp
 ASSEMBLY= $(ASSEMBLY_NAME).dll
 
+if WINBUILD
+CODEGEN=gapi_codegen.exe
+FIXUP=gapi-fixup.exe
+else
+CODEGEN=gapi2-codegen
+FIXUP=gapi2-fixup
+endif
+
 sources = NewWindowOrphan_handler.cs \
 	  NewWindow_delegate.cs      \
 	  NewWindow_handler.cs
@@ -25,10 +33,10 @@ all: generated-stamp gecko-sharp.dll
 $(API): $(srcdir)/$(RAW_API) $(srcdir)/$(METADATA)
 	cp $(srcdir)/$(RAW_API) $(API)
 	chmod u+w $(API)
-	gapi2-fixup --api=$(API) --metadata=$(srcdir)/$(METADATA)
+	$(FIXUP) --api=$(srcdir)/$(API) --metadata=$(srcdir)/$(METADATA)
 
 generated-stamp: $(API)
-	 gapi2-codegen --generate $(API) $(GTK_SHARP_CFLAGS) --outdir=generated --customdir=$(srcdir) --assembly-name=gecko-sharp && touch generated-stamp
+	 $(CODEGEN) --generate $(srcdir)/$(API) $(GTK_SHARP_CFLAGS) --outdir=generated --customdir=$(srcdir) --assembly-name=gecko-sharp && touch generated-stamp
 
 gecko-sharp.snk: $(top_srcdir)/gecko-sharp.snk
 	cp $(top_srcdir)/gecko-sharp.snk .

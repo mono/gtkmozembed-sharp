@@ -70,14 +70,29 @@
 [DllImport("gtkembedmoz.dll")]
 static extern IntPtr gtk_moz_embed_new();
 
-public WebControl(string aPath, string aDir) : base (IntPtr.Zero)
+private void InitProfile (string aPath, string aDir)
 {
+	// Check for Windows
+	// On .NET 2.0 its "3" for Unix, Linux, and Mac
+	// On any version of Mono for anything but Windows (pre 2.0 api) its "128"
+	if (((int) System.Environment.OSVersion.Platform) >= 4) 
+	{
+        	// HACK: This is to fix shared profile issues on WIN32
+        	// We append a unique string to the end of the path.
+        	aPath +=  System.Guid.NewGuid().ToString("N");
+	} 
+	
+	// gtk_moz_embed_set_profile_path(aPath, aDir);
 	SetProfilePath (aPath, aDir);
 	Raw = gtk_moz_embed_new ();
 }
 
+public WebControl(string aPath, string aDir) : base (IntPtr.Zero)
+{
+	InitProfile (aPath, aDir);
+}
+
 public WebControl() : base (IntPtr.Zero)
 {
-	SetProfilePath ("gecko-sharp", "DummyProfile");
-	Raw = gtk_moz_embed_new();
+	InitProfile ("gecko-sharp", "DummyProfile");
 }

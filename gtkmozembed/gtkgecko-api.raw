@@ -331,8 +331,8 @@
       <method name="SetProfilePath" cname="gtk_moz_embed_set_profile_path" shared="true">
         <return-type type="void"/>
         <parameters>
-          <parameter type="char*" name="aDir"/>
-          <parameter type="char*" name="aName"/>
+          <parameter type="const-char*" name="aDir"/>
+          <parameter type="const-char*" name="aName"/>
         </parameters>
       </method>
       <method name="StatusEnumsGetType" cname="gtk_moz_embed_status_enums_get_type" shared="true">
