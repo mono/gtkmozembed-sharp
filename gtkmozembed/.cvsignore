@@ -2,3 +2,5 @@ Makefile.in
 Makefile
 gtkmozembed-sharp.dll
 generated
+generated-stamp
+gtkmozembed-api.xml

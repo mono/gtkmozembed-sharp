@@ -79,4 +79,5 @@ Makefile
 gtkmozembed/Makefile
 sample/Makefile
 sources/Makefile
+gtkmozembed-sharp.pc
 ])
