@@ -1,3 +1,8 @@
+2005-03-06  Zac Bowling  <zac@zacbowling.com>
+
+	* gtkmozembed/gecko-sharp.dll.config: Fixed dll mapping issues. 
+	shouldn't need to make this configured by autoconf like GTK#
+
 2005-02-22  Raja R Harinath  <rharinath@novell.com>
 
 	* gtkmozembed/Makefile.am (sources): Move AssemblyInfo.cs ...
