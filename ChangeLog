@@ -1,3 +1,8 @@
+2005-03-06  John Luke  <john.luke@gmail.com>
+
+	* gtkmozembed/WebControl.custom: use generated SetProfilePath
+	method to adjust for gtk# changes, fixes build with gtk# HEAD
+
 2005-03-06  Zac Bowling  <zac@zacbowling.com>
 
 	* gtkmozembed/gecko-sharp.dll.config: Fixed dll mapping issues. 
