@@ -17,6 +17,9 @@ build_sources = $(addprefix $(srcdir)/, $(sources))
 customs = Single.custom WebControl.custom
 
 CLEANFILES = gecko-sharp.dll generated-stamp generated/*.cs $(API)
+
+assemblydir = $(libdir)
+assembly_DATA = gecko-sharp.dll
 			
 all: generated-stamp gecko-sharp.dll
 
