@@ -39,11 +39,11 @@ gecko-sharp.dll: $(build_sources) generated-stamp gecko-sharp.snk
 	$(build_sources) generated/*.cs -o gecko-sharp.dll
 
 install-data-local:
-	echo "$(GACUTIL) /i $(ASSEMBLY) /f /package gecko-sharp /root $(DESTDIR)$(libdir)";  \
-        $(GACUTIL) /i $(ASSEMBLY) /f /package gecko-sharp /root $(DESTDIR)$(libdir) || exit 1;
+	echo "$(GACUTIL) /i $(ASSEMBLY) /f /package gecko-sharp-2.0 /root $(DESTDIR)$(libdir)";  \
+        $(GACUTIL) /i $(ASSEMBLY) /f /package gecko-sharp-2.0 /root $(DESTDIR)$(libdir) || exit 1;
                                                                                 
 uninstall-local:
-	echo "$(GACUTIL) /u $(ASSEMBLY_NAME) /package gecko-sharp /root $(DESTDIR)$(libdir)"; \
-        $(GACUTIL) /u $(ASSEMBLY_NAME) /package gecko-sharp /root $(DESTDIR)$(libdir) || exit 1;
+	echo "$(GACUTIL) /u $(ASSEMBLY_NAME) /package gecko-sharp-2.0 /root $(DESTDIR)$(libdir)"; \
+        $(GACUTIL) /u $(ASSEMBLY_NAME) /package gecko-sharp-2.0 /root $(DESTDIR)$(libdir) || exit 1;
  
 EXTRA_DIST = $(API) $(RAW_API) $(sources) $(customs) $(METADATA) AssemblyInfo.cs.in gecko-sharp.dll.config

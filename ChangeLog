@@ -1,3 +1,11 @@
+2005-02-11  Geoff Norton  <gnorton@customerdna.com>
+
+	* configure.in: Bumped assembly version to 2.0
+	* gecko-sharp-2.0.pc.in: Added
+	* gecko-sharp.pc.in: Dropped
+	* Updated gecko-sharp to gecko-sharp-2.0 to be consistent with its
+	gtk-sharp-2.0 dep.
+	
 2005-02-05  Mark Crichton  <crichton@localhost.localdomain>
 
 	* configure.in: bumped up version to 0.7.  I should become better

@@ -1,9 +1,9 @@
 AC_INIT(README)
 AC_CANONICAL_SYSTEM
-AM_INIT_AUTOMAKE(gecko-sharp, 0.7)
+AM_INIT_AUTOMAKE(gecko-sharp-2.0, 0.7)
 AM_MAINTAINER_MODE
 
-API_VERSION=1.0.0.0
+API_VERSION=2.0.0.0
 AC_SUBST(API_VERSION)
 
 AC_MSG_CHECKING([whether we're compiling from CVS])
@@ -80,5 +80,5 @@ gtkmozembed/Makefile
 gtkmozembed/AssemblyInfo.cs
 sample/Makefile
 sources/Makefile
-gecko-sharp.pc
+gecko-sharp-2.0.pc
 ])
