@@ -1,5 +1,6 @@
 Makefile.in
 Makefile
-gtkgecko-sharp.dll
+gecko-sharp.dll
 generated
 generated-stamp
+gtkgecko-api.xml

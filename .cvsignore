@@ -1,6 +1,7 @@
 Makefile.in
 Makefile
 aclocal.m4
+autom4te.cache
 config.cache
 config.guess
 config.h.in
@@ -9,4 +10,4 @@ configure
 config.status
 config.log
 stamp*
-gtkmozembed-sharp.pc
+gecko-sharp.pc
