@@ -7,7 +7,7 @@ namespace Gecko {
 
 	public delegate void NewWindowHandler(object o, NewWindowArgs args);
 
-	public class NewWindowArgs : GtkSharp.SignalArgs {
+	public class NewWindowArgs : GLib.SignalArgs {
 		public Gecko.WebControl NewEmbed{
 			set {
 				Args[0] = (Gecko.WebControl) value;

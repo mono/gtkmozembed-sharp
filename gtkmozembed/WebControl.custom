@@ -36,13 +36,13 @@
 					if (BeforeHandlers["new_window"] == null)
 						BeforeSignals["new_window"] = new GtkSharp.voidObjectObjectuintSignal(this, Handle, "new_window", value, System.Type.GetType("Gtk.NewWindowArgs,gtkmozembed-sharp"), 0);
 					else
-						((GtkSharp.SignalCallback) BeforeSignals ["new_window"]).AddDelegate (value);
+						((GLib.SignalCallback) BeforeSignals ["new_window"]).AddDelegate (value);
 					BeforeHandlers.AddHandler("new_window", value);
 				} else {
 					if (AfterHandlers["new_window"] == null)
 						AfterSignals["new_window"] = new GtkSharp.voidObjectObjectuintSignal(this, Handle, "new_window", value, System.Type.GetType("Gtk.NewWindowArgs,gtkmozembed-sharp"), 1);
 					else
-						((GtkSharp.SignalCallback) AfterSignals ["new_window"]).AddDelegate (value);
+						((GLib.SignalCallback) AfterSignals ["new_window"]).AddDelegate (value);
 					AfterHandlers.AddHandler("new_window", value);
 				}
 			}
@@ -53,7 +53,7 @@
 					event_list = BeforeHandlers;
 					signals = BeforeSignals;
 				}
-				GtkSharp.SignalCallback cb = signals ["new_window"] as GtkSharp.SignalCallback;
+				GLib.SignalCallback cb = signals ["new_window"] as GLib.SignalCallback;
 				event_list.RemoveHandler("new_window", value);
 				if (cb == null)
 					return;

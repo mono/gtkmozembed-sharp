@@ -5,7 +5,7 @@ namespace GtkSharp {
 
 	using System;
 	using System.Runtime.InteropServices;
-	using GtkSharp;
+	using GLib;
 
 	internal delegate void voidObjectObjectuintDelegate(IntPtr arg0, IntPtr arg1, uint arg2, int key);
 
