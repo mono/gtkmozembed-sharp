@@ -1,3 +1,12 @@
+2005-02-05  Mark Crichton  <crichton@localhost.localdomain>
+
+	* configure.in: bumped up version to 0.7.  I should become better
+	at this
+	* gtkmozembed/WebControl.custom: fixed to use gtkmozembed.dll
+	for Win32.  Also fixed path seperator differences
+	* gtkmozembed/gtkgecko-api.raw: Fixed .dll naming issue there as well
+	* sources: ...here as well
+
 2005-01-24  Mike Kestner  <mkestner@novell.com>
 
 	* configure.in : add a gapi pkgconfig check. [Fixes #71668]
