@@ -41,7 +41,7 @@ crichtma.pub: $(top_srcdir)/crichtma.pub
 
 gecko-sharp.dll: $(build_sources) generated-stamp crichtma.pub
 	$(MCS) --unsafe --target library -L $(GTKSHARP_PREFIX)/lib \
-	-r glib-sharp.dll -r gtk-sharp.dll -r gdk-sharp.dll \
+	/pkg:gtk-sharp \
 	$(build_sources) generated/*.cs -o gecko-sharp.dll
 
 install-data-local:
