@@ -1,3 +1,9 @@
+2005-04-20  John Luke  <john.luke@gmail.com>
+
+	* gtkmozembed/Makefile.am:
+	* sample/Makefile.am: use compatible compiler switches
+	to avoid warnings with mcs head
+
 2005-03-07  Zac Bowling  <zac@zacbowling.com>
 
 	* configure.in: conditional fix for WIN32

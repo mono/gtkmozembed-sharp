@@ -42,8 +42,8 @@ gecko-sharp.snk: $(top_srcdir)/gecko-sharp.snk
 	cp $(top_srcdir)/gecko-sharp.snk .
 
 gecko-sharp.dll: $(build_sources) generated-stamp gecko-sharp.snk
-	$(MCS) --unsafe --target library $(GTK_SHARP_LIBS) \
-	$(build_sources) generated/*.cs -o gecko-sharp.dll
+	$(MCS) -unsafe -target:library $(GTK_SHARP_LIBS) \
+	$(build_sources) generated/*.cs -out:gecko-sharp.dll
 
 install-data-local:
 	echo "$(GACUTIL) /i $(ASSEMBLY) /f /package gecko-sharp-2.0 /root $(DESTDIR)$(libdir)";  \
