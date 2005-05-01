@@ -1,4 +1,4 @@
-SUBDIRS = sources gtkmozembed sample
+SUBDIRS = sources gtkmozembed doc sample
 
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = gecko-sharp-2.0.pc

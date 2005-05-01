@@ -1,3 +1,8 @@
+2005-05-01  Mark Crichton  <crichton@gimp.org>
+
+	* Makefile.am:
+	* configure.in: Added code to support using monodoc
+
 2005-04-20  John Luke  <john.luke@gmail.com>
 
 	* gtkmozembed/Makefile.am:

@@ -1,6 +1,7 @@
 2005-05-01  Mark Crichton  <crichton@gimp.org>
 
 	* en/GtkSharp.GeckoSharp: Removed, for it is worthless.
+	* Makefile.am: Cleaned up
 
 2004-06-28  John Luke  <jluke@cfl.rr.com>
 
