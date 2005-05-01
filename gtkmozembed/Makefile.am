@@ -42,7 +42,7 @@ gecko-sharp.snk: $(top_srcdir)/gecko-sharp.snk
 	cp $(top_srcdir)/gecko-sharp.snk .
 
 gecko-sharp.dll: $(build_sources) generated-stamp gecko-sharp.snk
-	$(MCS) -unsafe -target:library $(GTK_SHARP_LIBS) \
+	$(MCS) -nowarn:169 -unsafe -target:library $(GTK_SHARP_LIBS) \
 	$(build_sources) generated/*.cs -out:gecko-sharp.dll
 
 install-data-local:
