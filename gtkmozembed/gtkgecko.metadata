@@ -31,4 +31,7 @@
   <attr path="/api/namespace/enum[@name='GtkMozEmbedProgressFlags']" name="name">ProgressFlags</attr>
   <attr path="/api/namespace/enum[@name='GtkMozEmbedReloadFlags']" name="name">ReloadFlags</attr>
   <attr path="/api/namespace/enum[@name='GtkMozEmbedStatusFlags']" name="name">StatusFlags</attr>
+
+<!-- symbol is mangled in some builds, so disable -->
+  <attr path="/api/namespace/object[@cname='GtkMozEmbedSingle']/method[@cname='gtk_moz_embed_single_get_type']" name="hidden">1</attr>
 </metadata>

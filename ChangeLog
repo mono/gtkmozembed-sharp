@@ -1,3 +1,9 @@
+2005-05-07  Alp Toker  <alp@atoker.com>
+
+	* gtkmozembed/gtkgecko.metadata: The gtk_moz_embed_single_get_type
+	symbol is mangled in some Mozilla builds, so hide it to get things
+	working again after the reparse.
+
 2005-05-06  Mark Crichton  <crichton@gimp.org>
 
 	* gtkmozembed/gtksharp.metadata: Finally get around to fixing
