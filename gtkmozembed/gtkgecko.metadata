@@ -11,8 +11,10 @@
   <attr path="/api/namespace/object[@cname='GtkMozEmbed']/method[@name='ChromeFlagsGetType']" name="hidden">1</attr>
 
 
-<!-- Hide new_window, since it needs special marshalling -->
-  <attr path="/api/namespace/object[@cname='GtkMozEmbed']/signal[@cname='new_window']" name="hidden">1</attr>
+<!-- Fixup new_window, since it needs special marshalling -->
+  <attr path="/api/namespace/object[@cname='GtkMozEmbed']/signal[@cname='new_window']/*/*[@type='GtkMozEmbed**']" name="pass_as">out</attr>
+
+<!-- Useless, really... -->
   <attr path="/api/namespace/object[@cname='GtkMozEmbedSingle']/signal[@cname='new_window_orphan']" name="hidden">1</attr>
 
 <!-- Fix the open_uri signal slightly -->

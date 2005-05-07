@@ -14,11 +14,7 @@ CODEGEN=gapi2-codegen
 FIXUP=gapi2-fixup
 endif
 
-sources = NewWindowOrphan_handler.cs \
-	  NewWindow_delegate.cs      \
-	  NewWindow_handler.cs
-
-build_sources = $(addprefix $(srcdir)/, $(sources)) AssemblyInfo.cs
+build_sources = AssemblyInfo.cs
 
 customs = Single.custom WebControl.custom
 

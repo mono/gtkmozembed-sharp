@@ -1,3 +1,11 @@
+2005-05-06  Mark Crichton  <crichton@gimp.org>
+
+	* gtkmozembed/gtksharp.metadata: Finally get around to fixing
+	signals
+	* gtkmozembed/NewWindow*.cs, Single.custom: Removed, for they
+	are junk now
+	* gtkmozembed/WebControl.custom: Removed more new_window hackery
+
 2005-05-01  Mark Crichton  <crichton@gimp.org>
 
 	* Makefile.am:
