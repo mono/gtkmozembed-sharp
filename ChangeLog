@@ -5,6 +5,7 @@
 	* gtkmozembed/NewWindow*.cs, Single.custom: Removed, for they
 	are junk now
 	* gtkmozembed/WebControl.custom: Removed more new_window hackery
+	* gtkmozembed/gtkgecko-api.raw: Reparsed Mozilla code
 
 2005-05-01  Mark Crichton  <crichton@gimp.org>
 
