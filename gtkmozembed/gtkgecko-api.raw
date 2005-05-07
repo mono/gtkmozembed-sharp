@@ -262,6 +262,106 @@
           <parameter type="gpointer" name="dom_event" />
         </parameters>
       </signal>
+      <method name="AppendData" cname="gtk_moz_embed_append_data">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="const-char*" name="data" />
+          <parameter type="guint32" name="len" />
+        </parameters>
+      </method>
+      <method name="CanGoBack" cname="gtk_moz_embed_can_go_back">
+        <return-type type="gboolean" />
+      </method>
+      <method name="CanGoForward" cname="gtk_moz_embed_can_go_forward">
+        <return-type type="gboolean" />
+      </method>
+      <method name="CloseStream" cname="gtk_moz_embed_close_stream">
+        <return-type type="void" />
+      </method>
+      <method name="GetChromeMask" cname="gtk_moz_embed_get_chrome_mask">
+        <return-type type="guint32" />
+      </method>
+      <method name="GetJsStatus" cname="gtk_moz_embed_get_js_status">
+        <return-type type="char*" />
+      </method>
+      <method name="GetLinkMessage" cname="gtk_moz_embed_get_link_message">
+        <return-type type="char*" />
+      </method>
+      <method name="GetLocation" cname="gtk_moz_embed_get_location">
+        <return-type type="char*" />
+      </method>
+      <method name="GetTitle" cname="gtk_moz_embed_get_title">
+        <return-type type="char*" />
+      </method>
+      <method name="GetType" cname="gtk_moz_embed_get_type" shared="true">
+        <return-type type="GtkType" />
+      </method>
+      <method name="GoBack" cname="gtk_moz_embed_go_back">
+        <return-type type="void" />
+      </method>
+      <method name="GoForward" cname="gtk_moz_embed_go_forward">
+        <return-type type="void" />
+      </method>
+      <method name="LoadUrl" cname="gtk_moz_embed_load_url">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="const-char*" name="url" />
+        </parameters>
+      </method>
+      <constructor cname="gtk_moz_embed_new" />
+      <method name="OpenStream" cname="gtk_moz_embed_open_stream">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="const-char*" name="base_uri" />
+          <parameter type="const-char*" name="mime_type" />
+        </parameters>
+      </method>
+      <method name="PopStartup" cname="gtk_moz_embed_pop_startup" shared="true">
+        <return-type type="void" />
+      </method>
+      <method name="PushStartup" cname="gtk_moz_embed_push_startup" shared="true">
+        <return-type type="void" />
+      </method>
+      <method name="Reload" cname="gtk_moz_embed_reload">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="gint32" name="flags" />
+        </parameters>
+      </method>
+      <method name="RenderData" cname="gtk_moz_embed_render_data">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="const-char*" name="data" />
+          <parameter type="guint32" name="len" />
+          <parameter type="const-char*" name="base_uri" />
+          <parameter type="const-char*" name="mime_type" />
+        </parameters>
+      </method>
+      <method name="SetChromeMask" cname="gtk_moz_embed_set_chrome_mask">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="guint32" name="flags" />
+        </parameters>
+      </method>
+      <method name="SetCompPath" cname="gtk_moz_embed_set_comp_path" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="const-char*" name="aPath" />
+        </parameters>
+      </method>
+      <method name="SetProfilePath" cname="gtk_moz_embed_set_profile_path" shared="true">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="const-char*" name="aDir" />
+          <parameter type="const-char*" name="aName" />
+        </parameters>
+      </method>
+      <method name="StatusEnumsGetType" cname="gtk_moz_embed_status_enums_get_type" shared="true">
+        <return-type type="GtkType" />
+      </method>
+      <method name="StopLoad" cname="gtk_moz_embed_stop_load">
+        <return-type type="void" />
+      </method>
     </object>
     <object name="GtkMozEmbedSingle" cname="GtkMozEmbedSingle" parent="GtkObject">
       <field name="Data" cname="data" type="void*" />
@@ -273,6 +373,12 @@
           <parameter type="guint" name="chromemask" />
         </parameters>
       </signal>
+      <method name="Get" cname="gtk_moz_embed_single_get" shared="true">
+        <return-type type="GtkMozEmbedSingle*" />
+      </method>
+      <method name="GetType" cname="gtk_moz_embed_single_get_type" shared="true">
+        <return-type type="GtkType" />
+      </method>
     </object>
   </namespace>
 </api>
