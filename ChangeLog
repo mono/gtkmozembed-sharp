@@ -1,3 +1,8 @@
+2005-05-09  Mark Crichton  <crichton@gimp.org>
+
+	* gtkmozembed/Makefile.am: added the XML api file to the dist, so
+	the build can go a bit smoother
+
 2005-05-07  Alp Toker  <alp@atoker.com>
 
 	* gtkmozembed/gtkgecko.metadata: The gtk_moz_embed_single_get_type

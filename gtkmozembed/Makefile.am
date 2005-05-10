@@ -16,7 +16,7 @@ endif
 
 build_sources = AssemblyInfo.cs
 
-customs = Single.custom WebControl.custom
+customs = WebControl.custom
 
 CLEANFILES = gecko-sharp.dll generated-stamp generated/*.cs $(API) gecko-sharp.snk
 
@@ -49,4 +49,4 @@ uninstall-local:
 	echo "$(GACUTIL) /u $(ASSEMBLY_NAME) /package gecko-sharp-2.0 /root $(DESTDIR)$(libdir)"; \
         $(GACUTIL) /u $(ASSEMBLY_NAME) /package gecko-sharp-2.0 /root $(DESTDIR)$(libdir) || exit 1;
 
-EXTRA_DIST = $(RAW_API) $(sources) $(customs) $(METADATA) AssemblyInfo.cs.in gecko-sharp.dll.config.in
+EXTRA_DIST = $(RAW_API) $(sources) $(customs) $(METADATA) AssemblyInfo.cs.in gecko-sharp.dll.config.in $(API)
