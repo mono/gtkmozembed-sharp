@@ -1,3 +1,18 @@
+2005-05-12  Ben Maurer  <bmaurer@ximian.com>
+
+	* sample/Makefile.am: Correct the install dir, and remove sed
+	stuff.
+
+	* sample/webshot.in: Use prefix/lib, and give the full path to mono.
+
+	* gecko-sharp-2.0.pc.in: use prefix/lib
+
+	* gtkmozembed/Makefile.am: use GACUTIL_FLAGS
+
+	* configure.in:
+	    - Add GACUTIL_FLAGS with prefix/lib rather than libdir
+	    - sample/webshot is now created by configure
+
 2005-05-09  Mark Crichton  <crichton@gimp.org>
 
 	* gtkmozembed/Makefile.am: added the XML api file to the dist, so

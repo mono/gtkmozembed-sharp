@@ -125,6 +125,8 @@ if test "x$GACUTIL" = "xno" ; then
         AC_MSG_ERROR([No gacutil tool found])
 fi
 
+GACUTIL_FLAGS='/package gecko-sharp-2.0 /gacdir $(DESTDIR)$(prefix)/lib'
+
 winbuild=no
 case "$host" in
        *-*-mingw*|*-*-cygwin*)
@@ -142,6 +144,7 @@ gtkmozembed/Makefile
 gtkmozembed/AssemblyInfo.cs
 doc/Makefile
 sample/Makefile
+sample/webshot
 sources/Makefile
 gecko-sharp-2.0.pc
 ])

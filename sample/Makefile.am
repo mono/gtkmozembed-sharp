@@ -1,14 +1,10 @@
 EXTRA_DIST = GtkMozApp.cs MozWindow.cs webshot.in WebThumbnailer.cs
-CLEANFILES = GtkMozApp.exe WebThumbnailer.exe webshot
+CLEANFILES = GtkMozApp.exe WebThumbnailer.exe
 
 bin_SCRIPTS = webshot
 
-exedir = $(libdir)/gecko-sharp
+exedir = $(prefix)/lib/gecko-sharp-2.0
 exe_DATA = WebThumbnailer.exe
-
-webshot: webshot.in
-	sed -e 's^\@libdir\@^$(libdir)^g' < $(srcdir)/webshot.in > webshot.tmp \
-        && mv webshot.tmp webshot
 
 all: GtkMozApp.exe WebThumbnailer.exe
 

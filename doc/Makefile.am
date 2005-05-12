@@ -1,14 +1,6 @@
 if ENABLE_MONODOC
-TARGETS = gecko-sharp-docs.zip gecko-sharp-docs.tree gecko-sharp-docs.source
-DOCDIR = `$(MONODOC) --get-sourcesdir`
-
-install-data-local:
-	install -m 644 $(srcdir)/gecko-sharp-docs.source `monodoc --get-sourcesdir`
-	install -m 644 $(srcdir)/gecko-sharp-docs.tree `monodoc --get-sourcesdir`
-	install -m 644 $(srcdir)/gecko-sharp-docs.zip `monodoc --get-sourcesdir`
-else
-TARGETS = 
-DOCDIR = $(datadir)
+docdir = `$(MONODOC) --get-sourcesdir`
+doc_DATA = gecko-sharp-docs.zip gecko-sharp-docs.tree gecko-sharp-docs.source
 endif
 
 noinst_DATA = $(TARGETS)
