@@ -126,6 +126,7 @@ if test "x$GACUTIL" = "xno" ; then
 fi
 
 GACUTIL_FLAGS='/package gecko-sharp-2.0 /gacdir $(DESTDIR)$(prefix)/lib'
+AC_SUBST(GACUTIL_FLAGS)
 
 winbuild=no
 case "$host" in
