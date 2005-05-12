@@ -1,2 +1,2 @@
 #!/bin/sh
-exec @MONO@ @prefix@/lib/gecko-sharp-2.0/WebThumbnailer.exe
+exec @MONO@ @prefix@/lib/mono/gecko-sharp-2.0/WebThumbnailer.exe

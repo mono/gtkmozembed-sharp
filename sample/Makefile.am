@@ -3,7 +3,7 @@ CLEANFILES = GtkMozApp.exe WebThumbnailer.exe
 
 bin_SCRIPTS = webshot
 
-exedir = $(prefix)/lib/gecko-sharp-2.0
+exedir = $(prefix)/lib/mono/gecko-sharp-2.0
 exe_DATA = WebThumbnailer.exe
 
 all: GtkMozApp.exe WebThumbnailer.exe
