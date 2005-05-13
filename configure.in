@@ -145,7 +145,6 @@ gtkmozembed/Makefile
 gtkmozembed/AssemblyInfo.cs
 doc/Makefile
 sample/Makefile
-sample/webshot
 sources/Makefile
 gecko-sharp-2.0.pc
 ])

@@ -1,3 +1,14 @@
+2005-05-13  Ben Maurer  <bmaurer@ximian.com>
+
+	* sample/Makefile.am, configure.in, sample/webshot.in: Remove
+	install of the webshot app. The bin file conflicts with the Gtk#
+	1.0 based version.
+
+	* Makefile.am (pkgconfigdir): Use the $datadir pkgconfig dir. This
+	forces some distros with old pkgconfig's to modify their
+	patch. However, it avoids breaking newer OS's with a new pkgconfig
+	going forward.
+
 2005-05-12  Ben Maurer  <bmaurer@ximian.com>
 
 	* sample/Makefile.am: Correct the install dir, and remove sed
