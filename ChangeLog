@@ -1,3 +1,7 @@
+2005-05-14  Ben Maurer  <bmaurer@ximian.com>
+
+	* configure.in: Bump for release and tag.
+
 2005-05-13  Ben Maurer  <bmaurer@ximian.com>
 
 	* sample/Makefile.am, configure.in, sample/webshot.in: Remove
