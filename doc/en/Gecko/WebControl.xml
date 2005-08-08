@@ -917,8 +917,9 @@ Returns the title of the requested website.
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added</summary>
-        <returns>a <see cref="T:System.String" /></returns>
+        <summary>Current location of the browser.</summary>
+        <returns>a <see cref="T:System.String" />
+Returns current location of the browser.</returns>
         <remarks>To be added</remarks>
       </Docs>
     </Member>
@@ -1041,7 +1042,7 @@ Returns the title of the requested website.
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added</summary>
+        <summary>Emitted when user's mouse (or keyboard) pointer is over a link in a web page.</summary>
         <remarks>To be added</remarks>
       </Docs>
     </Member>
@@ -1077,7 +1078,7 @@ Returns the title of the requested website.
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added</summary>
+        <summary>Emitted when the browser stops loading a page.</summary>
         <remarks>To be added</remarks>
       </Docs>
     </Member>
@@ -1137,7 +1138,7 @@ Returns the title of the requested website.
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added</summary>
+        <summary>Emitted when the browser starts loading a page.</summary>
         <remarks>To be added</remarks>
       </Docs>
     </Member>
@@ -1257,7 +1258,7 @@ Returns the title of the requested website.
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added</summary>
+        <summary>Emitted when current location of the browser has changed.</summary>
         <remarks>To be added</remarks>
       </Docs>
     </Member>
