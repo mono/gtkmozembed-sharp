@@ -1,14 +1,14 @@
 <Type Name="DomMouseDownHandler" FullName="Gecko.DomMouseDownHandler">
-  <TypeSignature Language="C#" Value="public sealed delegate void DomMouseDownHandler (object o, Gecko.DomMouseDownArgs args);" Maintainer="auto" />
+  <TypeSignature Language="C#" Maintainer="auto" Value="public delegate void DomMouseDownHandler(object o, Gecko.DomMouseDownArgs args);" />
   <AssemblyInfo>
     <AssemblyName>gecko-sharp</AssemblyName>
     <AssemblyPublicKey>[00 24 00 00 04 80 00 00 94 00 00 00 06 02 00 00 00 24 00 00 52 53 41 31 00 04 00 00 11 00 00 00 31 90 94 63 21 EC 14 EF 8C 5E DD 38 E6 B5 DE E6 9D 9C F4 B9 4C 23 5D 3A 08 30 8F 17 ED F3 5B 72 B9 81 E3 D4 68 94 78 E1 5C 08 BA 5C 0C D8 11 4A 12 2F 57 C8 82 8E D8 14 D4 34 13 24 23 A6 28 18 A7 DA C7 8F 1A A2 00 0A 94 BD 84 EE B8 47 3B 83 8B F8 01 83 6F 75 0A 93 2E E6 00 AA 3D C5 00 9B 89 05 25 58 11 76 2D C2 22 CA FB B2 99 03 1C 12 C6 54 81 F3 29 49 70 0D 4D 96 98 0E 90 6D BF A1]</AssemblyPublicKey>
-    <AssemblyVersion>1.0.0.0</AssemblyVersion>
-    <AssemblyCulture>neutral</AssemblyCulture>
-    <Attributes />
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
   </AssemblyInfo>
   <ThreadSafetyStatement>Gtk# is thread aware, but not thread safe; See the <link location="node:gtk-sharp/programming/threads">Gtk# Thread Programming</link> for details.</ThreadSafetyStatement>
   <Docs>
+    <param name="o">To be added.</param>
+    <param name="args">To be added.</param>
     <summary>Event handler.</summary>
     <remarks>
       <para>The <see cref="M:Gecko.WebControl.DomMouseDown" /> event utilizes this delegate:</para>
@@ -19,15 +19,6 @@
   <Base>
     <BaseTypeName>System.Delegate</BaseTypeName>
   </Base>
-  <Interfaces>
-    <Interface>
-      <InterfaceName>System.ICloneable</InterfaceName>
-    </Interface>
-    <Interface>
-      <InterfaceName>System.Runtime.Serialization.ISerializable</InterfaceName>
-    </Interface>
-  </Interfaces>
-  <Attributes />
   <Members />
   <ReturnValue>
     <ReturnType>System.Void</ReturnType>

@@ -5,7 +5,7 @@ endif
 
 noinst_DATA = $(TARGETS)
 
-ASSEMBLER = $(MONODOC) --assemble
+ASSEMBLER = mdassemble 
 UPDATER = $(MONODOC) --update
 
 gecko-sharp-docs.zip gecko-sharp-docs.tree: $(srcdir)/en/*/*.xml $(srcdir)/en/*.xml
