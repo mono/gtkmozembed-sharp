@@ -20,7 +20,7 @@
 	    Compile with: mcs GeckoTest.cs -pkg:gtk-sharp -pkg:gecko-sharp
 	  </para>
       <example>
-        <code language="C#">
+        <code lang="C#">
 using System;
 using Gtk;
 using Gecko;
@@ -216,7 +216,6 @@ namespace GeckoTest
         <remarks>To be added</remarks>
       </Docs>
     </Member>
-    
     <Member MemberName="OnStatusChange">
       <MemberSignature Language="C#" Value="protected virtual void OnStatusChange (IntPtr request, int status, IntPtr message);" />
       <MemberType>Method</MemberType>
@@ -788,11 +787,12 @@ namespace GeckoTest
         <param name="gtype">a <see cref="T:GLib.GType" /></param>
         <remarks>To be added</remarks>
       </Docs>
-    <Attributes>
+      <Attributes>
         <Attribute>
           <AttributeName>System.Obsolete(Message=null, IsError=False)</AttributeName>
         </Attribute>
-      </Attributes></Member>
+      </Attributes>
+    </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public WebControl (IntPtr raw);" />
       <MemberType>Constructor</MemberType>
@@ -937,11 +937,12 @@ Returns current location of the browser.</value>
         <summary>To be added</summary>
         <remarks>To be added</remarks>
       </Docs>
-    <Attributes>
+      <Attributes>
         <Attribute>
           <AttributeName>GLib.Signal(CName="status_change")</AttributeName>
         </Attribute>
-      </Attributes></Member>
+      </Attributes>
+    </Member>
     <Member MemberName="NetStateAll">
       <MemberSignature Language="C#" Value="public event Gecko.NetStateAllHandler NetStateAll;" />
       <MemberType>Event</MemberType>
@@ -953,11 +954,12 @@ Returns current location of the browser.</value>
         <summary>To be added</summary>
         <remarks>To be added</remarks>
       </Docs>
-    <Attributes>
+      <Attributes>
         <Attribute>
           <AttributeName>GLib.Signal(CName="net_state_all")</AttributeName>
         </Attribute>
-      </Attributes></Member>
+      </Attributes>
+    </Member>
     <Member MemberName="ECMAStatus">
       <MemberSignature Language="C#" Value="public event EventHandler ECMAStatus;" />
       <MemberType>Event</MemberType>
@@ -969,11 +971,12 @@ Returns current location of the browser.</value>
         <summary>To be added</summary>
         <remarks>To be added</remarks>
       </Docs>
-    <Attributes>
+      <Attributes>
         <Attribute>
           <AttributeName>GLib.Signal(CName="js_status")</AttributeName>
         </Attribute>
-      </Attributes></Member>
+      </Attributes>
+    </Member>
     <Member MemberName="OpenUri">
       <MemberSignature Language="C#" Value="public event Gecko.OpenUriHandler OpenUri;" />
       <MemberType>Event</MemberType>
@@ -998,11 +1001,12 @@ Returns current location of the browser.</value>
           </para>
         </remarks>
       </Docs>
-    <Attributes>
+      <Attributes>
         <Attribute>
           <AttributeName>GLib.Signal(CName="open_uri")</AttributeName>
         </Attribute>
-      </Attributes></Member>
+      </Attributes>
+    </Member>
     <Member MemberName="DomMouseDblClick">
       <MemberSignature Language="C#" Value="public event Gecko.DomMouseDblClickHandler DomMouseDblClick;" />
       <MemberType>Event</MemberType>
@@ -1014,11 +1018,12 @@ Returns current location of the browser.</value>
         <summary>To be added</summary>
         <remarks>To be added</remarks>
       </Docs>
-    <Attributes>
+      <Attributes>
         <Attribute>
           <AttributeName>GLib.Signal(CName="dom_mouse_dbl_click")</AttributeName>
         </Attribute>
-      </Attributes></Member>
+      </Attributes>
+    </Member>
     <Member MemberName="SizeTo">
       <MemberSignature Language="C#" Value="public event Gecko.SizeToHandler SizeTo;" />
       <MemberType>Event</MemberType>
@@ -1030,11 +1035,12 @@ Returns current location of the browser.</value>
         <summary>To be added</summary>
         <remarks>To be added</remarks>
       </Docs>
-    <Attributes>
+      <Attributes>
         <Attribute>
           <AttributeName>GLib.Signal(CName="size_to")</AttributeName>
         </Attribute>
-      </Attributes></Member>
+      </Attributes>
+    </Member>
     <Member MemberName="LinkMsg">
       <MemberSignature Language="C#" Value="public event EventHandler LinkMsg;" />
       <MemberType>Event</MemberType>
@@ -1046,11 +1052,12 @@ Returns current location of the browser.</value>
         <summary>Emitted when user's mouse (or keyboard) pointer is over a link in a web page.</summary>
         <remarks>To be added</remarks>
       </Docs>
-    <Attributes>
+      <Attributes>
         <Attribute>
           <AttributeName>GLib.Signal(CName="link_message")</AttributeName>
         </Attribute>
-      </Attributes></Member>
+      </Attributes>
+    </Member>
     <Member MemberName="DomMouseOut">
       <MemberSignature Language="C#" Value="public event Gecko.DomMouseOutHandler DomMouseOut;" />
       <MemberType>Event</MemberType>
@@ -1062,11 +1069,12 @@ Returns current location of the browser.</value>
         <summary>To be added</summary>
         <remarks>To be added</remarks>
       </Docs>
-    <Attributes>
+      <Attributes>
         <Attribute>
           <AttributeName>GLib.Signal(CName="dom_mouse_out")</AttributeName>
         </Attribute>
-      </Attributes></Member>
+      </Attributes>
+    </Member>
     <Member MemberName="DomMouseOver">
       <MemberSignature Language="C#" Value="public event Gecko.DomMouseOverHandler DomMouseOver;" />
       <MemberType>Event</MemberType>
@@ -1078,11 +1086,12 @@ Returns current location of the browser.</value>
         <summary>To be added</summary>
         <remarks>To be added</remarks>
       </Docs>
-    <Attributes>
+      <Attributes>
         <Attribute>
           <AttributeName>GLib.Signal(CName="dom_mouse_over")</AttributeName>
         </Attribute>
-      </Attributes></Member>
+      </Attributes>
+    </Member>
     <Member MemberName="NetStop">
       <MemberSignature Language="C#" Value="public event EventHandler NetStop;" />
       <MemberType>Event</MemberType>
@@ -1094,11 +1103,12 @@ Returns current location of the browser.</value>
         <summary>Emitted when the browser stops loading a page.</summary>
         <remarks>To be added</remarks>
       </Docs>
-    <Attributes>
+      <Attributes>
         <Attribute>
           <AttributeName>GLib.Signal(CName="net_stop")</AttributeName>
         </Attribute>
-      </Attributes></Member>
+      </Attributes>
+    </Member>
     <Member MemberName="DomKeyPress">
       <MemberSignature Language="C#" Value="public event Gecko.DomKeyPressHandler DomKeyPress;" />
       <MemberType>Event</MemberType>
@@ -1110,11 +1120,12 @@ Returns current location of the browser.</value>
         <summary>To be added</summary>
         <remarks>To be added</remarks>
       </Docs>
-    <Attributes>
+      <Attributes>
         <Attribute>
           <AttributeName>GLib.Signal(CName="dom_key_press")</AttributeName>
         </Attribute>
-      </Attributes></Member>
+      </Attributes>
+    </Member>
     <Member MemberName="DomKeyUp">
       <MemberSignature Language="C#" Value="public event Gecko.DomKeyUpHandler DomKeyUp;" />
       <MemberType>Event</MemberType>
@@ -1126,11 +1137,12 @@ Returns current location of the browser.</value>
         <summary>To be added</summary>
         <remarks>To be added</remarks>
       </Docs>
-    <Attributes>
+      <Attributes>
         <Attribute>
           <AttributeName>GLib.Signal(CName="dom_key_up")</AttributeName>
         </Attribute>
-      </Attributes></Member>
+      </Attributes>
+    </Member>
     <Member MemberName="SecurityChange">
       <MemberSignature Language="C#" Value="public event Gecko.SecurityChangeHandler SecurityChange;" />
       <MemberType>Event</MemberType>
@@ -1142,11 +1154,12 @@ Returns current location of the browser.</value>
         <summary>To be added</summary>
         <remarks>To be added</remarks>
       </Docs>
-    <Attributes>
+      <Attributes>
         <Attribute>
           <AttributeName>GLib.Signal(CName="security_change")</AttributeName>
         </Attribute>
-      </Attributes></Member>
+      </Attributes>
+    </Member>
     <Member MemberName="NetState">
       <MemberSignature Language="C#" Value="public event Gecko.NetStateHandler NetState;" />
       <MemberType>Event</MemberType>
@@ -1158,11 +1171,12 @@ Returns current location of the browser.</value>
         <summary>To be added</summary>
         <remarks>To be added</remarks>
       </Docs>
-    <Attributes>
+      <Attributes>
         <Attribute>
           <AttributeName>GLib.Signal(CName="net_state")</AttributeName>
         </Attribute>
-      </Attributes></Member>
+      </Attributes>
+    </Member>
     <Member MemberName="NetStart">
       <MemberSignature Language="C#" Value="public event EventHandler NetStart;" />
       <MemberType>Event</MemberType>
@@ -1174,11 +1188,12 @@ Returns current location of the browser.</value>
         <summary>Emitted when the browser starts loading a page.</summary>
         <remarks>To be added</remarks>
       </Docs>
-    <Attributes>
+      <Attributes>
         <Attribute>
           <AttributeName>GLib.Signal(CName="net_start")</AttributeName>
         </Attribute>
-      </Attributes></Member>
+      </Attributes>
+    </Member>
     <Member MemberName="Visibility">
       <MemberSignature Language="C#" Value="public event Gecko.VisibilityHandler Visibility;" />
       <MemberType>Event</MemberType>
@@ -1190,11 +1205,12 @@ Returns current location of the browser.</value>
         <summary>To be added</summary>
         <remarks>To be added</remarks>
       </Docs>
-    <Attributes>
+      <Attributes>
         <Attribute>
           <AttributeName>GLib.Signal(CName="visibility")</AttributeName>
         </Attribute>
-      </Attributes></Member>
+      </Attributes>
+    </Member>
     <Member MemberName="DestroyBrowser">
       <MemberSignature Language="C#" Value="public event EventHandler DestroyBrowser;" />
       <MemberType>Event</MemberType>
@@ -1206,11 +1222,12 @@ Returns current location of the browser.</value>
         <summary>To be added</summary>
         <remarks>To be added</remarks>
       </Docs>
-    <Attributes>
+      <Attributes>
         <Attribute>
           <AttributeName>GLib.Signal(CName="destroy_browser")</AttributeName>
         </Attribute>
-      </Attributes></Member>
+      </Attributes>
+    </Member>
     <Member MemberName="DomMouseClick">
       <MemberSignature Language="C#" Value="public event Gecko.DomMouseClickHandler DomMouseClick;" />
       <MemberType>Event</MemberType>
@@ -1222,11 +1239,12 @@ Returns current location of the browser.</value>
         <summary>To be added</summary>
         <remarks>To be added</remarks>
       </Docs>
-    <Attributes>
+      <Attributes>
         <Attribute>
           <AttributeName>GLib.Signal(CName="dom_mouse_click")</AttributeName>
         </Attribute>
-      </Attributes></Member>
+      </Attributes>
+    </Member>
     <Member MemberName="TitleChange">
       <MemberSignature Language="C#" Value="public event EventHandler TitleChange;" />
       <MemberType>Event</MemberType>
@@ -1238,11 +1256,12 @@ Returns current location of the browser.</value>
         <summary>To be added</summary>
         <remarks>Reports the change of the title of a loaded website.</remarks>
       </Docs>
-    <Attributes>
+      <Attributes>
         <Attribute>
           <AttributeName>GLib.Signal(CName="title")</AttributeName>
         </Attribute>
-      </Attributes></Member>
+      </Attributes>
+    </Member>
     <Member MemberName="DomMouseUp">
       <MemberSignature Language="C#" Value="public event Gecko.DomMouseUpHandler DomMouseUp;" />
       <MemberType>Event</MemberType>
@@ -1254,11 +1273,12 @@ Returns current location of the browser.</value>
         <summary>To be added</summary>
         <remarks>To be added</remarks>
       </Docs>
-    <Attributes>
+      <Attributes>
         <Attribute>
           <AttributeName>GLib.Signal(CName="dom_mouse_up")</AttributeName>
         </Attribute>
-      </Attributes></Member>
+      </Attributes>
+    </Member>
     <Member MemberName="ProgressAll">
       <MemberSignature Language="C#" Value="public event Gecko.ProgressAllHandler ProgressAll;" />
       <MemberType>Event</MemberType>
@@ -1270,11 +1290,12 @@ Returns current location of the browser.</value>
         <summary>To be added</summary>
         <remarks>To be added</remarks>
       </Docs>
-    <Attributes>
+      <Attributes>
         <Attribute>
           <AttributeName>GLib.Signal(CName="progress_all")</AttributeName>
         </Attribute>
-      </Attributes></Member>
+      </Attributes>
+    </Member>
     <Member MemberName="DomMouseDown">
       <MemberSignature Language="C#" Value="public event Gecko.DomMouseDownHandler DomMouseDown;" />
       <MemberType>Event</MemberType>
@@ -1286,11 +1307,12 @@ Returns current location of the browser.</value>
         <summary>To be added</summary>
         <remarks>To be added</remarks>
       </Docs>
-    <Attributes>
+      <Attributes>
         <Attribute>
           <AttributeName>GLib.Signal(CName="dom_mouse_down")</AttributeName>
         </Attribute>
-      </Attributes></Member>
+      </Attributes>
+    </Member>
     <Member MemberName="DomKeyDown">
       <MemberSignature Language="C#" Value="public event Gecko.DomKeyDownHandler DomKeyDown;" />
       <MemberType>Event</MemberType>
@@ -1302,11 +1324,12 @@ Returns current location of the browser.</value>
         <summary>To be added</summary>
         <remarks>To be added</remarks>
       </Docs>
-    <Attributes>
+      <Attributes>
         <Attribute>
           <AttributeName>GLib.Signal(CName="dom_key_down")</AttributeName>
         </Attribute>
-      </Attributes></Member>
+      </Attributes>
+    </Member>
     <Member MemberName="Progress">
       <MemberSignature Language="C#" Value="public event Gecko.ProgressHandler Progress;" />
       <MemberType>Event</MemberType>
@@ -1318,11 +1341,12 @@ Returns current location of the browser.</value>
         <summary>To be added</summary>
         <remarks>To be added</remarks>
       </Docs>
-    <Attributes>
+      <Attributes>
         <Attribute>
           <AttributeName>GLib.Signal(CName="progress")</AttributeName>
         </Attribute>
-      </Attributes></Member>
+      </Attributes>
+    </Member>
     <Member MemberName="LocChange">
       <MemberSignature Language="C#" Value="public event EventHandler LocChange;" />
       <MemberType>Event</MemberType>
@@ -1334,11 +1358,12 @@ Returns current location of the browser.</value>
         <summary>Emitted when current location of the browser has changed.</summary>
         <remarks>To be added</remarks>
       </Docs>
-    <Attributes>
+      <Attributes>
         <Attribute>
           <AttributeName>GLib.Signal(CName="location")</AttributeName>
         </Attribute>
-      </Attributes></Member>
+      </Attributes>
+    </Member>
     <Member MemberName="NewWindow">
       <MemberSignature Language="C#" Value="public event Gecko.NewWindowHandler NewWindow;" />
       <MemberType>Event</MemberType>
@@ -1350,12 +1375,13 @@ Returns current location of the browser.</value>
         <summary>To be added</summary>
         <remarks>To be added</remarks>
       </Docs>
-    <Attributes>
+      <Attributes>
         <Attribute>
           <AttributeName>GLib.Signal(CName="new_window")</AttributeName>
         </Attribute>
-      </Attributes></Member>
-  <Member MemberName="DomActivate">
+      </Attributes>
+    </Member>
+    <Member MemberName="DomActivate">
       <MemberSignature Language="C#" Value="public event Gecko.DomActivateHandler DomActivate;" />
       <MemberType>Event</MemberType>
       <Attributes>
@@ -1371,7 +1397,7 @@ Returns current location of the browser.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-  <Member MemberName="DomFocusOut">
+    <Member MemberName="DomFocusOut">
       <MemberSignature Language="C#" Value="public event Gecko.DomFocusOutHandler DomFocusOut;" />
       <MemberType>Event</MemberType>
       <Attributes>
@@ -1387,7 +1413,7 @@ Returns current location of the browser.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-  <Member MemberName="DomFocusIn">
+    <Member MemberName="DomFocusIn">
       <MemberSignature Language="C#" Value="public event Gecko.DomFocusInHandler DomFocusIn;" />
       <MemberType>Event</MemberType>
       <Attributes>
@@ -1403,7 +1429,7 @@ Returns current location of the browser.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-  <Member MemberName="OnOpenUri">
+    <Member MemberName="OnOpenUri">
       <MemberSignature Language="C#" Value="protected virtual bool OnOpenUri (string aURI);" />
       <MemberType>Method</MemberType>
       <ReturnValue>
@@ -1419,7 +1445,7 @@ Returns current location of the browser.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-  <Member MemberName="OnNewWindow">
+    <Member MemberName="OnNewWindow">
       <MemberSignature Language="C#" Value="protected virtual void OnNewWindow (out Gecko.WebControl newEmbed, uint chromemask);" />
       <MemberType>Method</MemberType>
       <ReturnValue>
@@ -1436,7 +1462,7 @@ Returns current location of the browser.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-  <Member MemberName="OnDomActivate">
+    <Member MemberName="OnDomActivate">
       <MemberSignature Language="C#" Value="protected virtual int OnDomActivate (IntPtr dom_event);" />
       <MemberType>Method</MemberType>
       <ReturnValue>
@@ -1452,7 +1478,7 @@ Returns current location of the browser.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-  <Member MemberName="OnDomFocusOut">
+    <Member MemberName="OnDomFocusOut">
       <MemberSignature Language="C#" Value="protected virtual int OnDomFocusOut (IntPtr dom_event);" />
       <MemberType>Method</MemberType>
       <ReturnValue>
@@ -1468,7 +1494,7 @@ Returns current location of the browser.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-  <Member MemberName="OnDomFocusIn">
+    <Member MemberName="OnDomFocusIn">
       <MemberSignature Language="C#" Value="protected virtual int OnDomFocusIn (IntPtr dom_event);" />
       <MemberType>Method</MemberType>
       <ReturnValue>
