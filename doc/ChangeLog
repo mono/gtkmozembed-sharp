@@ -1,3 +1,8 @@
+2005-09-08  Wade Berrier <wberrier@novell.com>
+
+	* Makefile.am: don't use pkgconfig for monodoc location
+	  Use prefix instead so I can install to custom location
+
 2005-05-12  Ben Maurer  <bmaurer@ximian.com>
 
 	* Makefile.am: Handle destdir correctly.
