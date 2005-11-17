@@ -1,5 +1,5 @@
 if ENABLE_MONODOC
-docdir = $(DESTDIR)`pkg-config monodoc --variable=sourcesdir`
+docdir = $(prefix)/lib/monodoc/sources
 
 doc_DATA = gecko-sharp-docs.zip gecko-sharp-docs.tree gecko-sharp-docs.source
 endif
