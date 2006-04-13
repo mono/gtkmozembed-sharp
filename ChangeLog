@@ -1,3 +1,16 @@
+2006-04-13  Zac Bowling <zac@zacbowling.com>
+
+	* sample/Makefile.am: added Glib to WebThumbnailer
+	* sample/WebThumbnailer.cs: Add timming hacks and updated save
+	function (Savev seems broken, but Save is better). Fixed other minor
+	issues.
+	* sample/webthumbnailer.sh: Added, detects mozilla/firefox directory
+	to find libgtkembedmoz.so 
+	* sample/gtkmoztest.sh: Added, detects mozilla/firefox directory to
+	find libgtkembedmoz.so
+	* sample/MozWindow.cs: updated GTK# to not use obsolete toolbar
+	functions
+
 2005-05-14  Ben Maurer  <bmaurer@ximian.com>
 
 	* configure.in: Bump for release and tag.

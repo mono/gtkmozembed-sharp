@@ -11,11 +11,12 @@
 using System;
 using Gtk;
 using Gecko;
+using GLib;
 
 class X {
 	static WebControl wc;
-	static string output = "shot.png";
-	static string url;
+	static string output = null;
+	static string url = null;
 	static int width = -1;
 	static int height = -1;
 	
@@ -56,33 +57,42 @@ class X {
 		}
 		if (url == null)
 			Help ();
+		if (output == null)
+			output = "shot.png";
 
 		Application.Init();
 		Window w = new Window ("test");
 		wc = new WebControl ();
 		wc.LoadUrl (args [0]);
-		wc.NetStop += MakeShot;
 		wc.Show ();
+		wc.LocChange += WaitABit;
 		wc.SetSizeRequest (1024, 768);
 		w.Add (wc);
 		w.ShowAll ();
+		//GLib.Timeout.Add(700, new TimeoutHandler(MakeShot));		
 		Application.Run();
 	}
 
 	static void Help ()
 	{
-		Console.WriteLine ("Usage is: webshot [-width N] [-height N] url [shot]");
+		Console.WriteLine ("Usage is: WebThumbnailer [-width N] [-height N] url [shot]");
 		Environment.Exit (0);
 	}
 	
-	static void MakeShot (object sender, EventArgs a)
+	static void WaitABit (object sender, EventArgs e)
 	{
+		GLib.Timeout.Add(1000, new TimeoutHandler(MakeShot));
+	}
+	
+	static bool MakeShot ()
+	{
+		Console.WriteLine(wc.Location);
 		Gdk.Window win = wc.GdkWindow;
 		int iwidth = wc.Allocation.Width;
 		int iheight = wc.Allocation.Height;
 		Gdk.Pixbuf p = new Gdk.Pixbuf (Gdk.Colorspace.Rgb, false, 8, iwidth, iheight);
 		Gdk.Pixbuf scaled;
-		
+	
 		p.GetFromDrawable (win, win.Colormap, 0, 0, 0, 0, iwidth, iheight);
 		if (width == -1){
 			if (height == -1)
@@ -95,8 +105,9 @@ class X {
 			else
 				scaled = p.ScaleSimple (width, height, Gdk.InterpType.Hyper);
 		}
-		
-		scaled.Savev (output, "png", null, null); 
-		Application.Quit (); 
+	
+		scaled.Save (output, "png"); 
+		Application.Quit ();
+		return true;
 	}
 }

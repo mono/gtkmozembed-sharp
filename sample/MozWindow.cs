@@ -100,20 +100,29 @@ namespace GtkSamples {
       Toolbar toolbar = new Toolbar();
       toolbar.ToolbarStyle = ToolbarStyle.Both;
       toolbar.Orientation = Orientation.Horizontal;
+      toolbar.ShowArrow = false;
       hbox.PackStart(toolbar, false, false, 0);
       
-      toolbar.AppendItem("Go Back", "Go Back", "Go Back",
-			 new Label("Go Back"),  new SignalFunc (back_clicked_cb));
+      ToolButton backButton = new ToolButton("Go Back");
+      backButton.Clicked += new EventHandler (back_clicked_cb);
+      backButton.Label = "Go Back";
+      toolbar.Insert(backButton, -1);
       
-      toolbar.AppendItem("Stop", "Stop", "Stop",
-			 new Label("Stop"), new SignalFunc (stop_clicked_cb));
-      
-      toolbar.AppendItem("Forward", "Go Forward", "Go Forward",
-			 new Label("Go Forward"), new SignalFunc (forward_clicked_cb));
-      
-      toolbar.AppendItem("Reload", "Reload", "Reload",
-			 new Label("Reload"), new SignalFunc (reload_clicked_cb));
-      
+      ToolButton stopButton = new ToolButton("Stop");
+      stopButton.Clicked += new EventHandler (stop_clicked_cb);
+      stopButton.Label = "Stop";
+      toolbar.Insert(stopButton, -1);
+
+      ToolButton forwardButton = new ToolButton("Forward");
+      forwardButton.Clicked += new EventHandler (forward_clicked_cb);
+      forwardButton.Label = "Forward";
+      toolbar.Insert(forwardButton, -1);
+
+      ToolButton reloadButton = new ToolButton("Reload");
+      reloadButton.Clicked += new EventHandler (reload_clicked_cb);
+      reloadButton.Label = "Reload";
+      toolbar.Insert(reloadButton, -1);
+
       editbox = new Entry();
       editbox.Activated += new EventHandler(entry_act);
       hbox.PackStart (editbox, true, true, 0);
@@ -259,22 +268,22 @@ namespace GtkSamples {
       moz.LoadUrl(editbox.Text);
     }
     
-    void back_clicked_cb ()
+    void back_clicked_cb (object obj, EventArgs args)
     {
       moz.GoBack();
     }
     
-    void stop_clicked_cb ()
+    void stop_clicked_cb (object obj, EventArgs args)
     {
       moz.StopLoad();
     }
     
-    void forward_clicked_cb ()
+    void forward_clicked_cb (object obj, EventArgs args)
     {
       moz.GoForward();
     }
     
-    void reload_clicked_cb ()
+    void reload_clicked_cb (object obj, EventArgs args)
     {
       moz.Reload(0);
     }
