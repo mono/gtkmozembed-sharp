@@ -1,5 +1,10 @@
 2006-12-11  Wade Berrier <wberrier@novell.com>
 
+	* Makefile.am: rename some vars: docdir -> monodocdir
+	as 'docdir' is overwritten with newer autofoo versions
+
+2006-12-11  Wade Berrier <wberrier@novell.com>
+
 	* Makefile.am: use monodocer instead of monodoc to break
 	cyclic dep on mono-tools
 

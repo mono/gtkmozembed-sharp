@@ -1,7 +1,6 @@
 if ENABLE_MONODOC
-docdir = $(prefix)/lib/monodoc/sources
-
-doc_DATA = gecko-sharp-docs.zip gecko-sharp-docs.tree gecko-sharp-docs.source
+monodocdir = $(prefix)/lib/monodoc/sources
+monodoc_DATA = gecko-sharp-docs.zip gecko-sharp-docs.tree gecko-sharp-docs.source
 endif
 
 noinst_DATA = $(TARGETS)
