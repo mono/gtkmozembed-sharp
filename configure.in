@@ -108,15 +108,15 @@ AC_SUBST(MONODOC_REQUIRED_VERSION)
 PKG_CHECK_MODULES(MONODOC_DEPENDENCY, monodoc >= $MONODOC_REQUIRED_VERSION, enable_monodoc=yes, enable_monodoc=no)
 
 if test "x$enable_monodoc" = "xyes"; then
-        AC_PATH_PROG(MONODOC, monodoc, no)
-        if test x$MONODOC = xno; then
+        AC_PATH_PROG(MONODOCER, monodocer, no)
+        if test x$MONODOCER = xno; then
            enable_monodoc=no
         fi
 else
-        MONODOC=
+        MONODOCER=
 fi
 
-AC_SUBST(MONODOC)
+AC_SUBST(MONODOCER)
 AM_CONDITIONAL(ENABLE_MONODOC, test "x$enable_monodoc" = "xyes")
 
 
@@ -154,7 +154,7 @@ echo "Configuration summary"
 echo ""
 echo "   * Installation prefix: $prefix"
 echo "   * compiler: $CSC"
-echo "   * Documentation: $enable_monodoc ($MONODOC)"
+echo "   * Documentation: $enable_monodoc ($MONODOCER)"
 echo ""
 echo "---"
 

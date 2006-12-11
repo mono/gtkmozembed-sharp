@@ -1,3 +1,8 @@
+2006-12-11  Wade Berrier <wberrier@novell.com>
+
+	* Makefile.am: use monodocer instead of monodoc to break
+	cyclic dep on mono-tools
+
 2005-09-08  Wade Berrier <wberrier@novell.com>
 
 	* Makefile.am: don't use pkgconfig for monodoc location

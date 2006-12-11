@@ -7,13 +7,13 @@ endif
 noinst_DATA = $(TARGETS)
 
 ASSEMBLER = mdassembler
-UPDATER = $(MONODOC) --update
 
 gecko-sharp-docs.zip gecko-sharp-docs.tree: $(srcdir)/en/*/*.xml $(srcdir)/en/*.xml
 	$(ASSEMBLER) --ecma $(srcdir)/en -o gecko-sharp-docs
 
 update:
-		$(UPDATER) ../gtkmozembed-sharp/gecko-sharp.dll -o ./en -f
+	rm -Rf ./en/Gecko/* ./en/GtkSharp.GeckoSharp/*
+	$(MONODOCER) -updateto:./en -path:. -assembly:../gtkmozembed/gecko-sharp.dll
 
 CLEANFILES = gecko-sharp-docs.zip gecko-sharp-docs.tree
 
