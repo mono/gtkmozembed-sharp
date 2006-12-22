@@ -1,3 +1,7 @@
+2006-12-22  Wade Berrier  <wberrier@novell.com>
+
+	* configure.in: version bump -> 0.12
+
 2006-12-11  Wade Berrier  <wberrier@novell.com>
 
 	* configure.in: use monodocer instead of monodoc to break 
