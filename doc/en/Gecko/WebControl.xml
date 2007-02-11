@@ -19,8 +19,13 @@
       <para>
 	    Compile with: mcs GeckoTest.cs -pkg:gtk-sharp -pkg:gecko-sharp
 	  </para>
+      <block subset="none" type="note">
+        <para>
+The WebControl depends on Gecko/Mozilla.   In some distributions the engine is distributed as part of the xulrunner package, and in order for this to work, you must set the "MOZILLA_FIVE_HOME" environment variable to point to the location where xulrunner resides.   For example in OpenSUSE 10.2 this is done by using: export MOZILLA_FIVE_HOME=/usr/lib/xulrunner-1.8.1b2
+  </para>
+      </block>
       <example>
-        <code lang="C#">
+        <code language="C#">
 using System;
 using Gtk;
 using Gecko;
