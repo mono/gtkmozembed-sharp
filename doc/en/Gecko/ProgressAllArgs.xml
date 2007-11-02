@@ -35,9 +35,9 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added</summary>
-        <value>a <see cref="T:System.String" /></value>
-        <remarks>To be added</remarks>
+        <summary />
+        <value>a <see cref="T:System.String" /> The return links currently being loaded</value>
+        <remarks>Returns the current object/links in pages being loaded</remarks>
       </Docs>
     </Member>
     <Member MemberName="Curprogress">
@@ -48,9 +48,9 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added</summary>
-        <value>a <see cref="T:System.Int32" /></value>
-        <remarks>To be added</remarks>
+        <summary>Current progress</summary>
+        <value>a <see cref="T:System.Int32" /> Current bytes being loaded</value>
+        <remarks>Returns the current bytes being loaded.</remarks>
       </Docs>
     </Member>
     <Member MemberName="Maxprogress">
@@ -61,9 +61,9 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added</summary>
-        <value>a <see cref="T:System.Int32" /></value>
-        <remarks>To be added</remarks>
+        <summary>Maximum Progress</summary>
+        <value>a <see cref="T:System.Int32" /> The total bytes of the whole page.</value>
+        <remarks>Returns the total bytes of the whole page currently being loaded.</remarks>
       </Docs>
     </Member>
   </Members>
