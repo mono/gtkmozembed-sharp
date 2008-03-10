@@ -10,6 +10,7 @@
   <attr path="/api/namespace/object[@cname='GtkMozEmbed']/method[@name='StatusEnumsGetType']" name="hidden">1</attr>
   <attr path="/api/namespace/object[@cname='GtkMozEmbed']/method[@name='ChromeFlagsGetType']" name="hidden">1</attr>
 
+  <attr path="/api/namespace/object[@cname='GtkMozEmbed']/method[@cname='gtk_moz_embed_set_comp_path']" name="hidden">1</attr>
 
 <!-- Fixup new_window, since it needs special marshalling -->
   <attr path="/api/namespace/object[@cname='GtkMozEmbed']/signal[@cname='new_window']/*/*[@type='GtkMozEmbed**']" name="pass_as">out</attr>

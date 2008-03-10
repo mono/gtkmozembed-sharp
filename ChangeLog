@@ -1,3 +1,14 @@
+2008-03-10  Andreia Gaita  <avidigal@novell.com>
+
+	* gtkmozembed/gtkgecko.metadata: Hide gtk_moz_embed_set_comp_path.
+	* gtkmozembed/WebControl.custom: Add initialization of CompPath,
+	to set the initial components path (if it hasn't been set yet by the
+	application) from the MOZILLA_FIVE_HOME env var,before the control is
+	created. Without this, gtkmozembed will try to load the runtime from 
+	the current process	path instead of going to the runtime directory, 
+	and will blow up.
+	[Fixes #341815]
+
 2006-12-22  Wade Berrier  <wberrier@novell.com>
 
 	* configure.in: version bump -> 0.12
