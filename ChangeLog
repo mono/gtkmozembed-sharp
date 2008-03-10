@@ -1,3 +1,7 @@
+2008-03-10  Wade Berrier  <wberrier@novell.com>
+
+	* configure.in: version bump -> 0.13
+
 2008-03-10  Andreia Gaita  <avidigal@novell.com>
 
 	* gtkmozembed/gtkgecko.metadata: Hide gtk_moz_embed_set_comp_path.
