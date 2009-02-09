@@ -1,3 +1,8 @@
+2009-02-09  Jonathan Pryor  <jpryor@novell.com>
+
+	* gecko-sharp-docs.source: Add a /monodoc/node element so that
+	  documentation is inserted under the "Mozilla Libraries" node.
+
 2006-12-11  Wade Berrier <wberrier@novell.com>
 
 	* Makefile.am: rename some vars: docdir -> monodocdir

@@ -1,4 +1,5 @@
 <?xml version="1.0"?>
 <monodoc>
+  <node label="Mozilla Libraries" name="classlib-gecko" parent="libraries" />
   <source provider="ecma" basefile="gecko-sharp-docs" path="classlib-gecko"/>
 </monodoc>
